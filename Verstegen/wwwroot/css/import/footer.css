@@ -1,1 +1,52 @@
-﻿/* Footer.css */
+﻿
+/* Footer.css */
+
+#footer-color-1 {
+    background-color: #495e57;
+}
+
+#footer-section-2 {
+    background-color: #546b63;
+    padding-bottom: 30px;
+}
+
+#footer-text-color-1 h4 {
+    color: #87a198;
+}
+
+#newsletter-text {
+    font-style: italic;
+}
+
+h3 {
+    color: white;
+}
+
+h4 {
+    padding-top: 10px;
+    color: white;
+}
+
+h5 {
+    color: #e4f3ee;
+}
+
+.section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.container {
+    text-align: center;
+}
+
+.category {
+    display: inline-block;
+    background: #ccc;
+    margin: 1px;
+}
+
+.category img {
+    width: 75px;
+    height: 75px;
+}
