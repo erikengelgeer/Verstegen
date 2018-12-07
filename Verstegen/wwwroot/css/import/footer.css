@@ -45,3 +45,18 @@ h5 {
     width: 75px;
     height: 75px;
 }
+
+.square {
+    border-radius: 5px;
+    margin-left:2px;
+    height: 50px;
+    width: 50px;
+    background-color: #ce0b35;
+}
+
+.square > img {
+    height: 25px;
+    width: 25px;
+    margin-top: 25%;
+    margin-left: 25%;
+}
