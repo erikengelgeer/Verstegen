@@ -7,7 +7,6 @@
 
 #footer-section-2 {
     background-color: #546b63;
-    padding-bottom: 30px;
 }
 
 #footer-text-color-1 h4 {
@@ -31,10 +30,7 @@ h5 {
     color: #e4f3ee;
 }
 
-.section {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+
 
 .category {
     display: inline-block;
