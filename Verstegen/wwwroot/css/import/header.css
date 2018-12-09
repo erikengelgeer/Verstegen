@@ -1,1 +1,124 @@
 ﻿/* Header.css */
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+.masthead {
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: url(https://images8.alphacoders.com/817/817980.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    .masthead h1 {
+        font-size: 4rem;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+
+@media (min-width: 992px) {
+    .masthead {
+        height: 100vh;
+    }
+
+        .masthead h1 {
+            font-size: 5.5rem;
+        }
+}
+
+#sidebar-wrapper {
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px);
+    background: #CD0B35;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .sidebar-nav li.sidebar-nav-item a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        padding: 15px;
+    }
+
+    .sidebar-nav li a:hover {
+        text-decoration: none;
+        color: #CD0B35;
+        background: #ffffff;
+        border-radius: 10px;
+    }
+
+    .sidebar-nav li a:active,
+    .sidebar-nav li a:focus {
+        text-decoration: none;
+    }
+
+
+#sidebar-wrapper.active {
+    right: 250px;
+    width: 250px;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.menu-toggle, .menu-toggle-wrapper {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #CD0B35;
+    line-height: 50px;
+    z-index: 999;
+}
+
+.menu-toggle-wrapper {
+    width: 170px;
+    background: rgba(78, 78, 78, 0.6);
+    padding-right: 50px;
+}
+
+.menu-toggle:focus {
+    color: #fff;
+}
+
+.menu-toggle:hover {
+    background: #fff;
+    color: #CD0B35;
+}
