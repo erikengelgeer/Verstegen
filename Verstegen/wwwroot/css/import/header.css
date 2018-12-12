@@ -6,13 +6,9 @@ html {
 }
 
 .masthead {
-    min-height: 30rem;
     position: relative;
-    display: table;
     width: 100%;
-    height: auto;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    max-height: 500px;
     background: url(https://images8.alphacoders.com/817/817980.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -27,8 +23,8 @@ html {
 }
 
 .logo-container {
-    width: 110px;
     position: absolute;
+    width: 110px;
     left: 30px;
     top: 30px;
     z-index: 997;
@@ -45,7 +41,7 @@ html {
 }
 
 #sidebar-wrapper {
-    position: fixed;
+    position: absolute;
     z-index: 2;
     right: 0;
     width: 250px;
@@ -95,7 +91,7 @@ html {
 }
 
 .menu-toggle, .menu-toggle-wrapper {
-    position: fixed;
+    position: absolute;
     right: 30px;
     top: 30px;
     width: 80px;
@@ -107,11 +103,16 @@ html {
     z-index: 999;
 }
 
-.menu-toggle-wrapper {
-    width: 200px;
-    background: rgba(78, 78, 78, 0.6);
-    padding-right: 75px;
+.menu-toggle {
+    right: 0;
+    top: 0;
 }
+
+    .menu-toggle-wrapper {
+        width: 200px;
+        background: rgba(78, 78, 78, 0.6);
+        padding-right: 75px;
+    }
 
 .food-industry {
     margin-left: 25px;
