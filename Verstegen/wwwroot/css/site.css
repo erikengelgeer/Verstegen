@@ -4,4 +4,8 @@
 @import "import/footer.css";
 @import "import/E33.css";
 
+body {
+    font-family: 'Nunito';
+}
+
 /* NO CSS UNDER THIS LINE */
