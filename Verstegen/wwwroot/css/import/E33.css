@@ -1,4 +1,11 @@
 ﻿/* css file for Text and Image */
+*{
+    border: 1px solid red;
+}
+
+.nopadding {
+    padding: 0px !important;
+}
 
 .E33-Text-Margin{
     margin-left:300px;
