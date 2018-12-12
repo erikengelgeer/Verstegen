@@ -10,15 +10,25 @@
     <link rel="stylesheet" href="/css/site.css" />
 </head>
 <body>
+
+    <div class="logo-container">
+        <img class="logo-img" src="~/images/footer/logo-verstegen.svg" alt="Verstegen Logo" />
+    </div>
+
     <!-- Navigation -->
     <div class="menu-toggle-wrapper rounded">
-        <span class="food-industry">Food industry</span>
-        <a class="menu-toggle rounded" href="#">
-            <span class="fas fa-bars"></span>
-        </a>
+        <div class="row">
+            <span class="food-industry">Food industry</span>
+            <a class="menu-toggle rounded" href="#">
+                <span class="fa fa-bars"> Menu</span>
+            </a>
+        </div>
+        <div class="row">
+            
+        </div>
     </div>
     <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
+        <ul class="sidebar-nav mt-5">
             <li class="sidebar-nav-item mt-5">
                 <a class="js-scroll-trigger" href="#p">Home</a>
             </li>
@@ -47,7 +57,7 @@
                 <a class="js-scroll-trigger" href="#">Contact</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">Verstegen</a>
+                <a class="js-scroll-trigger h3" href="#">Verstegen</a>
             </li>
             <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="#">About Verstegen</a>
@@ -61,7 +71,7 @@
         </ul>
     </nav>
 
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
     </div>
 
