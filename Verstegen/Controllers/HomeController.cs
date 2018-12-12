@@ -14,5 +14,10 @@ namespace Verstegen.Controllers
         {
             return View();
         }
+
+        public IActionResult HowWeWork()
+        {
+            return View();
+        }
     }
 }
