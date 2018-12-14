@@ -55,15 +55,17 @@ namespace Verstegen
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
+                    name: "Default",
                     template: "{controller=Home}/{action=Home}/");
 
-                routes.MapRoute(
-                    name: "defaultProducts",
-                    template: "{controller=Products}/{action=Products}/");
+                routes.MapRoute("how-we-work", "/how-we-work/",
+                    defaults: new { controller = "HowWeWork", action = "Index" });
 
-                routes.MapRoute("how-we-work", "/how-we-work",
-                    defaults: new { controller = "Home", action = "HowWeWork" });
+                routes.MapRoute("products overzicht", "/products/",
+                     defaults: new { controller = "Product", action = "Products" });
+
+                routes.MapRoute("products spec", "/product/{product?}",
+                     defaults: new { controller = "Product", action = "Product" });
             });
         }
     }
