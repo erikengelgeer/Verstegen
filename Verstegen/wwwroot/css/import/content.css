@@ -1,5 +1,37 @@
 ﻿/* Content.css */
 
+.inspiration-card-2 .card-img-block {
+    float: left;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.inspiration-card-2 .card-body {
+    position: relative;
+    background-color: #e4e4e4;
+}
+.inspiration-card-2 .inspiration {
+    border-radius: 50%;
+    position: absolute;
+    top: -42px;
+    right: -38px;
+    max-width: 75px;
+    padding: 5px;
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+    background: #CD0B35;
+}
+
+.inspiration-card-2 a {
+    text-decoration: none;
+    color: #4e4e4e;
+}
+
+.inspiration-card-2 .card-title > span {
+    margin-left: 5px;
+    color: #CD0B35;
+ 
 .icon-arrow-right {
     width: 20px;
     height: 20px;
