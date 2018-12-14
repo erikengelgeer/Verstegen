@@ -5,6 +5,12 @@ html {
     height: 100%;
 }
 
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
 .masthead {
     position: relative;
     width: 100%;
