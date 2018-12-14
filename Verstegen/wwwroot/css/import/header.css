@@ -108,11 +108,11 @@ html {
     top: 0;
 }
 
-    .menu-toggle-wrapper {
-        width: 200px;
-        background: rgba(78, 78, 78, 0.6);
-        padding-right: 75px;
-    }
+.menu-toggle-wrapper {
+    width: 200px;
+    background: rgba(78, 78, 78, 0.6);
+    padding-right: 75px;
+}
 
 .food-industry {
     margin-left: 25px;
