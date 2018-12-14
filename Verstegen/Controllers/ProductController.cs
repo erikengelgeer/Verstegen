@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace Verstegen.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductController : Controller
     {
 
         public IActionResult Products()
         {
+            return View();
+        }
+
+        public IActionResult Product(string product)
+        {
+            ViewData["productname"] = product;
             return View();
         }
     }
