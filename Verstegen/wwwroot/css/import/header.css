@@ -128,3 +128,6 @@ html {
     color: #CD0B35;
 }
 
+.header-position-style {
+    position: relative;
+}
