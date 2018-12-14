@@ -3,6 +3,7 @@ body,
 html {
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .masthead {
@@ -41,7 +42,7 @@ html {
 }
 
 #sidebar-wrapper {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     right: 0;
     width: 250px;
@@ -126,3 +127,4 @@ html {
     background: #fff;
     color: #CD0B35;
 }
+

@@ -31,4 +31,66 @@
 .inspiration-card-2 .card-title > span {
     margin-left: 5px;
     color: #CD0B35;
+ 
+.icon-arrow-right {
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.category-list li {
+    list-style-type: none;
+    height: 30px;
+    width: ;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -border-radius: 4px;
+    border-radius: 4px;
+}
+
+.category-list a {
+    color: #4E4E4E;
+    text-decoration: none;
+    display: block;
+    width: inherit;
+    height: inherit;
+}
+
+.category-list li:nth-child(odd) {
+    background: #ECECEC
+}
+
+.category-list li:nth-child(even) {
+    background: #FFF
+}
+
+.categories-title h6 {
+    color: #007A51;
+    text-align: center;
+}
+
+.categories-title h2 {
+    color: #4e4e4e;
+    text-align: center;
+}
+
+.categories-list-text {
+    margin-left: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.categories-row {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.categories {
+    display: inline-block;
 }
