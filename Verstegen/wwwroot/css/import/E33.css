@@ -1,17 +1,12 @@
 ﻿/* css file for Text and Image */
 
 .E33-Text-Margin{
-    margin-left:300px;
+    margin-left:20%;
 }
 
 .E33-Row-Margin {
     margin-top: 50px;
     margin-bottom: 50px;
-}
-
-.E33-Vertical-Align {
-    align-items:center;
-    display:flex;
 }
 
 .E33-Text-Layout{
