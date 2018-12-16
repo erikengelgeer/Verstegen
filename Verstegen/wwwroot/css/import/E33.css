@@ -1,12 +1,4 @@
 ﻿/* css file for Text and Image */
-*{
-    border: 1px solid red;
-}
-
-.nopadding {
-    padding: 0px !important;
-}
-
 .E33-Text-Margin{
     margin-left:300px;
 }
@@ -26,3 +18,22 @@
     font-size:32px;
 }
 
+.spotlightTitle{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    padding: 2%;
+    background: #323031;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.spotlightImg{
+    border: 1px solid #ECECEC;
+}
+
+.spotlightP {
+    padding: 5% 5% 5% 5%;
+    background-color: #ECECEC;
+}

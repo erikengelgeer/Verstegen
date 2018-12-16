@@ -1,7 +1,14 @@
-﻿/* Imports css files */
+/* Imports css files */
 @import "import/header.css";
+@import "import/E33.css";
 @import "import/content.css";
 @import "import/footer.css";
-@import "import/E33.css";
+@import "import/E23.css";
+
+/*STANDARD */
+
+body {
+    font-family: 'Nunito';
+}
 
 /* NO CSS UNDER THIS LINE */
