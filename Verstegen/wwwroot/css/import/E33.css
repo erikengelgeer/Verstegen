@@ -10,7 +10,12 @@
 
 .E33-Text-Layout{
     font-family:Arial;
-    font-size:32px;
+    font-size:26px;
+}
+
+.E33-Vertical-Align {
+    display: flex;
+    align-items: center;
 }
 
 .spotlightTitle{
