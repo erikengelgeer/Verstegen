@@ -60,3 +60,21 @@ h5 {
     margin-top: 25%;
     margin-left: 25%;
 }
+
+.footer-copyright {
+    display: flex;
+}
+
+.footer-copyright p{
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    margin-top: 100px;
+}
+
+.footer-sub-title {
+    color: #89A99F;
+}

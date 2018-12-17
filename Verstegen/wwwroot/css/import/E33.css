@@ -36,4 +36,9 @@
 .spotlightP {
     padding: 5% 5% 5% 5%;
     background-color: #ECECEC;
+    color: #848484;
+}
+
+.spotlightP strong {
+    color: #4E4E4E;
 }

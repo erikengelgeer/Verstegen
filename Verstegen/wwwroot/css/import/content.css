@@ -92,7 +92,7 @@
 
 .category-list li {
     list-style-type: none;
-    height: 30px;
+    height: 40px;
     width:;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -142,4 +142,8 @@
 
 .categories {
     display: inline-block;
+}
+
+.categories-title {
+    margin-top: 100px;
 }
