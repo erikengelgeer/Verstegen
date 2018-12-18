@@ -217,6 +217,11 @@ p {
   How we work 
 ***************/
 
+.vertical-align{
+    display:flex;
+    align-items:center;
+}
+
 .container-fluid {
     padding: 0px;
 }
@@ -264,6 +269,11 @@ p {
     color: white;
     padding-top: 4%;
     padding-bottom: 2%;
+}
+
+.green-usp-button {
+    background-color: white;
+    color: #CD0B35;
 }
 
 .icon-arrow-right-white {
