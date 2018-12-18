@@ -1,18 +1,18 @@
 /* Imports css files */
+/*STANDARD */
 @import "import/header.css";
-@import "import/E33.css";
 @import "import/content.css";
 @import "import/footer.css";
-@import "import/E23.css";
-
-/*STANDARD */
 
 body {
     font-family: 'Nunito';
 }
 
-a:hover {
+a,a:hover {
     text-decoration: none;
 }
+
+
+
 
 /* NO CSS UNDER THIS LINE */

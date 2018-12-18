@@ -1,6 +1,30 @@
 ﻿/* Content.css */
 
 
+/***********************
+  Global css
+************************/
+
+.element-title {
+    margin-top: 70px !important;
+}
+
+.element-title h2 {
+    color: #4e4e4e;
+    text-align: center;
+}
+
+.element-title h6 {
+    color: #007A51;
+    text-align: center;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: normal;
+}
 
 /***********************
   CUSTON BTN VALUES
@@ -9,35 +33,42 @@
 .btn {
 }
 
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
+.btn-primary {
     color: #fff;
-    background-color: #930D2A !important;
-    border-color: #930D2A !important;
+    background-color: #cd0b35 !important;
+    border-color: #cd0b35 !important;
 }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open .dropdown-toggle.btn-primary {
+        color: #fff;
+        background-color: #930D2A !important;
+        border-color: #930D2A !important;
+    }
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
+    outline: none !important;
 }
 
-.btn-primary {
-    background: #930D2A;
-    color: #ffffff;
+/***********************
+  Home intro section
+************************/
+
+.home-inner-container {
+    width: 65%;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #930D2A;
-}
+@media (max-width: 767.98px) {
 
-.btn-primary:active, .btn-primary.active {
-    background: #930D2A;
-    box-shadow: none;
+    .home-inner-container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
-
 
 /***********************
   Inspiration section
@@ -45,9 +76,14 @@
 
 .inspiration-card-2 .card-img-block {
     float: left;
-    width: 100%;
+    max-width: 100%;
     height: 150px;
     overflow: hidden;
+}
+
+.card-img-block img {
+    width: 100%;
+    height: auto;
 }
 
 .inspiration-card-2 .card-body {
@@ -81,6 +117,9 @@
 /***********************
   Categories section
 ************************/
+.category-list {
+    padding: 0;
+}
 
 .icon-arrow-right {
     width: 20px;
@@ -92,6 +131,7 @@
 
 .category-list li {
     list-style-type: none;
+    line-height: 42px;
     height: 40px;
     width:;
     -webkit-border-radius: 4px;
@@ -116,15 +156,6 @@
     background: #FFF
 }
 
-.categories-title h6 {
-    color: #007A51;
-    text-align: center;
-}
-
-.categories-title h2 {
-    color: #4e4e4e;
-    text-align: center;
-}
 
 .categories-list-text {
     margin-left: 10px;
@@ -132,41 +163,54 @@
     vertical-align: middle;
 }
 
-.categories-row {
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    margin-top: 20px;
-    margin-bottom: 40px;
+/***********************
+  Spotlight section 
+***********************/
+
+.spotlightTitle {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    padding: 2%;
+    background: #323031;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
 }
 
-.categories {
-    display: inline-block;
+.spotlightImg {
+    border: 1px solid #ECECEC;
 }
 
-.categories-title {
-    margin-top: 100px;
+.spotlightP {
+    padding: 5% 5% 5% 5%;
+    background-color: #ECECEC;
+    color: #848484;
 }
+
+    .spotlightP strong {
+        color: #4E4E4E;
+    }
 
 /***************
   Breadcrumbs 
 ***************/
 
-.breadcrumb{
-    background-color:white;
-    padding:0px;
-    margin:0px;
+.breadcrumb {
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
-.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-    content: url("../../images/icons/right-arrow-short.svg");
-    width:17px;
-    height:17px;
-}
+    .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+        content: url("../../images/icons/right-arrow-short.svg");
+        width: 17px;
+        height: 17px;
+    }
 
-.breadcrumb a {
-    color: #cd0b35;
-}
+    .breadcrumb a {
+        color: #cd0b35;
+    }
 
 
 /***************
@@ -177,38 +221,33 @@
     padding: 0px;
 }
 
-.alt-button-colors {
-    background-color: white;
-    color: #cd0b35;
-}
-
 .background-image {
-    width:775px;
+    width: 775px;
 }
 
-.white-space{
-    padding-left:120px;
-    padding-right:120px;
+.white-space {
+    padding-left: 120px;
+    padding-right: 120px;
 }
 
-.margin-bottom{
-    margin-top:75px;
-    margin-bottom:75px;
+.margin-bottom {
+    margin-top: 75px;
+    margin-bottom: 75px;
 }
 
-.green-usp{
-    background-color:#536B63;
+.green-usp {
+    background-color: #536B63;
 }
 
 .green-usp-size {
     padding-left: 120px;
     padding-right: 120px;
-    padding-top:3%;
-    padding-bottom:3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 .green-usp-block h6 {
-    opacity:0.9;
+    opacity: 0.9;
     font-size: 1vw;
     color: white;
 }
@@ -222,7 +261,7 @@
 .green-usp-block p {
     opacity: 0.6;
     font-size: 1vw;
-    color:white;
+    color: white;
     padding-top: 4%;
     padding-bottom: 2%;
 }
@@ -237,7 +276,7 @@
 }
 
 .usp-block h6 {
-    font-size:1vw;
+    font-size: 1vw;
     color: #007A51;
 }
 

@@ -7,71 +7,78 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet" />
-    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
+
 </head>
 <body>
     <div class="header-position-style">
-    <div class="logo-container">
-        <a href="/Home"><img class="logo-img" src="~/images/footer/logo-verstegen.svg" alt="Verstegen Logo" /></a>
-    </div>
+        <div class="logo-container">
+            <a href="/Home"><img class="logo-img" src="~/images/footer/logo-verstegen.svg" alt="Verstegen Logo" /></a>
+        </div>
 
-    <!-- Navigation -->
-    <div class="menu-toggle-wrapper rounded">
-        <div class="row">
-            <span class="food-industry">Food industry</span>
-            <a class="menu-toggle rounded" href="#">
-                <span class="fa fa-bars"> Menu</span>
-            </a>
+        <!-- Navigation -->
+        <div class="menu-toggle-wrapper rounded">
+            <div class="row">
+                <span class="food-industry">Food industry</span>
+                <a class="menu-toggle rounded" href="#">
+                    <span class="fa fa-bars"> Menu</span>
+                </a>
+                <div class="changeLang ">
+                    <input type="radio" name="l" id="toNl" checked />
+                    <label for="toNl"></label>
+                    <input type="radio" name="l" id="toEn" />
+                    <label for="toEn"></label>
+                    <a href="#">
+                        <span class="fas fa-search"></span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="row">
-            
-        </div>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav mt-5">
+                <li class="sidebar-nav-item mt-5">
+                    <a class="js-scroll-trigger" href="/Home">Home</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="/how-we-work">How we work</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">Inspiration</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">News & events</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">Products</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">Packaging</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">Recipes</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">Packaging</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">Contact</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger h3" href="#">Verstegen</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">About Verstegen</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">Career</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#">News</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav mt-5">
-            <li class="sidebar-nav-item mt-5">
-                <a class="js-scroll-trigger" href="/Home">Home</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="/how-we-work">How we work</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">Inspiration</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">News & events</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">Products</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">Packaging</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">Recipes</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">Packaging</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">Contact</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger h3" href="#">Verstegen</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">About Verstegen</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">Career</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#">News</a>
-            </li>
-        </ul>
-    </nav>
-        </div>
     <div class="body-content">
         @RenderBody()
     </div>
@@ -99,7 +106,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row py-5 secondary-color">
+            <div class="row py-5 px-5 secondary-color">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-3">
                     <div>
