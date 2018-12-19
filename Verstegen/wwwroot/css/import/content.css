@@ -325,7 +325,14 @@
     margin-top: 5px;
 }
 
-.accordion-item-body{
+.accordion-item-body {
     background-color: #ECECEC;
     color: #848484;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.accordion-card {
+    border: none;
 }
