@@ -294,11 +294,11 @@
 }
 
 .accordion-list li:nth-child(odd) .card-header.collapsed{
-    background: #ECECEC
+    background: #ECECEC !important;
 }
 
 .accordion-list li:nth-child(even) .card-header.collapsed{
-    background: #FFF
+    background: #FFF !important;
 }
 
 .card-header.collapsed .card-header-img {
@@ -323,4 +323,9 @@
     float: right;
     margin-right: 10px;
     margin-top: 5px;
+}
+
+.accordion-item-body{
+    background-color: #ECECEC;
+    color: #848484;
 }
