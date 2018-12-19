@@ -5,7 +5,7 @@
 @import "import/footer.css";
 
 body {
-    font-family: 'Nunito';
+    font-family: 'Nunito', sans-serif;
 }
 
 a,a:hover {

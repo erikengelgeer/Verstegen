@@ -5,6 +5,26 @@
   Global css
 ************************/
 
+.pt-6,
+.py-6 {
+    padding-top: 8rem !important;
+}
+
+.pr-6,
+.px-6 {
+    padding-right: 8rem !important;
+}
+
+.pb-6,
+.py-6 {
+    padding-bottom: 8rem !important;
+}
+
+.pl-6,
+.px-6 {
+    padding-left: 8rem !important;
+}
+
 .element-title {
     margin-top: 70px !important;
 }
@@ -19,38 +39,115 @@
     text-align: center;
 }
 
-p {
-    font-family: 'Nunito', sans-serif;
+.h1 {
+    font-size: 120px;
+    color: #FFFFFF;
+
+}
+
+.h2 {
+    font-size: 55px;
+    font-weight: bold;
+    color: #4E4E4E;
+}
+
+.h3 {
+    font-size: 30px;
+    color: #4E4E4E;
+}
+
+.h4 {
+    font-size: 30px;
+    color: #4E4E4E;
+}
+
+.h6 {
+    color: #007A51;
+}
+
+p.body-text {
     font-size: 18px;
     line-height: 25px;
     font-weight: normal;
+    color: #848484;
+}
+@media (max-width: 767.98px) {
+
+    .h1 {
+        font-size: 30px;
+    }
+
+    .h2 {
+        font-size: 20px;
+    }
+
+    .h3 {
+        font-size: 15px;
+    }
+
+    .h4 {
+        font-size: 15px;
+    }
+
+    p.body-text {
+        font-size: 19px;
+    }
+}
+.green-background {
+    background-color: #536B63;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
 }
 
 /***********************
   CUSTON BTN VALUES
 ************************/
 
+.fa-arrow-r:before {
+    content: "\f178" !important;
+}
+
 .btn {
 }
 
-.btn-primary {
+.btn-red {
     color: #fff;
     background-color: #cd0b35 !important;
     border-color: #cd0b35 !important;
 }
 
-    .btn-primary:hover,
-    .btn-primary:focus,
-    .btn-primary:active,
-    .btn-primary.active,
-    .open .dropdown-toggle.btn-primary {
-        color: #fff;
-        background-color: #930D2A !important;
-        border-color: #930D2A !important;
-    }
+.btn-red:hover,
+.btn-red:focus,
+.btn-red:active,
+.btn-red.active,
+.open .dropdown-toggle.btn-red {
+    color: #fff;
+    background-color: #930D2A !important;
+    border-color: #930D2A !important;
+}
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: none !important;
+}
+
+.btn-white {
+    color: #cd0b35;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+.btn-white:hover,
+.btn-white:focus,
+.btn-white:active,
+.btn-white.active,
+.open .dropdown-toggle.btn-white {
+    color: #848484;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
 }
 
 /***********************
@@ -202,25 +299,20 @@ p {
     margin: 0px;
 }
 
-    .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-        content: url("../../images/icons/right-arrow-short.svg");
-        width: 17px;
-        height: 17px;
-    }
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: url("../../images/icons/right-arrow-short.svg");
+    width: 17px;
+    height: 17px;
+}
 
-    .breadcrumb a {
-        color: #cd0b35;
-    }
+.breadcrumb a {
+    color: #cd0b35;
+}
 
 
 /***************
   How we work 
 ***************/
-
-.vertical-align{
-    display:flex;
-    align-items:center;
-}
 
 .container-fluid {
     padding: 0px;
@@ -230,50 +322,21 @@ p {
     width: 775px;
 }
 
-.white-space {
-    padding-left: 120px;
-    padding-right: 120px;
-}
-
 .margin-bottom {
     margin-top: 75px;
     margin-bottom: 75px;
 }
 
-.green-usp {
-    background-color: #536B63;
-}
-
-.green-usp-size {
-    padding-left: 120px;
-    padding-right: 120px;
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-
 .green-usp-block h6 {
-    opacity: 0.9;
-    font-size: 1vw;
-    color: white;
+    color: #ffffff;
 }
 
 .green-usp-block h2 {
-    font-size: 3vw;
-    font-weight: bold;
-    color: white;
+    color: #ffffff;
 }
 
 .green-usp-block p {
-    opacity: 0.6;
-    font-size: 1vw;
-    color: white;
-    padding-top: 4%;
-    padding-bottom: 2%;
-}
-
-.green-usp-button {
-    background-color: white;
-    color: #CD0B35;
+    color: #ffffff;
 }
 
 .icon-arrow-right-white {
@@ -283,22 +346,4 @@ p {
     margin-right: 5px;
     margin-left: 10px;
     margin-top: 5px;
-}
-
-.usp-block h6 {
-    font-size: 1vw;
-    color: #007A51;
-}
-
-.usp-block h2 {
-    font-size: 3vw;
-    font-weight: bold;
-    color: #4e4e4e;
-}
-
-.usp-block p {
-    font-size: 1vw;
-    padding-top: 4%;
-    padding-bottom: 2%;
-    opacity: 0.6;
 }
