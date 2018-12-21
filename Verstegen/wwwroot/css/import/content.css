@@ -272,6 +272,7 @@
     color: #4E4E4E;
     font-weight: bold;
     text-align: left;
+    padding-left: 40px;
 }
 
 .accordion-item {
@@ -335,4 +336,54 @@
 
 .accordion-card {
     border: none;
+}
+
+.contact-bubble {
+    position: relative;
+    background: #ECECEC;
+    border-radius: .4em;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.contact-us {
+    height: 33%;
+}
+
+.persoon-img {
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 50%;
+    width: 100px;
+}
+
+.accordion-item-body .card-body {
+    position: relative
+}
+
+    .accordion-item-body .card-body:after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -5px;
+        left: 30px;
+        background: #ECECEC;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+.phone-icon {
+    float: left;
+    width: 40px;
+}
+
+.phone-numer {
+    align-items: center;
+    display: inline-flex;
+}
+
+phone-card {
+    height: 50px;
 }
