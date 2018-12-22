@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Verstegen.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,6 +22,33 @@ namespace Verstegen.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Blogs",
+                columns: table => new
+                {
+                    BlogId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Title = table.Column<string>(nullable: false),
+                    Text = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Blogs", x => x.BlogId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Categorys",
+                columns: table => new
+                {
+                    CategoryId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CategoryName = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categorys", x => x.CategoryId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Recipes",
                 columns: table => new
                 {
@@ -33,6 +60,32 @@ namespace Verstegen.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Recipes", x => x.ReceptId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BlogCategorys",
+                columns: table => new
+                {
+                    BlogCategoryId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    BlogId1 = table.Column<int>(nullable: false),
+                    CategoryId1 = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BlogCategorys", x => x.BlogCategoryId);
+                    table.ForeignKey(
+                        name: "FK_BlogCategorys_Blogs_BlogId1",
+                        column: x => x.BlogId1,
+                        principalTable: "Blogs",
+                        principalColumn: "BlogId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BlogCategorys_Categorys_CategoryId1",
+                        column: x => x.CategoryId1,
+                        principalTable: "Categorys",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -72,6 +125,16 @@ namespace Verstegen.Migrations
                 name: "IX_ArticleAmounts_ReceptId",
                 table: "ArticleAmounts",
                 column: "ReceptId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BlogCategorys_BlogId1",
+                table: "BlogCategorys",
+                column: "BlogId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BlogCategorys_CategoryId1",
+                table: "BlogCategorys",
+                column: "CategoryId1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -80,10 +143,19 @@ namespace Verstegen.Migrations
                 name: "ArticleAmounts");
 
             migrationBuilder.DropTable(
+                name: "BlogCategorys");
+
+            migrationBuilder.DropTable(
                 name: "Articles");
 
             migrationBuilder.DropTable(
                 name: "Recipes");
+
+            migrationBuilder.DropTable(
+                name: "Blogs");
+
+            migrationBuilder.DropTable(
+                name: "Categorys");
         }
     }
 }
