@@ -294,11 +294,11 @@
     margin-top: 5px;
 }
 
-.accordion-list li:nth-child(odd) .card-header.collapsed{
+.accordion-list li:nth-child(odd) .card-header.collapsed {
     background: #ECECEC !important;
 }
 
-.accordion-list li:nth-child(even) .card-header.collapsed{
+.accordion-list li:nth-child(even) .card-header.collapsed {
     background: #FFF !important;
 }
 
@@ -310,13 +310,13 @@
     background-color: #CD0B35;
 }
 
-.card-header:not(.collapsed) .card-header-img{
-    content: url(../../images/icons/minimize.svg);
-}
+    .card-header:not(.collapsed) .card-header-img {
+        content: url(../../images/icons/minimize.svg);
+    }
 
-.card-header:not(.collapsed) .accordion-item {
-    color: white;
-}
+    .card-header:not(.collapsed) .accordion-item {
+        color: white;
+    }
 
 .card-header-img {
     width: 30px;
@@ -342,20 +342,96 @@
     position: relative;
     background: #ECECEC;
     border-radius: .4em;
-    height: 300px;
     margin-top: 20px;
     margin-left: 40px;
 }
 
 .contact-us {
-    height: 33%;
+    height: 45%;
 }
 
-.persoon-img {
-    margin-left: 15px;
-    margin-top: 15px;
-    border-radius: 50%;
-    width: 100px;
+.contact-us .row {
+    margin-bottom: 30px;
+}
+
+.persoon-info {
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    clear: left;
+}
+
+.persoon-naam {
+    font-weight: bold;
+}
+
+span {
+    clear: left;
+}
+
+@media (min-width: 1400px) {
+    .persoon-naam {
+        margin-top: 35px;
+        color: #4E4E4E;
+        float: left;
+        clear: left;
+    }
+
+    .persoon-functie {
+        text-decoration: none;
+        color: #848484;
+        font-weight: normal;
+        float: left;
+    }
+
+    .persoon-img {
+        margin-top: 15px;
+        margin-left: 25px;
+        border-radius: 50%;
+        width: 100px;
+    }
+}
+
+.persoon-naam {
+    margin-top: 35px;
+    text-decoration: none;
+    color: #4E4E4E;
+    float: left;
+    clear: left;
+}
+
+.persoon-functie {
+    text-decoration: none;
+    color: #848484;
+    font-weight: normal;
+    float: left;
+}
+
+@media only screen and (max-width: 1399px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .persoon-img {
+        display: block;
+        margin-top: 15px;
+        border-radius: 50%;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .persoon-naam {
+        margin-left: 25px;
+        text-align: center;
+    }
+
+    .persoon-functie {
+        margin-left: 25px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
 }
 
 .accordion-item-body .card-body {
@@ -374,16 +450,62 @@
         transform: rotate(45deg);
     }
 
+.contact-bubble:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    left: 30px;
+    background: #ECECEC;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.phone-card img {
+    float: left;
+    clear: left;
+}
+
 .phone-icon {
     float: left;
-    width: 40px;
+    width: 25px;
+    margin-top: 12.5px;
 }
 
-.phone-numer {
-    align-items: center;
-    display: inline-flex;
+.phone-number {
+    float: left;
+    margin-left: 45px;
+    margin-top: -23px;
+    color: #848484;
 }
 
-phone-card {
+.phone-card {
     height: 50px;
+    margin-bottom: 10px;
+}
+
+.email-card {
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+@media (max-width: 1399px) {
+    .email-card {
+        height: 50px;
+        margin-bottom: 10px;
+        margin-left: 8.333333%;
+    }
+}
+
+.contact-card {
+    background-color: #ECECEC;
+    border-style: hidden;
+    margin-bottom: 25px;
+}
+
+.all-contacts {
+    margin-left: 40px;
+    margin-bottom: 15px;
 }
