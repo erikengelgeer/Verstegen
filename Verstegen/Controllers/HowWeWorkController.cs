@@ -10,12 +10,17 @@ namespace Verstegen.Controllers
 {
     public class HowWeWorkController : Controller
     {
+        readonly MyContext db;
+
+        public HowWeWorkController()
+        {
+            db = new MyContext();
+        }
+
         public IActionResult Index()
         {
-            GetData data = new GetData();
-            
-            ViewBag.Blogs = data.getBlogs();
-            ViewBag.Contact = data.GetContact();
+            ViewBag.Blogs = db.Blogs.ToList();
+            ViewBag.Contact = db.Contacts.First();    
             return View("HowWeWork");
         }
     }
