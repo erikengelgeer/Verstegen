@@ -69,6 +69,12 @@ namespace Verstegen
 
                 routes.MapRoute("products spec", "/product/{product?}",
                      defaults: new { controller = "Product", action = "Product" });
+
+                routes.MapRoute("inspiration", "/inspiration/",
+                     defaults: new { controller = "Inspiration", action = "Index" });
+
+                routes.MapRoute("inspiration detail", "/inspiration/detail",
+                    defaults: new { controller = "Inspiration", action = "Detail" });
             });
         }
     }
