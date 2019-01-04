@@ -9,19 +9,13 @@ html {
 .masthead {
     position: relative;
     width: 100%;
-    max-height: 500px;
+    height: 500px;
     background: url(https://images8.alphacoders.com/817/817980.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.masthead h1 {
-    font-size: 4rem;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-}
 
 .logo-container {
     position: absolute;
@@ -31,15 +25,6 @@ html {
     z-index: 997;
 }
 
-@media (min-width: 992px) {
-    .masthead {
-        height: 100vh;
-    }
-
-    .masthead h1 {
-        font-size: 5.5rem;
-    }
-}
 
 #sidebar-wrapper {
     position: fixed;
@@ -64,24 +49,24 @@ html {
     list-style: none;
 }
 
-.sidebar-nav li.sidebar-nav-item a {
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    padding: 15px;
-}
+    .sidebar-nav li.sidebar-nav-item a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        padding: 15px;
+    }
 
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #CD0B35;
-    background: #ffffff;
-    border-radius: 10px;
-}
+    .sidebar-nav li a:hover {
+        text-decoration: none;
+        color: #CD0B35;
+        background: #ffffff;
+        border-radius: 10px;
+    }
 
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
+    .sidebar-nav li a:active,
+    .sidebar-nav li a:focus {
+        text-decoration: none;
+    }
 
 
 #sidebar-wrapper.active {
@@ -95,7 +80,7 @@ html {
     position: absolute;
     right: 30px;
     top: 30px;
-    width: 110px;
+    width: 80px;
     height: 50px;
     text-align: center;
     color: #fff;
@@ -110,9 +95,8 @@ html {
 }
 
 .menu-toggle-wrapper {
-    width: 230px;
+    width: 200px;
     background: rgba(78, 78, 78, 0.6);
-    padding-right: 75px;
 }
 
 .food-industry {
@@ -126,6 +110,10 @@ html {
 .menu-toggle:hover {
     background: #fff;
     color: #CD0B35;
+}
+
+.menu-toggle:after {
+    content: "Menu"
 }
 
 .header-position-style {
@@ -161,9 +149,27 @@ html {
 .menu-toggle-wrapper .changeLang input[type="radio"]:checked + label {
     font-weight: 900;
 }
+
 .menu-toggle-wrapper .changeLang label[for="toEn"]:after {
     content: "En";
 }
+
 .menu-toggle-wrapper .changeLang label[for="toNl"]:after {
     content: "NL";
+}
+
+@media (max-width: 767.98px) {
+    .logo-container {
+        width: 80px;
+    }
+
+    .masthead {
+        height: 50vh;
+    }
+    .food-industry {
+        display: none;
+    }
+    .menu-toggle-wrapper {
+        background: transparent;
+    }
 }
