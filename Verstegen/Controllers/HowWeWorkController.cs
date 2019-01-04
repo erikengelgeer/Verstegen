@@ -12,6 +12,9 @@ namespace Verstegen.Controllers
     {
         public IActionResult Index()
         {
+            BlogData data = new BlogData();
+            
+            ViewBag.Blogs = data.getBlogs();
             return View("HowWeWork");
         }
     }

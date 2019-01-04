@@ -1,5 +1,7 @@
-﻿@{
+@using Verstegen.Models;
+@{
     ViewData["Title"] = "How we work";
+    var BlogCounter = 0;
 }
 
 <!-- Header -->
@@ -12,6 +14,7 @@
 </header>
 
 <div class="container">
+
     <div class="row mt-4">
         <div class="col-md-12">
             <ol class="breadcrumb">
@@ -21,91 +24,80 @@
         </div>
     </div>
 
-    <div class="row margin-bottom">
-        <div class="col-md-6 mr-5">
-            <img class="img-fluid background-image" src="~/images/Stories/field-worker.jpg" alt="Field Worker" />
-        </div>
-        <div class="col-md-5 d-flex align-items-center">
-            <div class="usp-block">
-                <h6 class="h6">S o u r c e</h6>
-                <h2 class="h2">Products are sourced from where they grow</h2>
-                <p class="body-text">
-                    Our expert of the innovation team tells you about it.
-                    Donec ullamcorper nulla non metus auctor fringilla. Sed Posuere Consectetur est at lobortis.
-                    Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis.
-                </p>
-                <button type="button" class="btn btn-red btn-lg">
-                    Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                </button>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="row margin-bottom">
-        <div class="col-md-5 d-flex align-items-center">
-            <div class="usp-block">
-                <h2 class="h2">We process everything in our own factory</h2>
-                <p class="body-text">
-                    Our expert of the innovation team tells you about it.
-                    Donec ullamcorper nulla non metus auctor fringilla. Sed Posuere Consectetur est at lobortis.
-                    Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis.
-                </p>
-                <button type="button" class="btn btn-red btn-lg">
-                    Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                </button>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-6">
-            <img class="img-fluid background-image" src="~/images/Stories/lab-worker.jpg" alt="Field Worker" />
-        </div>
-    </div>
-</div>
-<div class="container-fluid green-background">
-    <div class="container">
-        <div class="row margin-bottom py-6">
-            <div class="col-md-6 mr-5">
-                <img class="img-fluid background-image" src="~/images/Stories/chef-worker.jpg" alt="Field Worker" />
-            </div>
-            <div class="col-md-5 d-flex align-items-center">
-                <div class="green-usp-block">
-                    <h6 class="h6">C u s t o m &nbsp; v s &nbsp; s t a n d a r d</h6>
-                    <h2 class="h2">Standard and custom made products</h2>
-                    <p class="body-text">
-                        Our expert of the innovation team tells you about it.
-                        Donec ullamcorper nulla non metus auctor fringilla. Sed Posuere Consectetur est at lobortis.
-                        Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis.
-                    </p>
-                    <button type="button" class="btn btn-white btn-lg">
-                        Read more <span class="fas fa-arrow-right"></span>
-                    </button>
+    @foreach (var d in ViewBag.Blogs)
+    {
+        @if (BlogCounter == 0)
+        {
+            <div class="row margin-bottom">
+                <div class="col-md-6 mr-5">
+                    <img class="img-fluid background-image" src="@d.ImgUrl" alt="Field Worker" />
                 </div>
+                <div class="col-md-5 d-flex align-items-center">
+                    <div class="usp-block">
+                        <h6 class="h6">@d.Subtitle</h6>
+                        <h2 class="h2">@d.Title</h2>
+                        <p class="body-text">
+                            @d.Text
+                        </p>
+                        <button type="button" class="btn btn-red btn-lg">
+                            Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
 
+        @if (BlogCounter == 1)
+        {
+            <div class="row margin-bottom">
+                <div class="col-md-5 d-flex align-items-center">
+                    <div class="usp-block">
+                        <h2 class="h2">@d.Title</h2>
+                        <p class="body-text">
+                            @d.Text
+                        </p>
+                        <button type="button" class="btn btn-red btn-lg">
+                            Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-6">
+                    <img class="img-fluid background-image" src="@d.ImgUrl" alt="Field Worker" />
+                </div>
             </div>
+        }
+
+        @if (BlogCounter == 2)
+        {
+         <div class="container-fluid green-background">
+              <div class="container">
+                    <div class="row margin-bottom py-6">
+                        <div class="col-md-6 mr-5">
+                            <img class="img-fluid background-image" src="@d.ImgUrl" alt="Field Worker" />
+                        </div>
+                        <div class="col-md-5 d-flex align-items-center">
+                            <div class="green-usp-block">
+                                <h6 class="h6">@d.Subtitle</h6>
+                                <h2 class="h2">@d.Title</h2>
+                                <p class="body-text">
+                                    @d.Text
+                                </p>
+                                <button type="button" class="btn btn-white btn-lg">
+                                    Read more<span class="fas fa-arrow-right"></span>
+                                </button>
+                            </div>
+                        </div>
+                 </div>
+             </div>
         </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row margin-bottom">
-        <div class="col-md-5 d-flex align-items-center">
-            <div class="usp-block">
-                <h2 class="h2">The product is important, but partnership is everything</h2>
-                <p class="body-text">
-                    Our expert of the innovation team tells you about it.
-                    Donec ullamcorper nulla non metus auctor fringilla. Sed Posuere Consectetur est at lobortis.
-                    Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis.
-                </p>
-                <button type="button" class="btn btn-red btn-lg">
-                    Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                </button>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-6">
-            <img class="img-fluid background-image" src="~/images/Stories/hand-seasoning.jpg" alt="Field Worker" />
-        </div>
-    </div>
+        }
+        BlogCounter = BlogCounter + 1;
+        if (BlogCounter == 3)
+        {
+            BlogCounter = 0;
+        }
+    }
 </div>
 
 <div class="how-can-we-help">
@@ -226,4 +218,3 @@
         </div>
     </div>
 </div>
-
