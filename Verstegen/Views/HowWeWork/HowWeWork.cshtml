@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Verstegen.Models;
+@{
     ViewData["Title"] = "How we work";
 }
 
@@ -12,6 +13,7 @@
 </header>
 
 <div class="container">
+
     <div class="row mt-4">
         <div class="col-md-12">
             <ol class="breadcrumb">
@@ -20,6 +22,27 @@
             </ol>
         </div>
     </div>
+
+    @foreach(var d in ViewBag.Blogs)
+    {
+        <div class="row margin-bottom">
+            <div class="col-md-6 mr-5">
+                <img class="img-fluid background-image" src="~/images/Stories/field-worker.jpg" alt="Field Worker" />
+            </div>
+            <div class="col-md-5 d-flex align-items-center">
+                <div class="usp-block">
+                    <h6 class="h6">S o u r c e</h6>
+                    <h2 class="h2">@d.Title</h2>
+                    <p class="body-text">
+                        @d.Text
+                    </p>
+                    <button type="button" class="btn btn-red btn-lg">
+                        Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                    </button>
+                </div>
+            </div>
+        </div>
+     }
 
     <div class="row margin-bottom">
         <div class="col-md-6 mr-5">
