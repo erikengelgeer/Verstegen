@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Verstegen.Migrations
 {
-    public partial class initial : Migration
+    public partial class Verstegen : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,7 +29,10 @@ namespace Verstegen.Migrations
                     BlogId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: false),
-                    Text = table.Column<string>(nullable: false)
+                    Subtitle = table.Column<string>(nullable: false),
+                    Text = table.Column<string>(nullable: false),
+                    ImgUrl = table.Column<string>(nullable: false),
+                    Date = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

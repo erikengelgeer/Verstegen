@@ -13,10 +13,9 @@ namespace Verstegen.Controllers
         public IActionResult Index()
         {
             BlogData data = new BlogData();
-            List<Blog> blogs = data.getBlogs();
             
-            ViewBag.Blogs = blogs;
-            return View("HowWeWork", blogs);
+            ViewBag.Blogs = data.getBlogs();
+            return View("HowWeWork");
         }
     }
 }

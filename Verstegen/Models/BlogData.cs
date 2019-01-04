@@ -13,12 +13,16 @@ namespace Verstegen.Models
         {
             using (var context = new MyContext())
             {
-                if(!context.Blogs.Any())
-                {
-                    context.Add(new Blog { Title = "Title", Text = "Dit is de text", Date = DateTime.Now });
-                }
-
                 List<Blog> data = context.Blogs.ToList();
+                return data;
+            }
+        }
+
+        public List<Category> getCategorys()
+        {
+            using (var context = new MyContext())
+            {
+                List<Category> data = context.Categorys.ToList();
                 return data;
             }
         }

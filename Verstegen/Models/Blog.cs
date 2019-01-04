@@ -14,8 +14,13 @@ namespace Verstegen.Models
         [Required]
         public string Title { get; set; }
 
+        public string Subtitle { get; set; }
+
         [Required]
         public string Text { get; set; }
+
+        [Required]
+        public string ImgUrl { get; set; }
 
         [Required]
         public DateTime Date { get; set; }
