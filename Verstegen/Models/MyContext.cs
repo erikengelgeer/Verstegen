@@ -8,6 +8,8 @@ namespace Verstegen.Models
 {
     public class MyContext : DbContext
     {
+        public DbSet<Contact> Contacts { get; set; }
+
         public DbSet<Recept> Recipes { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<ArticleAmount> ArticleAmounts { get; set; }
