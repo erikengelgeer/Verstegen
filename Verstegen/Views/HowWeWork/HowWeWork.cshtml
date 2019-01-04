@@ -1,4 +1,4 @@
-﻿@using Verstegen.Models;
+@using Verstegen.Models;
 @{
     ViewData["Title"] = "How we work";
     var BlogCounter = 0;
@@ -92,11 +92,129 @@
              </div>
         </div>
         }
-
         BlogCounter = BlogCounter + 1;
         if (BlogCounter == 3)
         {
             BlogCounter = 0;
         }
     }
+</div>
+
+<div class="how-can-we-help">
+    <div class="usp-block">
+        <h2 class="how-can-we-help-title"> How can we help you? </h2>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-5 categories">
+            <h3 class="hww-h4">Contact us</h3>
+            <div class="contact-bubble card contact-card">
+                <div class="contact-us">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="persoon-img" src="~/images/icons/persoon_img.svg">
+                        </div>
+                        <div class="col-md-6">
+                            <span class="persoon-naam">Jan den Heijer</span>
+                            <span class="persoon-functie">Director of Sales & Marketing Food Industry</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card col-md-5 offset-1 phone-card">
+                            <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
+                            <span class="phone-number">+31(0)622571514</span>
+                        </div>
+                        <div class="card col-md-5 offset-1 email-card">
+                            <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
+                            <span class="phone-number">hhensen@verstegen.nl</span>
+                        </div>
+                        <div class="card col-md-5 offset-1 phone-card">
+                            <img src="~/images/icons/chat.svg" class="phone-icon" />
+                            <span class="phone-number">Send a message</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-lg red-color all-contacts">
+                All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+            </button>
+        </div>
+        <div class="col-md-5 categories">
+            <h3 class="hww-h4">More about how we work</h3>
+            <ul id="accordion" class="accordion-list">
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">What sources are used?</strong> <img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseOne" class="collapse accordion-item-body" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"><strong class="accordion-item">How we ensure fair trade </strong> <img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseTwo" class="collapse accordion-item-body" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">How we produce organic </strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseThree" class="collapse accordion-item-body" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">What is custom made </strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseFour" class="collapse accordion-item-body" aria-labelledby="headingFour" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"><strong class="accordion-item">What sources are used? </strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseFive" class="collapse accordion-item-body" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">How we ensure fair trade </strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseSix" class="collapse accordion-item-body" aria-labelledby="headingSix" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
