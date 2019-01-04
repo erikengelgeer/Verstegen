@@ -29,7 +29,7 @@ namespace Verstegen.Migrations
                     BlogId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: false),
-                    Subtitle = table.Column<string>(nullable: false),
+                    Subtitle = table.Column<string>(nullable: true),
                     Text = table.Column<string>(nullable: false),
                     ImgUrl = table.Column<string>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false)
@@ -50,6 +50,25 @@ namespace Verstegen.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categorys", x => x.CategoryId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Contacts",
+                columns: table => new
+                {
+                    ContactId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: false),
+                    Function = table.Column<string>(nullable: false),
+                    Country = table.Column<string>(nullable: false),
+                    Province = table.Column<string>(nullable: false),
+                    Tel = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    ImgUrl = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contacts", x => x.ContactId);
                 });
 
             migrationBuilder.CreateTable(
@@ -148,6 +167,9 @@ namespace Verstegen.Migrations
 
             migrationBuilder.DropTable(
                 name: "BlogCategorys");
+
+            migrationBuilder.DropTable(
+                name: "Contacts");
 
             migrationBuilder.DropTable(
                 name: "Articles");

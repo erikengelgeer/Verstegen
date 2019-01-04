@@ -70,8 +70,7 @@ namespace Verstegen.Migrations
                     b.Property<string>("ImgUrl")
                         .IsRequired();
 
-                    b.Property<string>("Subtitle")
-                        .IsRequired();
+                    b.Property<string>("Subtitle");
 
                     b.Property<string>("Text")
                         .IsRequired();
@@ -115,6 +114,38 @@ namespace Verstegen.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categorys");
+                });
+
+            modelBuilder.Entity("Verstegen.Models.Contact", b =>
+                {
+                    b.Property<int>("ContactId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Country")
+                        .IsRequired();
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<string>("Function")
+                        .IsRequired();
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Province")
+                        .IsRequired();
+
+                    b.Property<string>("Tel")
+                        .IsRequired();
+
+                    b.HasKey("ContactId");
+
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("Verstegen.Models.Recept", b =>

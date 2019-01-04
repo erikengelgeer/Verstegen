@@ -112,21 +112,21 @@
                 <div class="contact-us">
                     <div class="row">
                         <div class="col-md-3">
-                            <img class="persoon-img" src="~/images/icons/persoon_img.svg">
+                            <img class="persoon-img" src="@ViewBag.Contact.ImgUrl">
                         </div>
                         <div class="col-md-6">
-                            <span class="persoon-naam">Jan den Heijer</span>
-                            <span class="persoon-functie">Director of Sales & Marketing Food Industry</span>
+                            <span class="persoon-naam">@ViewBag.Contact.Name</span>
+                            <span class="persoon-functie">@ViewBag.Contact.Function</span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="card col-md-5 offset-1 phone-card">
                             <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
-                            <span class="phone-number">+31(0)622571514</span>
+                            <span class="phone-number">@ViewBag.Contact.Tel</span>
                         </div>
                         <div class="card col-md-5 offset-1 email-card">
                             <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
-                            <span class="phone-number">hhensen@verstegen.nl</span>
+                            <span class="phone-number">@ViewBag.Contact.Email</span>
                         </div>
                         <div class="card col-md-5 offset-1 phone-card">
                             <img src="~/images/icons/chat.svg" class="phone-icon" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Verstegen.Models
 {
-    public class BlogData
+    public class GetData
     {
         public List<Blog> getBlogs()
         {
@@ -24,6 +24,14 @@ namespace Verstegen.Models
             {
                 List<Category> data = context.Categorys.ToList();
                 return data;
+            }
+        }
+
+        public Contact GetContact()
+        {
+            using (var context = new MyContext())
+            {
+                return context.Contacts.Last();
             }
         }
     }
