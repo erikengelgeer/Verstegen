@@ -51,6 +51,11 @@
     color: #4E4E4E;
 }
 
+.masthead .container .h2 {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
 .h3 {
     font-size: 30px;
     color: #4E4E4E;
@@ -149,7 +154,12 @@ p.body-text {
     color: #848484;
     background-color: #ffffff !important;
     border-color: #ffffff !important;
+    background-image: url(../../images/icons/right-arrow-green.svg);
 }
+
+    .btn-white:hover .icon-arrow-right-green{
+        background: url(../../images/icons/right-arrow-green.svg);
+    }
 
 /***********************
   Home intro section
@@ -385,6 +395,15 @@ p.body-text {
 }
 
 .icon-arrow-right-white {
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.icon-arrow-right-green {
     width: 20px;
     height: 20px;
     float: right;
