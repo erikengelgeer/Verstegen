@@ -1,5 +1,8 @@
 ﻿/* Content.css */
 
+*{
+    border: 1px solid red;
+}
 
 /***********************
   Global css
@@ -40,13 +43,12 @@
 }
 
 .h1 {
-    font-size: 120px;
+    font-size: 7.5rem;
     color: #FFFFFF;
-
 }
 
 .h2 {
-    font-size: 55px;
+    font-size: 3.438rem;
     font-weight: bold;
     color: #4E4E4E;
 }
@@ -57,12 +59,12 @@
 }
 
 .h3 {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: #4E4E4E;
 }
 
 .h4 {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: #4E4E4E;
 }
 
@@ -71,41 +73,18 @@
 }
 
 p.body-text {
-    font-size: 18px;
+    font-size: 1.25rem;
     line-height: 25px;
     font-weight: normal;
-    color: #848484;
+    color: #5e5e5e;
 }
-@media (max-width: 767.98px) {
 
-    .h1 {
-        font-size: 30px;
-    }
-
-    .h2 {
-        font-size: 20px;
-    }
-
-    .h3 {
-        font-size: 15px;
-    }
-
-    .h4 {
-        font-size: 15px;
-    }
-
-    p.body-text {
-        font-size: 19px;
-    }
-}
 .green-background {
     background-color: #536B63;
 }
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1400px;
-    }
+.card-body {
+    background-color: #e4e4e4;
 }
 
 /***********************
@@ -166,26 +145,16 @@ p.body-text {
 ************************/
 
 .home-inner-container {
-    width: 65%;
+    width: 75%;
 }
 
-    .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-        background: #930D2A;
-    }
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #930D2A;
+}
 
-    .btn-primary:active, .btn-primary.active {
-        background: #930D2A;
-        box-shadow: none;
-    }
-
-
-@media (max-width: 767.98px) {
-
-    .home-inner-container {
-        width: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+.btn-primary:active, .btn-primary.active {
+    background: #930D2A;
+    box-shadow: none;
 }
 
 /***********************
@@ -251,10 +220,8 @@ p.body-text {
     list-style-type: none;
     line-height: 42px;
     height: 40px;
-    width:;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    -border-radius: 4px;
     border-radius: 4px;
 }
 
@@ -326,16 +293,16 @@ p.body-text {
     height: 17px;
 }
 
-    .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-        content: url("../../images/icons/right-arrow-short.svg");
-        width: 17px;
-        height: 17px;
-    }
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: url("../../images/icons/right-arrow-short.svg");
+    width: 17px;
+    height: 17px;
+}
 
 
-    .breadcrumb a {
-        color: #cd0b35;
-    }
+.breadcrumb a {
+    color: #cd0b35;
+}
 
 
 /***************
@@ -486,13 +453,13 @@ p.body-text {
     background-color: #CD0B35;
 }
 
-    .card-header:not(.collapsed) .card-header-img {
-        content: url(../../images/icons/minimize.svg);
-    }
+.card-header:not(.collapsed) .card-header-img {
+    content: url(../../images/icons/minimize.svg);
+}
 
-    .card-header:not(.collapsed) .accordion-item {
-        color: white;
-    }
+.card-header:not(.collapsed) .accordion-item {
+    color: white;
+}
 
 .card-header-img {
     width: 30px;
@@ -545,29 +512,6 @@ span {
     clear: left;
 }
 
-@media (min-width: 1400px) {
-    .persoon-naam {
-        margin-top: 35px;
-        color: #4E4E4E;
-        float: left;
-        clear: left;
-    }
-
-    .persoon-functie {
-        text-decoration: none;
-        color: #848484;
-        font-weight: normal;
-        float: left;
-    }
-
-    .persoon-img {
-        margin-top: 15px;
-        margin-left: 25px;
-        border-radius: 50%;
-        width: 100px;
-    }
-}
-
 .persoon-naam {
     margin-top: 35px;
     text-decoration: none;
@@ -583,48 +527,21 @@ span {
     float: left;
 }
 
-@media only screen and (max-width: 1399px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
-
-    .persoon-img {
-        display: block;
-        margin-top: 15px;
-        border-radius: 50%;
-        width: 100px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .persoon-naam {
-        margin-left: 25px;
-        text-align: center;
-    }
-
-    .persoon-functie {
-        margin-left: 25px;
-        text-align: center;
-        margin-bottom: 25px;
-    }
-}
-
 .accordion-item-body .card-body {
     position: relative
 }
 
-    .accordion-item-body .card-body:after {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        top: -5px;
-        left: 30px;
-        background: #ECECEC;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
+.accordion-item-body .card-body:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    left: 30px;
+    background: #ECECEC;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
 
 .contact-bubble:after {
     content: "";
@@ -667,14 +584,6 @@ span {
     margin-left: 10px;
 }
 
-@media (max-width: 1399px) {
-    .email-card {
-        height: 50px;
-        margin-bottom: 10px;
-        margin-left: 8.333333%;
-    }
-}
-
 .contact-card {
     background-color: #ECECEC;
     border-style: hidden;
@@ -684,4 +593,171 @@ span {
 .all-contacts {
     margin-left: 40px;
     margin-bottom: 15px;
+}
+
+/***************
+  T03 INSPIRATION DETAIL
+***************/
+header.inspirationImg {
+    height: 100vh;
+    min-height: 500px;
+    background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/lnpNnwy/videoblocks-agricultural-soybean-seeds_swlprdurl_thumbnail-full01.png) !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#detailH1 {
+    font-size: 6rem;
+    padding: 30% 15% 0% 15%;
+    color: #FFFFFF;
+}
+
+.ct-btn-scroll {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    margin: auto;
+    z-index: 9;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.25s ease-in-out;
+    transition: background-color 0.25s ease-in-out;
+}
+.ct-btn-scroll:hover {
+    background-color: #CE0B35;
+}
+
+.inspirationP{
+    font-size: 1rem !important;
+    opacity: 0.7;
+}
+
+.inspirationQuote{
+    color: #626262 !important;
+    font-size: 1.8rem !important;
+}
+
+#inspirationQuoteIcon {
+    right: 0;
+    bottom: 0;
+    transform: translate(-31%,-0%);
+    background-color: #CC0B37;
+    border: 10px solid #CC0B37;
+    width: 48px;
+}
+
+/***************
+  MEDIA QUERIES
+***************/
+@media (max-width: 767.98px) {
+    .h1 {
+        font-size: 30px;
+    }
+
+    .h2 {
+        font-size: 20px;
+    }
+
+    .h3 {
+        font-size: 15px;
+    }
+
+    .h4 {
+        font-size: 15px;
+    }
+
+    p.body-text {
+        font-size: 19px;
+    }
+
+    .home-inner-container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #detailH1 {
+        font-size: 5rem;
+        padding: 40% 15% 0% 15%;
+    }
+
+    .ct-btn-scroll{
+        display: none;
+    }
+
+    #inspirationQuoteIcon {
+        width: 18px;
+        transform: translate(-84%,-0%);
+        border: 4px solid #CC0B37;
+    }
+}
+
+@media (min-width: 767.99px) and (max-width: 991px) {
+    #inspirationQuoteIcon {
+        width: 32px;
+        transform: translate(-47%,-0%);
+        border: 8px solid #CC0B37;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+@media only screen and (max-width: 1399px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .persoon-img {
+        display: block;
+        margin-top: 15px;
+        border-radius: 50%;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .persoon-naam {
+        margin-left: 25px;
+        text-align: center;
+    }
+
+    .persoon-functie {
+        margin-left: 25px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .email-card {
+        height: 50px;
+        margin-bottom: 10px;
+        margin-left: 8.333333%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .persoon-naam {
+        margin-top: 35px;
+        color: #4E4E4E;
+        float: left;
+        clear: left;
+    }
+
+    .persoon-functie {
+        text-decoration: none;
+        color: #848484;
+        font-weight: normal;
+        float: left;
+    }
+
+    .persoon-img {
+        margin-top: 15px;
+        margin-left: 25px;
+        border-radius: 50%;
+        width: 100px;
+    }
 }
