@@ -10,7 +10,7 @@ using Verstegen.Models;
 namespace Verstegen.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190104190534_Verstegen")]
+    [Migration("20190107135709_Verstegen")]
     partial class Verstegen
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -111,6 +111,9 @@ namespace Verstegen.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CategoryName")
+                        .IsRequired();
+
+                    b.Property<string>("CategoryValue")
                         .IsRequired();
 
                     b.HasKey("CategoryId");

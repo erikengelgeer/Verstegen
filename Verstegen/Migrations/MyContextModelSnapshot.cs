@@ -111,6 +111,9 @@ namespace Verstegen.Migrations
                     b.Property<string>("CategoryName")
                         .IsRequired();
 
+                    b.Property<string>("CategoryValue")
+                        .IsRequired();
+
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categorys");

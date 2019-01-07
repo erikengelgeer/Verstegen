@@ -45,7 +45,8 @@ namespace Verstegen.Migrations
                 {
                     CategoryId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CategoryName = table.Column<string>(nullable: false)
+                    CategoryName = table.Column<string>(nullable: false),
+                    CategoryValue = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
