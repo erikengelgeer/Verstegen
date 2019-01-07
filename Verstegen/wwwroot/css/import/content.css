@@ -524,7 +524,8 @@ span {
 }
 
 .accordion-item-body .card-body {
-    position: relative
+    position: relative;
+    border-radius: 10px;
 }
 
 .accordion-item-body .card-body:after {
@@ -534,7 +535,7 @@ span {
     height: 20px;
     top: -5px;
     left: 30px;
-    background: #ECECEC;
+    background: #E4E4E4;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
