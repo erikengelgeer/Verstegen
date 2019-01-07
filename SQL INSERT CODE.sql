@@ -22,6 +22,23 @@ SET IDENTITY_INSERT [dbo].[Contacts] ON
 INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country] ,[Province], [Tel], [Email], [ImgUrl]) VALUES (1, 'Gerrit de Jong', 'Director of Sales & Marketing Food Industry', 'The Netherland' , 'Zuid-Holland', '+31(0)532534344', 'gdjong@verstegen.nl', '/images/icons/persoon_img.svg')
 SET IDENTITY_INSERT [dbo].[Contacts] OFF
 
+SET IDENTITY_INSERT [dbo].[BlogCategorys] ON
+INSERT INTO [dbo].[BlogCategorys] ([BlogCategoryId], [BlogId1], [CategoryId1]) VALUES (0, 0, 0)
+SET IDENTITY_INSERT [dbo].[BlogCategorys] OFF
+
+SET IDENTITY_INSERT [dbo].[BlogCategorys] ON
+INSERT INTO [dbo].[BlogCategorys] ([BlogCategoryId], [BlogId1], [CategoryId1]) VALUES (1, 1, 0)
+SET IDENTITY_INSERT [dbo].[BlogCategorys] OFF
+
+SET IDENTITY_INSERT [dbo].[BlogCategorys] ON
+INSERT INTO [dbo].[BlogCategorys] ([BlogCategoryId], [BlogId1], [CategoryId1]) VALUES (2, 2, 0)
+SET IDENTITY_INSERT [dbo].[BlogCategorys] OFF
+
+SET IDENTITY_INSERT [dbo].[BlogCategorys] ON
+INSERT INTO [dbo].[BlogCategorys] ([BlogCategoryId], [BlogId1], [CategoryId1]) VALUES (3, 3, 0)
+SET IDENTITY_INSERT [dbo].[BlogCategorys] OFF
+
+
 
 
 
