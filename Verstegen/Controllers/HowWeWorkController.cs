@@ -21,7 +21,7 @@ namespace Verstegen.Controllers
         {
             ViewBag.Blogs = db.Blogs.ToList();
             ViewBag.Contact = db.Contacts.First();    
-            return View("HowWeWork");
+            return View();
         }
     }
 }
