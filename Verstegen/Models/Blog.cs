@@ -36,12 +36,4 @@ namespace Verstegen.Models
         [Required]
         public Category CategoryId { get; set; }
     }
-
-    public class Category
-    {
-        public int CategoryId { get; set; }
-
-        [Required]
-        public string CategoryName { get; set; }
-    }
 }
