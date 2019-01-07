@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Verstegen.Controllers
 {
-    public class ProductController : Controller
+    public class ProductsController : Controller
     {
 
-        public IActionResult Products()
+        public IActionResult Index()
         {
             return View();
         }

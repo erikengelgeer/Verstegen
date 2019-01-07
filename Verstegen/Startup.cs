@@ -59,22 +59,8 @@ namespace Verstegen
             {
                 routes.MapRoute(
                     name: "Default",
-                    template: "{controller=Home}/{action=Home}/");
+                    template: "{controller=Home}/{action=Index}/");
 
-                routes.MapRoute("how-we-work", "/how-we-work/",
-                    defaults: new { controller = "HowWeWork", action = "Index" });
-
-                routes.MapRoute("products overzicht", "/products/",
-                     defaults: new { controller = "Product", action = "Products" });
-
-                routes.MapRoute("products spec", "/product/{product?}",
-                     defaults: new { controller = "Product", action = "Product" });
-
-                routes.MapRoute("inspiration", "/inspiration/",
-                     defaults: new { controller = "Inspiration", action = "Index" });
-
-                routes.MapRoute("inspiration detail", "/inspiration/detail",
-                    defaults: new { controller = "Inspiration", action = "Detail" });
             });
         }
     }
