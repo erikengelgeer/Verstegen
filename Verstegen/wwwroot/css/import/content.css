@@ -73,7 +73,7 @@
     position: relative;
     width: 100%;
     height: 500px;
-    background: url(https://cdn.pixabay.com/photo/2015/03/26/10/36/pine-leaves-691639_960_720.jpg);
+    background: url(https://i.imgur.com/yvXDRYR.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -714,9 +714,75 @@ header.inspirationImg {
     margin-top: 40px;
 }
 
+.products-sidebar h4 {
+    color: black;
+}
+
 .products-sidebar h5 {
     margin-top: 25px;
     font-weight: 600;
+}
+
+.products-sidebar .contact-bubble {
+    margin-left: 0;
+}
+
+.products-sidebar .persoon-naam {
+    margin-left: 25px;
+}
+
+.products-sidebar .persoon-functie {
+    margin-left: 25px;
+}
+
+.products-sidebar .phone-card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.products-sidebar .row {
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.products-sidebar .contact-us {
+    padding-bottom: 20px;
+}
+
+.products-sidebar .all-contacts {
+    margin-left: 0;
+}
+
+.products {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.products h5 {
+    color: black;
+}
+
+.products a {
+    text-decoration: none;
+}
+
+.products p {
+    color: #848484;
+}
+
+.product-rows .row {
+    margin-bottom: 8.33%;
+}
+
+.previous {
+    margin-left: 8.33%;
+    margin-top: 8.33%;
+}
+
+.previous img {
+    float: left;
+    margin-right: 10px;
+    margin-left: 5px;
 }
 
 /* Checkbox stuling from https://codepen.io/raubaca/pen/PZzWRN */

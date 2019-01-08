@@ -40,7 +40,7 @@
             </button>
         </div>
     </div>
-    <div class="products-content">
+    <div class="products-content row">
         <div class="col-md-3 products-sidebar">
             <select class="form-control">
                 <option disabled selected value=""> -- Filter --</option>
@@ -72,33 +72,160 @@
                 <li><a class="product-filter-more-text" href="#"><img class="add" src="~/images/icons/add.svg"> Show all categories</a></li>
             </ul>
 
+            <h4>How can we help?</h4>
+
             <div class="contact-bubble card contact-card">
                 <div class="contact-us">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <img class="persoon-img" src="@ViewBag.Contact.ImgUrl">
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <span class="persoon-naam">@ViewBag.Contact.Name</span>
                             <span class="persoon-functie">@ViewBag.Contact.Function</span>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="card col-md-5 offset-1 phone-card">
-                            <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
-                            <span class="phone-number">@ViewBag.Contact.Tel</span>
-                        </div>
-                        <div class="card col-md-5 offset-1 email-card">
-                            <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
-                            <span class="phone-number">@ViewBag.Contact.Email</span>
-                        </div>
-                        <div class="card col-md-5 offset-1 phone-card">
-                            <img src="~/images/icons/chat.svg" class="phone-icon" />
-                            <span class="phone-number">Send a message</span>
-                        </div>
+                    <div class="card col-md-10 phone-card">
+                        <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
+                        <span class="phone-number">@ViewBag.Contact.Tel</span>
+                    </div>
+                    <div class="card col-md-10 phone-card">
+                        <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
+                        <span class="phone-number">@ViewBag.Contact.Email</span>
+                    </div>
+                    <div class="card col-md-10 phone-card">
+                        <img src="~/images/icons/chat.svg" class="phone-icon" />
+                        <span class="phone-number">Send a message</span>
                     </div>
                 </div>
             </div>
+
+            <button type="button" class="btn btn-red btn-lg red-color all-contacts">
+                All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+            </button>
+
         </div>
+
+        <div class="col-md-8 product-rows">
+            <div class="row">
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Allspice ground</h5>
+                            <p class="card-text">Spices & Herbs</p>
+                        </div>
+                    </a>
+                </div>
+                <button type="button" class="btn btn-red btn-lg red-color previous" disabled>
+                    <img src="~/images/icons/left-arrow.svg" class="icon-arrow-right-white"> Previous
+                </button>
+            </div>
+        </div>        
     </div>
 </div>
