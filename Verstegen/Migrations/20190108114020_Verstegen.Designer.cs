@@ -10,7 +10,7 @@ using Verstegen.Models;
 namespace Verstegen.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190107135709_Verstegen")]
+    [Migration("20190108114020_Verstegen")]
     partial class Verstegen
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -91,15 +91,15 @@ namespace Verstegen.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BlogId1");
+                    b.Property<int?>("BlogID");
 
-                    b.Property<int>("CategoryId1");
+                    b.Property<int?>("CategoryID");
 
                     b.HasKey("BlogCategoryId");
 
-                    b.HasIndex("BlogId1");
+                    b.HasIndex("BlogID");
 
-                    b.HasIndex("CategoryId1");
+                    b.HasIndex("CategoryID");
 
                     b.ToTable("BlogCategorys");
                 });
@@ -185,15 +185,13 @@ namespace Verstegen.Migrations
 
             modelBuilder.Entity("Verstegen.Models.BlogCategory", b =>
                 {
-                    b.HasOne("Verstegen.Models.Blog", "BlogId")
-                        .WithMany()
-                        .HasForeignKey("BlogId1")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("Verstegen.Models.Blog", "Blog")
+                        .WithMany("BlogsInProject")
+                        .HasForeignKey("BlogID");
 
-                    b.HasOne("Verstegen.Models.Category", "CategoryId")
-                        .WithMany()
-                        .HasForeignKey("CategoryId1")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("Verstegen.Models.Category", "Category")
+                        .WithMany("BlogsInProject")
+                        .HasForeignKey("CategoryID");
                 });
 #pragma warning restore 612, 618
         }

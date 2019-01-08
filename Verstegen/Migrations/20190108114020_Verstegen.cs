@@ -92,24 +92,24 @@ namespace Verstegen.Migrations
                 {
                     BlogCategoryId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BlogId1 = table.Column<int>(nullable: false),
-                    CategoryId1 = table.Column<int>(nullable: false)
+                    BlogID = table.Column<int>(nullable: true),
+                    CategoryID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BlogCategorys", x => x.BlogCategoryId);
                     table.ForeignKey(
-                        name: "FK_BlogCategorys_Blogs_BlogId1",
-                        column: x => x.BlogId1,
+                        name: "FK_BlogCategorys_Blogs_BlogID",
+                        column: x => x.BlogID,
                         principalTable: "Blogs",
                         principalColumn: "BlogId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_BlogCategorys_Categorys_CategoryId1",
-                        column: x => x.CategoryId1,
+                        name: "FK_BlogCategorys_Categorys_CategoryID",
+                        column: x => x.CategoryID,
                         principalTable: "Categorys",
                         principalColumn: "CategoryId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -151,14 +151,14 @@ namespace Verstegen.Migrations
                 column: "ReceptId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BlogCategorys_BlogId1",
+                name: "IX_BlogCategorys_BlogID",
                 table: "BlogCategorys",
-                column: "BlogId1");
+                column: "BlogID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BlogCategorys_CategoryId1",
+                name: "IX_BlogCategorys_CategoryID",
                 table: "BlogCategorys",
-                column: "CategoryId1");
+                column: "CategoryID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Verstegen.Models;
 
 namespace Verstegen.Models
 {
@@ -28,12 +29,12 @@ namespace Verstegen.Models
 
     public class BlogCategory
     {
-        public int BlogCategoryId { get; set; }
+        public int BlogCategoryId { get; set;}
 
-        [Required]
-        public Blog BlogId { get; set; }
+        [ForeignKey("BlogID")]
+        public Blog Blog { get; set; }
 
-        [Required]
-        public Category CategoryId { get; set; }
+        [ForeignKey("CategoryID")]
+        public Category Category { get; set; }
     }
 }

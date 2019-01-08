@@ -15,5 +15,8 @@ namespace Verstegen.Models
 
         [Required]
         public string CategoryValue { get; set; }
+
+        public virtual ICollection<BlogCategory> BlogsInProject { get; set; }
     }
 }
+

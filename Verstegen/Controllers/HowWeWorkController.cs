@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -19,7 +20,10 @@ namespace Verstegen.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Blogs = db.Blogs.ToList();
+            ViewBag.Blogs = db.Categorys
+             .Where(m => m.CategoryValue == "hww")
+             .SelectMany(m => m.BlogsInProject.Select(mc => mc.Blog))
+             .ToList();
             ViewBag.Contact = db.Contacts.First();    
             return View();
         }
