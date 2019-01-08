@@ -24,7 +24,7 @@ namespace Verstegen.Controllers
              .Where(m => m.CategoryValue == "hww")
              .SelectMany(m => m.BlogsInProject.Select(mc => mc.Blog))
              .ToList();
-            ViewBag.Contact = db.Contacts.First();    
+            ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();    
             return View();
         }
     }
