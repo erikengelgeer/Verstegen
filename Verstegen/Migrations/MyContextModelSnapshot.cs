@@ -70,7 +70,15 @@ namespace Verstegen.Migrations
                     b.Property<string>("ImgUrl")
                         .IsRequired();
 
-                    b.Property<string>("Subtitle");
+                    b.Property<string>("Quote");
+
+                    b.Property<string>("QuoteFrom");
+
+                    b.Property<string>("SubText");
+
+                    b.Property<string>("SubTitle");
+
+                    b.Property<string>("Subject");
 
                     b.Property<string>("Text")
                         .IsRequired();
@@ -184,7 +192,7 @@ namespace Verstegen.Migrations
             modelBuilder.Entity("Verstegen.Models.BlogCategory", b =>
                 {
                     b.HasOne("Verstegen.Models.Blog", "Blog")
-                        .WithMany("BlogsInProject")
+                        .WithMany()
                         .HasForeignKey("BlogID");
 
                     b.HasOne("Verstegen.Models.Category", "Category")

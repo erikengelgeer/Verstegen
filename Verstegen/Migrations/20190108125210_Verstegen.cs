@@ -29,8 +29,12 @@ namespace Verstegen.Migrations
                     BlogId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: false),
-                    Subtitle = table.Column<string>(nullable: true),
+                    Subject = table.Column<string>(nullable: true),
                     Text = table.Column<string>(nullable: false),
+                    Quote = table.Column<string>(nullable: true),
+                    QuoteFrom = table.Column<string>(nullable: true),
+                    SubTitle = table.Column<string>(nullable: true),
+                    SubText = table.Column<string>(nullable: true),
                     ImgUrl = table.Column<string>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false)
                 },
