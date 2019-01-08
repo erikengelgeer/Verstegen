@@ -19,7 +19,21 @@ namespace Verstegen.Controllers
         public IActionResult Index()
         {
             ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
-            return View();
+            List<Recept> Recipes = db.Recipes.ToList();
+            return View(Recipes);
+        }
+
+        public IActionResult Recipe(int id)
+        {
+            if (id <= 0)
+            {
+                return RedirectToAction("/Recipes");
+            }
+            else
+            {
+                Recept Recipe = db.Recipes.SingleOrDefault(r => r.ReceptId == id);
+                return View(Recipe);
+            }
         }
     }
 }
