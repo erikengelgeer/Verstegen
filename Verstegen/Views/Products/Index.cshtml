@@ -222,10 +222,29 @@
                         </div>
                     </a>
                 </div>
-                <button type="button" class="btn btn-red btn-lg red-color previous" disabled>
-                    <img src="~/images/icons/left-arrow.svg" class="icon-arrow-right-white"> Previous
-                </button>
+                <ul class="pagination previous">
+                    <li class="page-item disabled">
+                        <button type="button" class="btn btn-red btn-lg red-color" disabled>
+                            Previous <img src="~/images/icons/left-arrow.svg" class="icon-arrow-right-white">
+                        </button>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item ">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <button type="button" class="btn btn-red btn-lg red-color all-contacts">
+                            Next <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                        </button>
+                    </li>
+                </ul>
+
             </div>
-        </div>        
+        </div>
     </div>
 </div>

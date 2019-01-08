@@ -785,6 +785,19 @@ header.inspirationImg {
     margin-left: 5px;
 }
 
+.previous .page-item {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.previous .all-contacts {
+    float: right;
+}
+
+.previous .page-item {
+    border-radius: ;5px
+}
+
 /* Checkbox stuling from https://codepen.io/raubaca/pen/PZzWRN */
 
 /* Basic styles */
