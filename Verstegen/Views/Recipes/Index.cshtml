@@ -1,6 +1,6 @@
 ﻿
 <!-- Header -->
-<header class="masthead d-flex justify-content-end">
+<header class="masthead recipes-masthead d-flex justify-content-end">
     <div class="container text-center my-auto">
         <h1 class="mb-1 h1">Recipes</h1>
         <h2 class="mb-1 h2">Enjoy great taste</h2>
@@ -19,37 +19,132 @@
         </div>
     </div>
 
-</div>
-
-<div class="container-fluid">
-    <div class="row mt-4 d-flex align-items-center">
-        <div class="col-md-4">
-            <img class="float-left img-fluid" src="~/images/recipes/clove.jpg" alt="clove" />
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <img class="float-left img-fluid" src="~/images/recipes/clove.jpg" alt="kruidnagel" />
         </div>
-        <div class="col-sm-12 col-md-4">
+        <div class="col-md-6 ml-md-5">
             <h2 class="h2">The finest recipes, created with passion</h2>
-            <p class="body-text">
+            <p class="products-p">
                 Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis faucibus cursus ante.
             </p>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-md-4">
+    <div class="products-content row">
+        <div class="col-md-3 products-sidebar">
+            <select class="form-control">
+                <option disabled selected value=""> -- Filter --</option>
+                <option value="">Geen</option>
+                <option value="agf">Aardappel, Groente, Fruit</option>
+                <option value="k&ks">Kant-en-klaar, Salades</option>
+                <option value="vkvv">Vlees, Kip, Vis, Vega</option>
+            </select>
 
+            <h5>Type</h5>
+            <ul class="product-type-filter">
+                <li><input type="checkbox" name="cb" id="cb1"><label for="cb1">Vegetable (14)</label></li>
+                <li><input type="checkbox" name="cb" id="cb2"><label for="cb2">Fruit (23)</label></li>
+                <li> <input type="checkbox" name="cb" id="cb3"><label for="cb3">Potato (27)</label></li>
+                <li><input type="checkbox" name="cb" id="cb4"><label for="cb4">Garlic, Peppers (14)</label></li>
+                <li><input type="checkbox" name="cb" id="cb5"><label for="cb5">Juices, Smoothies (21)</label></li>
+                <li><input type="checkbox" name="cb" id="cb6"><label for="cb6">Fruit Salad (11)</label></li>
+                <li><a class="product-filter-more-text" href="#"><img class="add" src="~/images/icons/add.svg"> Show all categories</a></li>
+            </ul>
 
-            <h3 class="h3">Type</h3>
-            <form>
-                <div class="d-flex align-items-center"><input type="radio" name="Type" value="Vegetable"><p class="body-text mb-0 ml-3">Vegetable (14)</p><br></div>
-                <div class="d-flex align-items-center"><input type="radio" name="Type" value="Fruit"><p class="body-text mb-0 ml-3">Fruit (23)</p><br></div>
-            </form>
+            <h4>How can we help?</h4>
 
+            <div class="contact-bubble card contact-card">
+                <div class="contact-us">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="persoon-img" src="@ViewBag.Contact.ImgUrl">
+                        </div>
+                        <div class="col-md-8">
+                            <span class="persoon-naam">@ViewBag.Contact.Name</span>
+                            <span class="persoon-functie">@ViewBag.Contact.Function</span>
+                        </div>
+                    </div>
+                    <div class="card col-md-10 phone-card">
+                        <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
+                        <span class="phone-number">@ViewBag.Contact.Tel</span>
+                    </div>
+                    <div class="card col-md-10 phone-card">
+                        <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
+                        <span class="phone-number">@ViewBag.Contact.Email</span>
+                    </div>
+                    <div class="card col-md-10 phone-card">
+                        <img src="~/images/icons/chat.svg" class="phone-icon" />
+                        <span class="phone-number">Send a message</span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-red btn-lg red-color all-contacts">
+                All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+            </button>
 
         </div>
-        <div class="col-md-8">
+
+        <div class="col-md-8 product-rows">
+
+
+            <div class="row">
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/recipes/sausages.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">BBQ Sausages</h5>
+                            <p class="card-text">Meat</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/recipes/sausages.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">BBQ Sausages</h5>
+                            <p class="card-text">Meat</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 products offset-1">
+                    <a href="#">
+                        <img class="card-img-top" src="~/images/recipes/sausages.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">BBQ Sausages</h5>
+                            <p class="card-text">Meat</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div class="row pagination">
+                <div class="col-md-3 offset-1 p-0">
+                    <div class="page-item disabled">
+                        <button type="button" class="btn btn-red btn-lg red-color" disabled>
+                            Previous <img src="~/images/icons/left-arrow.svg" class="icon-arrow-right-white">
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 offset-1 d-flex justify-content-center">
+                    <div class="page-item active"><a class="page-link" href="#">1</a></div>
+                    <div class="page-item"><a class="page-link" href="#">2</a></div>
+                    <div class="page-item"><a class="page-link" href="#">3</a></div>
+                    <div class="page-item"><a class="page-link" href="#">4</a></div>
+                </div>
+                <div class="col-md-3 offset-1 d-flex justify-content-end p-0">
+                    <div class="page-item">
+                        <button type="button" class="btn btn-red btn-lg red-color">
+                            Next <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>
