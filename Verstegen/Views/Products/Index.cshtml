@@ -2,4 +2,103 @@
     ViewData["Title"] = "Overzicht producten";
 }
 
-<h1>Overzicht producten</h1>
+<!-- Header -->
+<header class="masthead products-masthead d-flex justify-content-end">
+    <div class="container text-center my-auto">
+        <h1 class="mb-1 h1">Our products</h1>
+        <h2 class="mb-1 h2">Enjoy great taste</h2>
+    </div>
+    <div class="overlay"></div>
+</header>
+
+<div class="container">
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Products</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <img class="float-left img-fluid" src="~/images/home/rozemarijn.jpg" alt="rozemarijn" />
+        </div>
+        <div class="col-md-6">
+            <h1>The finest flavours for your products</h1>
+            <p class="products-p">
+                In hac habitasse platea dictumst. Integer maximus sapien a odio aliquet, quis sodales nisi iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque vitae tortor sit amet nibh lacinia ornare ut non lorem. Duis faucibus cursus ante.
+            </p>
+        </div>
+        <div class="col-md-3 custom-made-block">
+            <h2>Custom made</h2>
+            <p>Ut dapibus pulvinar gravida. Quisque erat arcu, imperdiet vel luctus ut, molestie.</p>
+            <button type="button" class="btn btn-white btn-lg">
+                All products <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
+            </button>
+        </div>
+    </div>
+    <div class="products-content">
+        <div class="col-md-3 products-sidebar">
+            <select class="form-control">
+                <option disabled selected value=""> -- Filter --</option>
+                <option value="">Geen</option>
+                <option value="agf">Aardappel, Groente, Fruit</option>
+                <option value="k&ks">Kant-en-klaar, Salades</option>
+                <option value="vkvv">Vlees, Kip, Vis, Vega</option>
+            </select>
+
+            <h5>Type</h5>
+            <ul class="product-type-filter">
+                <li><input type="checkbox" name="cb" id="cb1"><label for="cb1">Groente</label></li>
+                <li><input type="checkbox" name="cb" id="cb2"><label for="cb2">Fruit</label></li>
+                <li> <input type="checkbox" name="cb" id="cb3"><label for="cb3">Aardappel</label></li>
+                <li><input type="checkbox" name="cb" id="cb4"><label for="cb4">Knoflook, Pepers</label></li>
+                <li><input type="checkbox" name="cb" id="cb5"><label for="cb5">Fruitsalades</label></li>
+                <li><input type="checkbox" name="cb" id="cb6"><label for="cb6">Sappen, Smoothies</label></li>
+                <li><a class="product-filter-more-text" href="#"><img class="add" src="~/images/icons/add.svg"> Show all types</a></li>
+            </ul>
+
+            <h5>Product categories</h5>
+            <ul class="product-type-filter">
+                <li><input type="checkbox" name="cb" id="cb7"><label for="cb7">Spice & herbs</label></li>
+                <li><input type="checkbox" name="cb" id="cb8"><label for="cb8">Seasonings</label></li>
+                <li> <input type="checkbox" name="cb" id="cb9"><label for="cb9">Herb paste</label></li>
+                <li><input type="checkbox" name="cb" id="cb10"><label for="cb10">Marinades</label></li>
+                <li><input type="checkbox" name="cb" id="cb11"><label for="cb11">Sauces</label></li>
+                <li><input type="checkbox" name="cb" id="cb12"><label for="cb12">Dried vegetables</label></li>
+                <li><a class="product-filter-more-text" href="#"><img class="add" src="~/images/icons/add.svg"> Show all categories</a></li>
+            </ul>
+
+            <div class="contact-bubble card contact-card">
+                <div class="contact-us">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="persoon-img" src="@ViewBag.Contact.ImgUrl">
+                        </div>
+                        <div class="col-md-6">
+                            <span class="persoon-naam">@ViewBag.Contact.Name</span>
+                            <span class="persoon-functie">@ViewBag.Contact.Function</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card col-md-5 offset-1 phone-card">
+                            <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
+                            <span class="phone-number">@ViewBag.Contact.Tel</span>
+                        </div>
+                        <div class="card col-md-5 offset-1 email-card">
+                            <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
+                            <span class="phone-number">@ViewBag.Contact.Email</span>
+                        </div>
+                        <div class="card col-md-5 offset-1 phone-card">
+                            <img src="~/images/icons/chat.svg" class="phone-icon" />
+                            <span class="phone-number">Send a message</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
