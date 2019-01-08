@@ -15,10 +15,18 @@ namespace Verstegen.Models
         [Required]
         public string Title { get; set; }
 
-        public string Subtitle { get; set; }
+        public string Subject { get; set; }
 
         [Required]
         public string Text { get; set; }
+
+        public string Quote { get; set; }
+
+        public string QuoteFrom { get; set; }
+
+        public string SubTitle { get; set; }
+
+        public string SubText { get; set; }
 
         [Required]
         public string ImgUrl { get; set; }

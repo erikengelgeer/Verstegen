@@ -10,7 +10,7 @@ using Verstegen.Models;
 namespace Verstegen.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190108114020_Verstegen")]
+    [Migration("20190108125210_Verstegen")]
     partial class Verstegen
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,7 +72,15 @@ namespace Verstegen.Migrations
                     b.Property<string>("ImgUrl")
                         .IsRequired();
 
-                    b.Property<string>("Subtitle");
+                    b.Property<string>("Quote");
+
+                    b.Property<string>("QuoteFrom");
+
+                    b.Property<string>("SubText");
+
+                    b.Property<string>("SubTitle");
+
+                    b.Property<string>("Subject");
 
                     b.Property<string>("Text")
                         .IsRequired();
@@ -186,7 +194,7 @@ namespace Verstegen.Migrations
             modelBuilder.Entity("Verstegen.Models.BlogCategory", b =>
                 {
                     b.HasOne("Verstegen.Models.Blog", "Blog")
-                        .WithMany("BlogsInProject")
+                        .WithMany()
                         .HasForeignKey("BlogID");
 
                     b.HasOne("Verstegen.Models.Category", "Category")
