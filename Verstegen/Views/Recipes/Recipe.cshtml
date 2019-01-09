@@ -9,18 +9,84 @@
 <div class="container">
 
     <div class="row mt-4">
-        <div class="col-md-12">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/Home">Home</a></li>
-                <li class="breadcrumb-item"><a href="/Recipes">Recipes</a></li>
-                <li class="breadcrumb-item active" aria-current="page">@ViewBag.Recipe.Title</li>
-            </ol>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Home">Home</a></li>
+            <li class="breadcrumb-item"><a href="/Recipes">Recipes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@ViewBag.Recipe.Title</li>
+        </ol>
+    </div>
+
+    <div class="row mt-md-5 justify-content-center">
+        <div class="col-md-9 mt-md-5">
+
+            <h3 class="h3 mb-md-4">@ViewBag.Recipe.AmountOfPeople</h3>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Ingredients</th>
+                        <th scope="col">Article number</th>
+                        <th scope="col">Gram</th>
+                        <th scope="col">%</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Ingredient i in ViewBag.Ingredients)
+                    {
+                        <tr>
+                            <td>@i.Name</td>
+                            <td>@i.ArticleNumber</td>
+                            <td>@i.Gram</td>
+                            <td>@i.Percentage</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="card mt-md-5">
+                <img class="card-img-top card-img-top-big" src="~/images/recipes/preview/@ViewBag.Recipe.ImgUrl">
+                <div class="card-body">
+                    <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+
+            <h3 class="h3 mt-md-5">Procedure</h3>
+
+            @{ string[] ProceduresArray = ViewBag.Recipe.Precedure.Split('_'); }
+            <ul>
+                @foreach (string s in ProceduresArray)
+                {
+                    <li>@s</li>
+                }
+            </ul>
+
+            <h3 class="h3 mt-md-5">Decoratie</h3>
+            @{ string[] DecoratieArray = ViewBag.Recipe.Decoration.Split('_'); }
+            <ul>
+                @foreach (string s in DecoratieArray)
+                {
+                    <li>@s</li>
+                }
+            </ul>
+
+
+            <div class="my-md-5 disclaimer-block">
+                <p class="p-md-4 text-black-50">
+                    De gegeven informatie betreffende ingrediënten en allergenendeclaraties zijn 
+                    nauwkeurig en betrouwbaar in zoverre Verstegen Spices & Sauces BV dit kan overzien.
+                    Omdat de grondstoffen en productie (risicoanalyse) bij Verstegen Spices & Sauces BV niet bekend zijn, 
+                    ligt de eindverantwoordelijk betreffende ingrediënten en allergenendeclaraties bij de producent van de eindproducten.
+
+                </p>
+            </div>
+
+
         </div>
     </div>
 
-    @foreach (Ingredient i in ViewBag.Ingredients)
-    {
-        <h5>@i.Gram</h5>
-    }
+
+
+
 </div>
 

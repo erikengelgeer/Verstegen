@@ -150,6 +150,18 @@ p.body-text {
     object-fit: cover;
 }
 
+.card-img-top-big {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+
+.disclaimer-block {
+    background-color: #ECECEC;
+    font-size: .8rem;
+}
+
+
 /***********************
   CUSTOM BTN VALUES
 ************************/
