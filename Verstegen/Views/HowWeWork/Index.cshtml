@@ -1,7 +1,5 @@
-@using Verstegen.Models;
 @{
     ViewData["Title"] = "How we work";
-    var BlogCounter = 0;
 }
 
 <!-- Header -->
@@ -24,197 +22,197 @@
         </div>
     </div>
 
-    @foreach (var d in ViewBag.Blogs)
-    {
-        @if (BlogCounter == 0)
-        {
-            <div class="row margin-bottom">
-                <div class="col-md-6 mr-5">
-                    <img class="img-fluid background-image" src="@d.ImgUrl" alt="Field Worker" />
-                </div>
-                <div class="col-md-5 d-flex align-items-center">
-                    <div class="usp-block">
-                        <h6 class="h6">@d.Subject</h6>
-                        <h2 class="h2">@d.Title</h2>
-                        <p class="body-text">
-                            @d.Text
-                        </p>
-                        <button type="button" class="btn btn-red btn-lg">
-                            Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                        </button>
-                    </div>
+    <div class="row margin-bottom">
+        <div class="col-md-6 mr-5">
+            <img class="img-fluid background-image" src="@ViewBag.Blogs[0].ImgUrl" alt="Field Worker" />
+        </div>
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="usp-block">
+                <h6 class="h6">@ViewBag.Blogs[0].Subject</h6>
+                <h2 class="h2">@ViewBag.Blogs[0].Title</h2>
+                <p class="body-text">
+                    @ViewBag.Blogs[0].Text
+                </p>
+                <button type="button" class="btn btn-red btn-lg">
+                    Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-bottom">
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="usp-block">
+                <h2 class="h2">@ViewBag.Blogs[1].Title</h2>
+                <p class="body-text">
+                    @ViewBag.Blogs[1].Text
+                </p>
+                <button type="button" class="btn btn-red btn-lg">
+                    Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                </button>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <img class="img-fluid background-image" src="@ViewBag.Blogs[1].ImgUrl" alt="Field Worker" />
+        </div>
+    </div>
+</div>
+<div class="container-fluid green-background">
+    <div class="container">
+        <div class="row margin-bottom py-6">
+            <div class="col-md-6 mr-5">
+                <img class="img-fluid background-image" src="@ViewBag.Blogs[2].ImgUrl" alt="Field Worker" />
+            </div>
+            <div class="col-md-5 d-flex align-items-center">
+                <div class="green-usp-block">
+                    <h6 class="h6">@ViewBag.Blogs[2].Subject</h6>
+                    <h2 class="h2">@ViewBag.Blogs[2].Title</h2>
+                    <p class="body-text">
+                        @ViewBag.Blogs[2].Text
+                    </p>
+                    <button type="button" class="btn btn-white btn-lg">
+                        Read more <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
+                    </button>
                 </div>
             </div>
-        }
-
-        @if (BlogCounter == 1)
-        {
-            <div class="row margin-bottom">
-                <div class="col-md-5 d-flex align-items-center">
-                    <div class="usp-block">
-                        <h2 class="h2">@d.Title</h2>
-                        <p class="body-text">
-                            @d.Text
-                        </p>
-                        <button type="button" class="btn btn-red btn-lg">
-                            Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                        </button>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-6">
-                    <img class="img-fluid background-image" src="@d.ImgUrl" alt="Field Worker" />
-                </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row margin-bottom">
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="usp-block">
+                <h2 class="h2">@ViewBag.Blogs[3].Title</h2>
+                <p class="body-text">
+                    @ViewBag.Blogs[3].Text
+                </p>
+                <button type="button" class="btn btn-red btn-lg">
+                    Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                </button>
             </div>
-        }
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <img class="img-fluid background-image" src="@ViewBag.Blogs[3].ImgUrl" alt="Field Worker" />
+        </div>
+    </div>
+</div>
 
-        @if (BlogCounter == 2)
-        {
-         <div class="container-fluid green-background">
-              <div class="container">
-                    <div class="row margin-bottom py-6">
-                        <div class="col-md-6 mr-5">
-                            <img class="img-fluid background-image" src="@d.ImgUrl" alt="Field Worker" />
-                        </div>
-                        <div class="col-md-5 d-flex align-items-center">
-                            <div class="green-usp-block">
-                                <h6 class="h6">@d.Subject</h6>
-                                <h2 class="h2">@d.Title</h2>
-                                <p class="body-text">
-                                    @d.Text
-                                </p>
-                                <button type="button" class="btn btn-white btn-lg">
-                                    Read more <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
-                                </button>
+    <div class="how-can-we-help">
+        <div class="usp-block">
+            <h2 class="how-can-we-help-title"> How can we help you? </h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-5 categories">
+                <h3 class="hww-h4">Contact us</h3>
+                <div class="contact-bubble card contact-card">
+                    <div class="contact-us">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="persoon-img" src="@ViewBag.Contact.ImgUrl">
+                            </div>
+                            <div class="col-md-6">
+                                <span class="persoon-naam">@ViewBag.Contact.Name</span>
+                                <span class="persoon-functie">@ViewBag.Contact.Function</span>
                             </div>
                         </div>
-                 </div>
-             </div>
-        </div>
-        }
-        BlogCounter = BlogCounter + 1;
-        if (BlogCounter == 3)
-        {
-            BlogCounter = 0;
-        }
-    }
-</div>
-
-<div class="how-can-we-help">
-    <div class="usp-block">
-        <h2 class="how-can-we-help-title"> How can we help you? </h2>
-    </div>
-
-    <div class="row justify-content-center">
-        <div class="col-md-5 categories">
-            <h3 class="hww-h4">Contact us</h3>
-            <div class="contact-bubble card contact-card">
-                <div class="contact-us">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img class="persoon-img" src="@ViewBag.Contact.ImgUrl">
-                        </div>
-                        <div class="col-md-6">
-                            <span class="persoon-naam">@ViewBag.Contact.Name</span>
-                            <span class="persoon-functie">@ViewBag.Contact.Function</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="card col-md-5 offset-1 phone-card">
-                            <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
-                            <span class="phone-number">@ViewBag.Contact.Tel</span>
-                        </div>
-                        <div class="card col-md-5 offset-1 email-card">
-                            <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
-                            <span class="phone-number">@ViewBag.Contact.Email</span>
-                        </div>
-                        <div class="card col-md-5 offset-1 phone-card">
-                            <img src="~/images/icons/chat.svg" class="phone-icon" />
-                            <span class="phone-number">Send a message</span>
+                        <div class="row">
+                            <div class="card col-md-5 offset-1 phone-card">
+                                <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
+                                <span class="phone-number">@ViewBag.Contact.Tel</span>
+                            </div>
+                            <div class="card col-md-5 offset-1 email-card">
+                                <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
+                                <span class="phone-number">@ViewBag.Contact.Email</span>
+                            </div>
+                            <div class="card col-md-5 offset-1 phone-card">
+                                <img src="~/images/icons/chat.svg" class="phone-icon" />
+                                <span class="phone-number">Send a message</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button type="button" class="btn btn-red btn-lg red-color all-contacts">
+                    All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                </button>
             </div>
-            <button type="button" class="btn btn-red btn-lg red-color all-contacts">
-                All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-            </button>
-        </div>
-        <div class="col-md-5 categories">
-            <h3 class="hww-h4">More about how we work</h3>
-            <ul id="accordion" class="accordion-list">
-                <li class="card accordion-card">
-                    <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <a href="#"> <strong class="accordion-item">What sources are used?</strong> <img src="" class="card-header-img"></a>
-                    </div>
-                    <div id="collapseOne" class="collapse accordion-item-body" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
-                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
-                            Sed vel porttitor dolor. Aenean tempus eros.
+            <div class="col-md-5 categories">
+                <h3 class="hww-h4">More about how we work</h3>
+                <ul id="accordion" class="accordion-list">
+                    <li class="card accordion-card">
+                        <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <a href="#"> <strong class="accordion-item">What sources are used?</strong> <img src="" class="card-header-img"></a>
                         </div>
-                    </div>
-                </li>
-                <li class="card accordion-card">
-                    <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                        <a href="#"><strong class="accordion-item">How we ensure fair trade </strong> <img src="" class="card-header-img"></a>
-                    </div>
-                    <div id="collapseTwo" class="collapse accordion-item-body" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
-                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
-                            Sed vel porttitor dolor. Aenean tempus eros.
+                        <div id="collapseOne" class="collapse accordion-item-body" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                                Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                                Sed vel porttitor dolor. Aenean tempus eros.
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="card accordion-card">
-                    <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-                        <a href="#"> <strong class="accordion-item">How we produce organic </strong><img src="" class="card-header-img"></a>
-                    </div>
-                    <div id="collapseThree" class="collapse accordion-item-body" aria-labelledby="headingThree" data-parent="#accordion">
-                        <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
-                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
-                            Sed vel porttitor dolor. Aenean tempus eros.
+                    </li>
+                    <li class="card accordion-card">
+                        <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                            <a href="#"><strong class="accordion-item">How we ensure fair trade </strong> <img src="" class="card-header-img"></a>
                         </div>
-                    </div>
-                </li>
-                <li class="card accordion-card">
-                    <div class="card-header collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
-                        <a href="#"> <strong class="accordion-item">What is custom made </strong><img src="" class="card-header-img"></a>
-                    </div>
-                    <div id="collapseFour" class="collapse accordion-item-body" aria-labelledby="headingFour" data-parent="#accordion">
-                        <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
-                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
-                            Sed vel porttitor dolor. Aenean tempus eros.
+                        <div id="collapseTwo" class="collapse accordion-item-body" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                                Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                                Sed vel porttitor dolor. Aenean tempus eros.
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="card accordion-card">
-                    <div class="card-header collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
-                        <a href="#"><strong class="accordion-item">What sources are used? </strong><img src="" class="card-header-img"></a>
-                    </div>
-                    <div id="collapseFive" class="collapse accordion-item-body" aria-labelledby="headingFive" data-parent="#accordion">
-                        <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
-                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
-                            Sed vel porttitor dolor. Aenean tempus eros.
+                    </li>
+                    <li class="card accordion-card">
+                        <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                            <a href="#"> <strong class="accordion-item">How we produce organic </strong><img src="" class="card-header-img"></a>
                         </div>
-                    </div>
-                </li>
-                <li class="card accordion-card">
-                    <div class="card-header collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
-                        <a href="#"> <strong class="accordion-item">How we ensure fair trade </strong><img src="" class="card-header-img"></a>
-                    </div>
-                    <div id="collapseSix" class="collapse accordion-item-body" aria-labelledby="headingSix" data-parent="#accordion">
-                        <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
-                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
-                            Sed vel porttitor dolor. Aenean tempus eros.
+                        <div id="collapseThree" class="collapse accordion-item-body" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                                Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                                Sed vel porttitor dolor. Aenean tempus eros.
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                    <li class="card accordion-card">
+                        <div class="card-header collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                            <a href="#"> <strong class="accordion-item">What is custom made </strong><img src="" class="card-header-img"></a>
+                        </div>
+                        <div id="collapseFour" class="collapse accordion-item-body" aria-labelledby="headingFour" data-parent="#accordion">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                                Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                                Sed vel porttitor dolor. Aenean tempus eros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card accordion-card">
+                        <div class="card-header collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+                            <a href="#"><strong class="accordion-item">What sources are used? </strong><img src="" class="card-header-img"></a>
+                        </div>
+                        <div id="collapseFive" class="collapse accordion-item-body" aria-labelledby="headingFive" data-parent="#accordion">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                                Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                                Sed vel porttitor dolor. Aenean tempus eros.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card accordion-card">
+                        <div class="card-header collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
+                            <a href="#"> <strong class="accordion-item">How we ensure fair trade </strong><img src="" class="card-header-img"></a>
+                        </div>
+                        <div id="collapseSix" class="collapse accordion-item-body" aria-labelledby="headingSix" data-parent="#accordion">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                                Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                                Sed vel porttitor dolor. Aenean tempus eros.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
