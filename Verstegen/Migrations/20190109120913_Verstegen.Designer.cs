@@ -10,7 +10,7 @@ using Verstegen.Models;
 namespace Verstegen.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190109102007_Verstegen")]
+    [Migration("20190109120913_Verstegen")]
     partial class Verstegen
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

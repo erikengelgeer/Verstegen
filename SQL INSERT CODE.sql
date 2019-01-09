@@ -42,6 +42,17 @@ SET IDENTITY_INSERT [dbo].[BlogCategorys] ON
 INSERT INTO [dbo].[BlogCategorys] ([BlogCategoryId], [BlogId], [CategoryId]) VALUES (3, 3, 0)
 SET IDENTITY_INSERT [dbo].[BlogCategorys] OFF
 
+SET IDENTITY_INSERT [dbo].[Recipes] ON
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [Type], [AmountOfPeople], [ImgUrl], [Precedure], [Decoration]) VALUES (1, N'Sausages', N'Meat', N'For 5 sausages', N'sausages.jpg', N'Maal de rundersnippers één maal door de 3 mm plaat.\Meng het gehakt met World Spice Blend Mediterranean, water en Binding Vero Pure tot voldoende binding.', N'Parmazaan vlokken\Verse Tijm')
+SET IDENTITY_INSERT [dbo].[Recipes] OFF
+
+SET IDENTITY_INSERT [dbo].[Ingredients] ON
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (1, N'Rundersnippers 85/15', NULL, 860, 68.8, 1)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (2, N'Water', NULL, 60, 20, 1)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (3, N'Snijbare Champignonsaus', NULL, 250, 20, 1)
+SET IDENTITY_INSERT [dbo].[Ingredients] OFF
+
+
 
 
 

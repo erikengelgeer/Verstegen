@@ -9,12 +9,12 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 DROP TABLE [dbo].[__EFMigrationsHistory];
-DROP TABLE [dbo].[ArticleAmounts];
-DROP TABLE [dbo].[Articles];
+DROP TABLE [dbo].[Ingredients];
 DROP TABLE [dbo].[BlogCategorys];
 DROP TABLE [dbo].[Blogs];
 DROP TABLE [dbo].[Categorys];
 DROP TABLE [dbo].[Contacts];
 DROP TABLE [dbo].[Recipes];
+
 
 

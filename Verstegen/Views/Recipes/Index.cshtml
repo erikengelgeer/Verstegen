@@ -93,7 +93,7 @@
             <div class="row">
                 @foreach (Recipe r in Model)
                 {
-                    <div class="card col-md-3 products offset-1">
+                    <div class="card col-md-3 products offset-1 mb-md-5">
                         <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">
                             <img class="card-img-top" src="~/images/recipes/sausages.jpg" alt="Card image cap">
                             <div class="card-body">
