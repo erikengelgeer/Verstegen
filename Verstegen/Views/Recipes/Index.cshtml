@@ -1,4 +1,4 @@
-﻿@model List<Recept>
+﻿@model List<Recipe>
 
 <!-- Header -->
 <header class="masthead recipes-masthead d-flex justify-content-end">
@@ -91,14 +91,14 @@
 
 
             <div class="row">
-                @foreach (Recept r in Model)
+                @foreach (Recipe r in Model)
                 {
                     <div class="card col-md-3 products offset-1">
-                        <a href="@Url.Action("Recipe", "Recipes", new { id = r.ReceptId })">
+                        <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">
                             <img class="card-img-top" src="~/images/recipes/sausages.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">@r.Title</h5>
-                                <p class="card-text">@r.Category</p>
+                                <p class="card-text">@r.Type</p>
                             </div>
                         </a>
                     </div>
