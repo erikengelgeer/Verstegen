@@ -24,7 +24,7 @@ namespace Verstegen.Models
         public string ImgUrl { get; set; }
 
         [Required]
-        public string Precedure { get; set; }
+        public string Procedure { get; set; }
 
         [Required]
         public string Decoration { get; set; }

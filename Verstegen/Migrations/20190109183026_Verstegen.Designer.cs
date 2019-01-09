@@ -10,7 +10,7 @@ using Verstegen.Models;
 namespace Verstegen.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190109120913_Verstegen")]
+    [Migration("20190109183026_Verstegen")]
     partial class Verstegen
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,7 +160,7 @@ namespace Verstegen.Migrations
                     b.Property<string>("ImgUrl")
                         .IsRequired();
 
-                    b.Property<string>("Precedure")
+                    b.Property<string>("Procedure")
                         .IsRequired();
 
                     b.Property<string>("Title")
