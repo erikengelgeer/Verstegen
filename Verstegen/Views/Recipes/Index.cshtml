@@ -95,7 +95,7 @@
                 {
                     <div class="card col-md-3 products offset-1 mb-md-5">
                         <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">
-                            <img class="card-img-top" src="~/images/recipes/sausages.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="~/images/recipes/preview/@r.ImgUrl" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">@r.Title</h5>
                                 <p class="card-text">@r.Type</p>
