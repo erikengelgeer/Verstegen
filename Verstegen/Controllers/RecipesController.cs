@@ -19,7 +19,7 @@ namespace Verstegen.Controllers
         public IActionResult Index()
         {
             ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
-            List<Recept> Recipes = db.Recipes.ToList();
+            List<Recipe> Recipes = db.Recipes.ToList();
             return View(Recipes);
         }
 
@@ -31,8 +31,9 @@ namespace Verstegen.Controllers
             }
             else
             {
-                Recept Recipe = db.Recipes.SingleOrDefault(r => r.ReceptId == id);
-                return View(Recipe);
+                ViewBag.Ingredients = db.Ingredients.Where(i => i.RecipeId == id).ToList();
+                ViewBag.Recipe = db.Recipes.SingleOrDefault(r => r.RecipeId == id);
+                return View();
             }
         }
     }

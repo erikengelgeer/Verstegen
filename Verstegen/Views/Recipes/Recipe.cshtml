@@ -1,8 +1,7 @@
-﻿@model Recept
-<!-- Header -->
+﻿<!-- Header -->
 <header class="masthead recipes-masthead d-flex justify-content-end">
     <div class="container text-center my-auto">
-        <h1 class="mb-1 h1">@Model.Title</h1>
+        <h1 class="mb-1 h1">@ViewBag.Recipe.Title</h1>
         <h2 class="mb-1 h2">Recept</h2>
     </div>
 </header>
@@ -14,10 +13,14 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/Home">Home</a></li>
                 <li class="breadcrumb-item"><a href="/Recipes">Recipes</a></li>
-                <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewBag.Recipe.Title</li>
             </ol>
         </div>
     </div>
 
+    @foreach (Ingredient i in ViewBag.Ingredients)
+    {
+        <h5>@i.Gram</h5>
+    }
 </div>
 

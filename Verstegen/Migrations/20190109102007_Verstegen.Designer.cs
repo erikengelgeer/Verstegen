@@ -10,7 +10,7 @@ using Verstegen.Models;
 namespace Verstegen.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190108125210_Verstegen")]
+    [Migration("20190109102007_Verstegen")]
     partial class Verstegen
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,46 +20,6 @@ namespace Verstegen.Migrations
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Verstegen.Models.Article", b =>
-                {
-                    b.Property<int>("ArticleId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired();
-
-                    b.Property<string>("Type")
-                        .IsRequired();
-
-                    b.HasKey("ArticleId");
-
-                    b.ToTable("Articles");
-                });
-
-            modelBuilder.Entity("Verstegen.Models.ArticleAmount", b =>
-                {
-                    b.Property<int>("ArticleAmountId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ArticleId");
-
-                    b.Property<int>("Gram");
-
-                    b.Property<double>("Percentage");
-
-                    b.Property<int>("ReceptId");
-
-                    b.HasKey("ArticleAmountId");
-
-                    b.HasIndex("ArticleId");
-
-                    b.HasIndex("ReceptId");
-
-                    b.ToTable("ArticleAmounts");
-                });
 
             modelBuilder.Entity("Verstegen.Models.Blog", b =>
                 {
@@ -161,34 +121,57 @@ namespace Verstegen.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("Verstegen.Models.Recept", b =>
+            modelBuilder.Entity("Verstegen.Models.Ingredient", b =>
                 {
-                    b.Property<int>("ReceptId")
+                    b.Property<int>("IngredientId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Category")
+                    b.Property<int?>("ArticleNumber");
+
+                    b.Property<int>("Gram");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<double>("Percentage");
+
+                    b.Property<int>("RecipeId");
+
+                    b.HasKey("IngredientId");
+
+                    b.HasIndex("RecipeId");
+
+                    b.ToTable("Ingredients");
+                });
+
+            modelBuilder.Entity("Verstegen.Models.Recipe", b =>
+                {
+                    b.Property<int>("RecipeId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AmountOfPeople")
+                        .IsRequired();
+
+                    b.Property<string>("Decoration")
+                        .IsRequired();
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired();
+
+                    b.Property<string>("Precedure")
                         .IsRequired();
 
                     b.Property<string>("Title")
                         .IsRequired();
 
-                    b.HasKey("ReceptId");
+                    b.Property<string>("Type")
+                        .IsRequired();
+
+                    b.HasKey("RecipeId");
 
                     b.ToTable("Recipes");
-                });
-
-            modelBuilder.Entity("Verstegen.Models.ArticleAmount", b =>
-                {
-                    b.HasOne("Verstegen.Models.Article", "Article")
-                        .WithMany("Amounts")
-                        .HasForeignKey("ArticleId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Verstegen.Models.Recept", "Recept")
-                        .WithMany("Articles")
-                        .HasForeignKey("ReceptId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Verstegen.Models.BlogCategory", b =>
@@ -200,6 +183,14 @@ namespace Verstegen.Migrations
                     b.HasOne("Verstegen.Models.Category", "Category")
                         .WithMany("BlogsInProject")
                         .HasForeignKey("CategoryID");
+                });
+
+            modelBuilder.Entity("Verstegen.Models.Ingredient", b =>
+                {
+                    b.HasOne("Verstegen.Models.Recipe", "Recipe")
+                        .WithMany("Ingredients")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

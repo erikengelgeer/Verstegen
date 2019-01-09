@@ -10,9 +10,8 @@ namespace Verstegen.Models
     {
         public DbSet<Contact> Contacts { get; set; }
 
-        public DbSet<Recept> Recipes { get; set; }
-        public DbSet<Article> Articles { get; set; }
-        public DbSet<ArticleAmount> ArticleAmounts { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
 
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<BlogCategory> BlogCategorys { get; set; }

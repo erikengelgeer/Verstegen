@@ -9,20 +9,6 @@ namespace Verstegen.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Articles",
-                columns: table => new
-                {
-                    ArticleId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: false),
-                    Type = table.Column<string>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Articles", x => x.ArticleId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Blogs",
                 columns: table => new
                 {
@@ -80,14 +66,18 @@ namespace Verstegen.Migrations
                 name: "Recipes",
                 columns: table => new
                 {
-                    ReceptId = table.Column<int>(nullable: false)
+                    RecipeId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: false),
-                    Category = table.Column<string>(nullable: false)
+                    Type = table.Column<string>(nullable: false),
+                    AmountOfPeople = table.Column<string>(nullable: false),
+                    ImgUrl = table.Column<string>(nullable: false),
+                    Precedure = table.Column<string>(nullable: false),
+                    Decoration = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Recipes", x => x.ReceptId);
+                    table.PrimaryKey("PK_Recipes", x => x.RecipeId);
                 });
 
             migrationBuilder.CreateTable(
@@ -117,42 +107,27 @@ namespace Verstegen.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ArticleAmounts",
+                name: "Ingredients",
                 columns: table => new
                 {
-                    ArticleAmountId = table.Column<int>(nullable: false)
+                    IngredientId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: false),
+                    ArticleNumber = table.Column<int>(nullable: true),
                     Gram = table.Column<int>(nullable: false),
                     Percentage = table.Column<double>(nullable: false),
-                    ArticleId = table.Column<int>(nullable: false),
-                    ReceptId = table.Column<int>(nullable: false)
+                    RecipeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ArticleAmounts", x => x.ArticleAmountId);
+                    table.PrimaryKey("PK_Ingredients", x => x.IngredientId);
                     table.ForeignKey(
-                        name: "FK_ArticleAmounts_Articles_ArticleId",
-                        column: x => x.ArticleId,
-                        principalTable: "Articles",
-                        principalColumn: "ArticleId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ArticleAmounts_Recipes_ReceptId",
-                        column: x => x.ReceptId,
+                        name: "FK_Ingredients_Recipes_RecipeId",
+                        column: x => x.RecipeId,
                         principalTable: "Recipes",
-                        principalColumn: "ReceptId",
+                        principalColumn: "RecipeId",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ArticleAmounts_ArticleId",
-                table: "ArticleAmounts",
-                column: "ArticleId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ArticleAmounts_ReceptId",
-                table: "ArticleAmounts",
-                column: "ReceptId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BlogCategorys_BlogID",
@@ -163,13 +138,15 @@ namespace Verstegen.Migrations
                 name: "IX_BlogCategorys_CategoryID",
                 table: "BlogCategorys",
                 column: "CategoryID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ingredients_RecipeId",
+                table: "Ingredients",
+                column: "RecipeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ArticleAmounts");
-
             migrationBuilder.DropTable(
                 name: "BlogCategorys");
 
@@ -177,16 +154,16 @@ namespace Verstegen.Migrations
                 name: "Contacts");
 
             migrationBuilder.DropTable(
-                name: "Articles");
-
-            migrationBuilder.DropTable(
-                name: "Recipes");
+                name: "Ingredients");
 
             migrationBuilder.DropTable(
                 name: "Blogs");
 
             migrationBuilder.DropTable(
                 name: "Categorys");
+
+            migrationBuilder.DropTable(
+                name: "Recipes");
         }
     }
 }
