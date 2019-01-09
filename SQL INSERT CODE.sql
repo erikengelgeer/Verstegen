@@ -43,13 +43,20 @@ INSERT INTO [dbo].[BlogCategorys] ([BlogCategoryId], [BlogId], [CategoryId]) VAL
 SET IDENTITY_INSERT [dbo].[BlogCategorys] OFF
 
 SET IDENTITY_INSERT [dbo].[Recipes] ON
-INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [Type], [AmountOfPeople], [ImgUrl], [Precedure], [Decoration]) VALUES (1, N'Sausages', N'Meat', N'For 5 sausages', N'sausages.jpg', N'Maal de rundersnippers één maal door de 3 mm plaat.\Meng het gehakt met World Spice Blend Mediterranean, water en Binding Vero Pure tot voldoende binding.', N'Parmazaan vlokken\Verse Tijm')
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (1, N'Sausage', N'Meat', N'For 5 sausages', N'sausages.jpg', N'nog doen', N'nog doen')
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (2, N'Burger', N'Meat', N'For 4 burgers', N'burger.jpg', N'Maal de rundersnippers één maal door de 3 mm plaat._Meng het gehakt met World Spice Blend Mediterranean, water en Binding Vero Pure tot voldoende binding.', N'Parmazaan vlokken_Verse Tijm')
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (3, N'Salmon', N'Fish', N'For 5 plates', N'salmon.jpg', N'nog doen', N'nog doen')
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (4, N'Oatmeal with fruits', N'Vega', N'For 2 bowls', N'oatmeal-fruits.jpg', N'nog doen', N'nog doen')
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (5, N'Pancakes', N'Vega', N'For 10 pancakes', N'pancakes.jpg', N'nog doen', N'nog doen')
 SET IDENTITY_INSERT [dbo].[Recipes] OFF
 
+
 SET IDENTITY_INSERT [dbo].[Ingredients] ON
-INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (1, N'Rundersnippers 85/15', NULL, 860, 68.8, 1)
-INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (2, N'Water', NULL, 60, 20, 1)
-INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (3, N'Snijbare Champignonsaus', NULL, 250, 20, 1)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (1, N'Rundersnippers 85/15', NULL, 860, 68.8, 2)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (2, N'Water', NULL, 60, 20, 2)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (3, N'Snijbare Champignonsaus', NULL, 250, 20, 2)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (4, N'World Spice Blend Mediterranean', NULL, 40, 3.2, 2)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (5, N'Binding Vero Pure', NULL, 40, 3.2, 2)
 SET IDENTITY_INSERT [dbo].[Ingredients] OFF
 
 

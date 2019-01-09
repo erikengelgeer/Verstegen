@@ -72,7 +72,7 @@ namespace Verstegen.Migrations
                     Type = table.Column<string>(nullable: false),
                     AmountOfPeople = table.Column<string>(nullable: false),
                     ImgUrl = table.Column<string>(nullable: false),
-                    Precedure = table.Column<string>(nullable: false),
+                    Procedure = table.Column<string>(nullable: false),
                     Decoration = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
