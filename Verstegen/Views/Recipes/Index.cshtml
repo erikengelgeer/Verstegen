@@ -44,12 +44,13 @@
 
             <h5>Type</h5>
             <ul class="product-type-filter">
-                <li><input type="checkbox" name="cb" id="cb1"><label for="cb1">Vegetable (14)</label></li>
-                <li><input type="checkbox" name="cb" id="cb2"><label for="cb2">Fruit (23)</label></li>
-                <li> <input type="checkbox" name="cb" id="cb3"><label for="cb3">Potato (27)</label></li>
-                <li><input type="checkbox" name="cb" id="cb4"><label for="cb4">Garlic, Peppers (14)</label></li>
-                <li><input type="checkbox" name="cb" id="cb5"><label for="cb5">Juices, Smoothies (21)</label></li>
-                <li><input type="checkbox" name="cb" id="cb6"><label for="cb6">Fruit Salad (11)</label></li>
+                @{ int i = 1;}
+                @foreach (string type in ViewBag.Types)
+                {
+                    string s = "cb" + i;
+                    <li><input type="checkbox" name="cb" id="@s"><label for="@s">@type</label></li>
+                    i++;
+                }
                 <li><a class="product-filter-more-text" href="#"><img class="add" src="~/images/icons/add.svg"> Show all categories</a></li>
             </ul>
 
@@ -91,7 +92,7 @@
 
 
             <div class="row">
-                @foreach (Recipe r in Model)
+                @foreach (Recipe r in ViewBag.Recipes)
                 {
                     <div class="card col-md-3 products offset-1 mb-md-5">
                         <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">

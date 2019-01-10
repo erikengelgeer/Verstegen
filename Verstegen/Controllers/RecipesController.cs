@@ -18,9 +18,17 @@ namespace Verstegen.Controllers
 
         public IActionResult Index()
         {
+            List<string> TempTypeList = db.Recipes.Select(r => r.Type).Distinct().ToList();
+            List<string> TypesWithCount = new List<string>();
+            foreach(string s in TempTypeList)
+            {
+                TypesWithCount.Add(s + " (" + db.Recipes.Where(r => r.Type == s).Count() + ")");
+            }
+
+            ViewBag.Types = TypesWithCount;
             ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
-            List<Recipe> Recipes = db.Recipes.ToList();
-            return View(Recipes);
+            ViewBag.Recipes = db.Recipes.ToList();
+            return View();
         }
 
         public IActionResult Recipe(int id)
