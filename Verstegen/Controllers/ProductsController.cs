@@ -27,5 +27,12 @@ namespace Verstegen.Controllers
             ViewData["productname"] = product;
             return View();
         }
+
+        public IActionResult Details()
+        {
+            ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
+            return View();
+        }
     }
 }
+
