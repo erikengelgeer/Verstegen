@@ -158,7 +158,7 @@ namespace Verstegen.Migrations
                     b.Property<string>("ImgUrl")
                         .IsRequired();
 
-                    b.Property<string>("Precedure")
+                    b.Property<string>("Procedure")
                         .IsRequired();
 
                     b.Property<string>("Title")
