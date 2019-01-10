@@ -1,4 +1,7 @@
 ﻿/* Content.css */
+*{
+    border: 1px solid red;
+}
 
 /***********************
   Global css
@@ -678,7 +681,7 @@ span {
 /***************
   T03 INSPIRATION DETAIL
 ***************/
-header.inspirationImg {
+header.inspirationDetailImg {
     height: 100vh;
     min-height: 500px;
     background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/lnpNnwy/videoblocks-agricultural-soybean-seeds_swlprdurl_thumbnail-full01.png) !important;
@@ -731,9 +734,20 @@ header.inspirationImg {
 }
 
 /***************
+  T05 INSPIRATION THEME
+***************/
+.inspirationThemeImg {
+    height: 100vh;
+    min-height: 500px;
+    background: url(https://images.wallpaperscraft.com/image/ribs_barbecue_sauce_meat_113225_1920x1080.jpg) !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/***************
   Product overview
 ***************/
-
 .custom-made-block {
     background-color: #536B63;
     border-radius: 8px;

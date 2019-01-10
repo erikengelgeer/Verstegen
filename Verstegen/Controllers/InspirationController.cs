@@ -17,5 +17,10 @@ namespace Verstegen.Controllers
         {
             return View();
         }
+
+        public IActionResult Theme()
+        {
+            return View();
+        }
     }
 }
