@@ -31,11 +31,11 @@ SET IDENTITY_INSERT [dbo].[BlogCategorys] OFF
 
 
 SET IDENTITY_INSERT [dbo].[Recipes] ON
-INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (1, N'Sausage', N'Meat', '', N'For 5 sausages', N'sausages.jpg', N'nog doen', N'nog doen')
-INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (2, N'Burger', N'Meat', '', N'Voor 5 burgers', N'burger.jpg', N'Maal de rundersnippers één maal door de 3 mm plaat._Meng het gehakt met World Spice Blend Mediterranean, water en Binding Vero Pure tot voldoende binding.', N'Parmazaan vlokken_Verse Tijm')
-INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (3, N'Salmon', N'Fish', '', N'For 5 plates', N'salmon.jpg', N'nog doen', N'nog doen')
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (1, N'Sausage', '', N'Meat', N'For 5 sausages', N'sausages.jpg', N'nog doen', N'nog doen')
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (2, N'Burger', '', N'Meat',  N'Voor 5 burgers', N'burger.jpg', N'Maal de rundersnippers één maal door de 3 mm plaat._Meng het gehakt met World Spice Blend Mediterranean, water en Binding Vero Pure tot voldoende binding.', N'Parmazaan vlokken_Verse Tijm')
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (3, N'Salmon', '', N'Fish', N'For 5 plates', N'salmon.jpg', N'nog doen', N'nog doen')
 INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (4, N'Oatmeal with fruits', '', N'Vega', N'For 2 bowls', N'oatmeal-fruits.jpg', N'nog doen', N'nog doen')
-INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (5, N'Pancakes', N'Vega', '', N'For 10 pancakes', N'pancakes.jpg', N'nog doen', N'nog doen')
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration]) VALUES (5, N'Pancakes', '', N'Vega', N'For 10 pancakes', N'pancakes.jpg', N'nog doen', N'nog doen')
 SET IDENTITY_INSERT [dbo].[Recipes] OFF
 
 
