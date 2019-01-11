@@ -374,12 +374,13 @@ p.body-text {
         height: 17px;
     }
 
-    .breadcrumb a {
+    .breadcrumb .breadcrumb-item a {
         text-decoration: none;
+        color: #cd0b35;
     }
 
-        .breadcrumb a.active {
-            color: #cd0b35;
+        .breadcrumb .breadcrumb-item a.active {
+            color: #6c757d;
         }
 
 
