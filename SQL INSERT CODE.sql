@@ -8,7 +8,14 @@ SET IDENTITY_INSERT [dbo].[Blogs] OFF
 
 SET IDENTITY_INSERT [dbo].[Contacts] ON
 INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (0, N'Jan den Heijer', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)622571514', N'hhensen@verstegen.nl', N'/images/icons/persoon_img.svg')
-INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (1, N'Gerrit de Jong', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
+INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (1, N'Gerrit de Jong', N'Web Developer', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
+INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (2, N'Tom van Velden', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
+INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (3, N'Jonathan de Greef', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
+INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (4, N'Joost de Niet', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
+INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (5, N'Thijs van Rheenen', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
+INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (6, N'Mustafa', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
+INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (7, N'Erik Engelgeer', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
+INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (8, N'Adeel Shani', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
 SET IDENTITY_INSERT [dbo].[Contacts] OFF
 
 SET IDENTITY_INSERT [dbo].[Categorys] ON
