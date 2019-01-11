@@ -28,6 +28,8 @@ namespace Verstegen.Models
 
         public string SubText { get; set; }
 
+        public string Bullet { get; set; }
+
         [Required]
         public string ImgUrl { get; set; }
 

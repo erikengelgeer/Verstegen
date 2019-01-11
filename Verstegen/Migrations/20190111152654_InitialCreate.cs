@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Verstegen.Migrations
 {
-    public partial class Verstegen : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,6 +21,7 @@ namespace Verstegen.Migrations
                     QuoteFrom = table.Column<string>(nullable: true),
                     SubTitle = table.Column<string>(nullable: true),
                     SubText = table.Column<string>(nullable: true),
+                    Bullet = table.Column<string>(nullable: true),
                     ImgUrl = table.Column<string>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false)
                 },
@@ -63,12 +64,35 @@ namespace Verstegen.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Establishments",
+                columns: table => new
+                {
+                    EstablishmentId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Adres = table.Column<string>(nullable: true),
+                    PostalCode = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    Country = table.Column<string>(nullable: true),
+                    VATNumber = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Longitude = table.Column<string>(nullable: true),
+                    Latitude = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Establishments", x => x.EstablishmentId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Recipes",
                 columns: table => new
                 {
                     RecipeId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: false),
+                    SubTitle = table.Column<string>(nullable: false),
                     Type = table.Column<string>(nullable: false),
                     AmountOfPeople = table.Column<string>(nullable: false),
                     ImgUrl = table.Column<string>(nullable: false),
@@ -107,6 +131,30 @@ namespace Verstegen.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    ProductId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Title = table.Column<string>(nullable: false),
+                    Type = table.Column<string>(nullable: false),
+                    CategoryId = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
+                    Contents = table.Column<string>(nullable: false),
+                    ProductDetails = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.ProductId);
+                    table.ForeignKey(
+                        name: "FK_Products_Categorys_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categorys",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Ingredients",
                 columns: table => new
                 {
@@ -129,6 +177,27 @@ namespace Verstegen.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    ImageId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ImgUrl = table.Column<string>(nullable: true),
+                    AltString = table.Column<string>(nullable: true),
+                    ProductId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.ImageId);
+                    table.ForeignKey(
+                        name: "FK_Images_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "ProductId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_BlogCategorys_BlogID",
                 table: "BlogCategorys",
@@ -140,9 +209,19 @@ namespace Verstegen.Migrations
                 column: "CategoryID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Images_ProductId",
+                table: "Images",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Ingredients_RecipeId",
                 table: "Ingredients",
                 column: "RecipeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_CategoryId",
+                table: "Products",
+                column: "CategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -154,16 +233,25 @@ namespace Verstegen.Migrations
                 name: "Contacts");
 
             migrationBuilder.DropTable(
+                name: "Establishments");
+
+            migrationBuilder.DropTable(
+                name: "Images");
+
+            migrationBuilder.DropTable(
                 name: "Ingredients");
 
             migrationBuilder.DropTable(
                 name: "Blogs");
 
             migrationBuilder.DropTable(
-                name: "Categorys");
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Recipes");
+
+            migrationBuilder.DropTable(
+                name: "Categorys");
         }
     }
 }
