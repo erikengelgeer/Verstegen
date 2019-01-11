@@ -147,12 +147,6 @@ p.body-text {
     border-color: #cd0b35;
 }
 
-.card-img-top {
-    width: 100%;
-    height: 10vw;
-    object-fit: cover;
-}
-
 .card-img-top-big {
     width: 100%;
     height: 25vw;
@@ -745,6 +739,65 @@ header.inspirationDetailImg {
     background-repeat: no-repeat;
 }
 
+.carousel {
+    background: url(http://www.patanjaliayurved.org/wp-content/uploads/revslider/homepage4/leaves.png) !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+carouselArrows{
+    width: 50px;
+    height: 200px;
+    background-color: gray;
+}
+
+.carousel-inner {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+
+.carousel-item img{
+    width: 99%;
+}
+
+a.carousel-control-prev,
+a.carousel-control-next {
+    height: 26%;
+    top: 40%;
+    width: 86px;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(173,173,173,0.73);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(173,173,173,0.73);
+    box-shadow: 0px 0px 10px 2px rgba(173,173,173,0.73);
+    border: 1px solid rgba(173,173,173,1);
+}
+
+a.carousel-control-prev{
+    left: 10% !important;
+}
+
+a.carousel-control-next {
+    right: 10% !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon{
+     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.inspirationCard, .inspirationCardImg{
+    width: 42.5rem;
+    height: 20rem;
+}
+
+.inspirationCardBody{
+    background-color: #fff;
+}
+
 /***************
   Product overview
 ***************/
@@ -879,15 +932,15 @@ header.inspirationDetailImg {
     cursor: pointer;
 }
 
-    .products-sidebar label::before,
-    .products-sidebar label::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 1.5em;
-        height: 1.5em;
-    }
+.products-sidebar label::before,
+.products-sidebar label::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+}
 
 .products-sidebar label::before {
     content: " ";
@@ -920,13 +973,14 @@ header.inspirationDetailImg {
     -o-transform: scale(1);
     transform: scale(1);
 }
+
 /* Transition */
-    .products-sidebar label::before,
-    .products-sidebar label::after {
-        -webkit-transition: .25s all ease;
-        -o-transition: .25s all ease;
-        transition: .25s all ease;
-    }
+.products-sidebar label::before,
+.products-sidebar label::after {
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
 
 .product-type-filter {
     padding: 0;
@@ -992,7 +1046,7 @@ header.inspirationDetailImg {
         padding: 40% 15% 0% 15%;
     }
 
-    .ct-btn-scroll{
+    .ct-btn-scroll {
         display: none;
     }
 
@@ -1000,6 +1054,17 @@ header.inspirationDetailImg {
         width: 18px;
         transform: translate(-84%,-0%);
         border: 4px solid #CC0B37;
+    }
+
+    .inspirationCard,
+    .inspirationCardImg {
+       width: 20rem;
+    }
+}
+
+@media (min-width: 767.99px) {
+    #inspirationRecipeButton {
+        margin-top: 6% !important;
     }
 }
 
