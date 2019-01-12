@@ -1,4 +1,5 @@
-﻿
+﻿@model List<Contact>
+
 @{
     ViewData["Title"] = "Contact";
 }
@@ -99,7 +100,7 @@
         <h6 class="h6">Contact person for each region</h6>
         <h2 class="h2">How can we help you?</h2>
     </div>
-    
+
     <form action="#" class="mt-4">
         <div class="row">
             <label for="region" class="mr-4">Select your region&nbsp;</label>
@@ -119,4 +120,39 @@
         </div>
     </form>
 
+    <div class="row mt-5">
+        @foreach (Contact contacts in Model)
+        {
+            <div class="col-12 col-sm-12 col-md-4 mt-4">
+                <div class="card">
+                    <div class="card-body contacts-body px-5">
+                        <div class="row">
+                            <div class="col-12 col-md-3 text-center">
+                                <img src="@Url.Content(contacts.ImgUrl)" alt="" class="mx-auto rounded-circle img-fluid">
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <h4 class="mb-0 h4">@Html.DisplayFor(modelItem => contacts.Name)</h4>
+                                <p class="lead">@Html.DisplayFor(modelItem => contacts.Function)</p>
+                                <p>
+                                    @Html.DisplayFor(modelItem => contacts.Country), @Html.DisplayFor(modelItem => contacts.Province)
+                                </p>
+                            </div>
+                            <div class="col-12 contacts-body_ca">
+                                <img class="contacts-body_icon" src="~/images/icons/smartphone-call .svg" />
+                                <span>@Html.DisplayFor(modelItem => contacts.Tel)</span>
+                            </div>
+                            <div class="col-12 contacts-body_ca">
+                                <img class="contacts-body_icon" src="~/images/icons/close-envelope.svg" />
+                                <span>@Html.DisplayFor(modelItem => contacts.Email)</span>
+                            </div>
+                            <div class="col-12 contacts-body_ca">
+                                <img class="contacts-body_icon" src="~/images/icons/chat.svg" />
+                                <span>Send a message</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>

@@ -31,5 +31,6 @@ namespace Verstegen.Models
 
         [Required]
         public string ImgUrl { get; set; }
+        
     }
 }

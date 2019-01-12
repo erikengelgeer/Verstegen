@@ -1098,6 +1098,26 @@ header.inspirationImg {
         }
 
 /***************
+  Contact Page
+***************/
+.contacts-body {
+    background-color: #ECECEC;
+    border-style: hidden;
+}
+
+.contacts-body .contacts-body_ca {
+    background: #ffffff;
+    border-radius: .25rem;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+    .contacts-body .contacts-body_icon {
+        width: 25px;
+        margin-right: 5px;
+    }
+
+/***************
   MEDIA QUERIES
 ***************/
 @media (max-width: 767.98px) {
