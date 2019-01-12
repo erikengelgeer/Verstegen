@@ -1,7 +1,122 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Contact";
 }
 
-<h2>Index</h2>
+<!-- Header -->
+<header class="masthead how-we-work-masthead d-flex justify-content-end">
+    <div class="container text-center my-auto">
+        <h1 class="mb-1 h1">Contact</h1>
+        <h2 class="mb-1 h2">We staan voor u klaar!</h2>
+    </div>
+    <div class="overlay"></div>
+</header>
 
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home">Home</a></li>
+                <li class="breadcrumb-item" aria-current="page"><a class="active" href="/contact">Contact</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-8">
+            <div id="map" style="width: 100%; height: 500px;"></div>
+        </div>
+        <div class="col-md-4">
+            <h1 class="h3">Vestegen Spices & Sauces B.V</h1>
+            <ul id="accordion" class="accordion-list accordion-list-contact">
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">Head quarters</strong> <img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseOne" class="collapse accordion-item-body" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            Industrieweg 161 <br />
+                            3044 AS Rotterdam <br />
+                            The Netherlands <br />
+                            BTW: NL003199538B01 <br />
+
+                            <div class="card contact-card mt-4">
+                                <div class="contact-us">
+                                    <div class="card col-md-12 phone-card">
+                                        <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
+                                        <span class="phone-number">+31 (0)10-2455100</span>
+                                    </div>
+                                    <div class="card col-md-12 phone-card">
+                                        <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
+                                        <span class="phone-number">info@vestegen.nl</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"><strong class="accordion-item">Logistics center </strong> <img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseTwo" class="collapse accordion-item-body" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">Delivery of goods</strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseThree" class="collapse accordion-item-body" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">Verstegen academy </strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseFour" class="collapse accordion-item-body" aria-labelledby="headingFour" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="element-title">
+        <h6 class="h6">Contact person for each region</h6>
+        <h2 class="h2">How can we help you?</h2>
+    </div>
+    
+    <form action="#" class="mt-4">
+        <div class="row">
+            <label for="region" class="mr-4">Select your region&nbsp;</label>
+            <select name="region" class="form-control d-inline-block" style="width: 33%;">
+                <option selected>Selecteren</option>
+                <option value="1">Zuid-Holland</option>
+                <option value="2">Noord-Holland</option>
+                <option value="3">Zeeland</option>
+            </select>
+            <label for="version" class="mr-4 ml-5">Select Country or province &nbsp;</label>
+            <select class="form-control d-inline-block" style="width: 33%;">
+                <option selected>Open this select menu</option>
+                <option value="1">Nederland</option>
+                <option value="2">Duitsland</option>
+                <option value="3">Belgie</option>
+            </select>
+        </div>
+    </form>
+
+</div>

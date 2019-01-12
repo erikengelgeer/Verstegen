@@ -533,6 +533,10 @@ p.body-text {
     background: #FFF;
 }
 
+.accordion-list-contact {
+    padding: 0;
+}
+
 .card-header.collapsed .card-header-img {
     content: url(../../images/icons/plus-button.svg);
 }

@@ -19,3 +19,39 @@
         100 < a(this).scrollTop() ? a(".scroll-to-top").fadeIn() : a(".scroll-to-top").fadeOut();
     })
 }(jQuery);
+
+
+var locations = [
+    ["Den Haag", 52.0704978, 4.3006999, 2],
+    ["Amsterdam", 52.3702157, 4.8951679, 5],
+    ["Utrecht", 52.0907374, 5.1214201, 3],
+    ["Groningen", 53.2193835, 6.5665018, 4],
+    ["Rotterdam", 51.9244201, 4.4777325, 1]
+];
+
+var map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 7,
+    center: new google.maps.LatLng(52.132633, 5.291266),
+    disableDefaultUI: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+});
+
+var infowindow = new google.maps.InfoWindow();
+var marker, i;
+
+for (i = 0; i < locations.length; i++) {
+    marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+    });
+    google.maps.event.addListener(
+        marker,
+        "click",
+        (function (marker, i) {
+            return function () {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            };
+        })(marker, i)
+    );
+}
