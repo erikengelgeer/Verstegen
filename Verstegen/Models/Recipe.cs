@@ -15,6 +15,9 @@ namespace Verstegen.Models
         public string Title { get; set; }
 
         [Required]
+        public string SubTitle { get; set; }
+
+        [Required]
         public string Type { get; set; }
 
         [Required]
