@@ -24,6 +24,7 @@ namespace Verstegen.Controllers
         public IActionResult Theme()
         {
             ViewBag.Recipes = db.Recipes.ToList();
+            ViewBag.Blogs = db.Blogs.ToList();
 
             return View();
         }
