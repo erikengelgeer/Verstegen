@@ -34,7 +34,7 @@
     <div class="products-content row">
         <div class="col-md-3 products-sidebar">
             <select class="form-control">
-                <option value="geen">Filter</option>
+                <option value="geen">Geen filter</option>
                 @foreach (Category cat in ViewBag.Categories)
                 {
                     string val = cat.CategoryValue;
@@ -112,7 +112,7 @@
             <div class="row pagination">
                 <div class="col-md-3 offset-1 p-0">
                     <div class="page-item">
-                        <a href="@Url.Action("Index", "Products", new { page = ViewBag.Page-1 })" class="btn btn-red btn-lg @Html.Raw(ViewBag.Page < 2 ? "disabled" : "red-color")">
+                        <a href="@Url.Action("Index", "Recipes", new { page = ViewBag.Page-1 })" class="btn btn-red btn-lg @Html.Raw(ViewBag.Page < 2 ? "disabled" : "red-color")">
                             <div class="button-text-white">
                                 <img src="~/images/icons/left-arrow.svg" class="icon-arrow-left-white"> Back
                             </div>
@@ -122,12 +122,12 @@
                 <div class="col-md-3 offset-1 d-flex justify-content-center">
                     @for (var j = 1; j < ViewBag.AmountPages + 1; j++)
                     {
-                        <div class="page-item @Html.Raw(ViewBag.Page == j ? "active" : "")"><a class="page-link" href="@Url.Action("Index", "Products", new { page = j })">@j</a></div>
+                        <div class="page-item @Html.Raw(ViewBag.Page == j ? "active" : "")"><a class="page-link" href="@Url.Action("Index", "Recipes", new { page = j })">@j</a></div>
                     }
                 </div>
                 <div class="col-md-3 offset-1 d-flex justify-content-end p-0">
                     <div class="page-item">
-                        <a href="@Url.Action("Index", "Products", new { page = ViewBag.Page+1 })" class="btn btn-red btn-lg @Html.Raw(ViewBag.Page > ViewBag.AmountPages - 1 ? "disabled" : "red-color")">
+                        <a href="@Url.Action("Index", "Recipes", new { page = ViewBag.Page+1 })" class="btn btn-red btn-lg @Html.Raw(ViewBag.Page > ViewBag.AmountPages - 1 ? "disabled" : "red-color")">
                             <div class="button-text-white">
                                 Next <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
                             </div>
