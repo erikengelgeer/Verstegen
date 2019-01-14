@@ -18,7 +18,17 @@ namespace Verstegen.Controllers
 
         public IActionResult Index()
         {
+            List<string> TempTypeList = db.Products.Select(p => p.Type).Distinct().ToList();
+            List<string> TypesWithCount = new List<string>();
+            foreach (string s in TempTypeList)
+            {
+                TypesWithCount.Add(s + " (" + db.Products.Where(p => p.Type == s).Count() + ")");
+            }
+
+            ViewBag.Types = TypesWithCount;
             ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
+            ViewBag.Products = db.Products.ToList();
+            ViewBag.Categories = db.Categories.ToList();
             return View();
         }
 

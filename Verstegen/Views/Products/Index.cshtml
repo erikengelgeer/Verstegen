@@ -43,22 +43,25 @@
     <div class="products-content row">
         <div class="col-md-3 products-sidebar">
             <select class="form-control">
-                <option disabled selected value=""> -- Filter --</option>
-                <option value="">Geen</option>
-                <option value="agf">Aardappel, Groente, Fruit</option>
-                <option value="k&ks">Kant-en-klaar, Salades</option>
-                <option value="vkvv">Vlees, Kip, Vis, Vega</option>
+                <option value="geen">Filter</option>
+                @foreach (Category cat in ViewBag.Categories)
+                {
+                    string val = cat.CategoryValue;
+                    string name = cat.CategoryName;
+                    <option value="@val">@name</option>
+                }
             </select>
 
             <h5>Type</h5>
             <ul class="product-type-filter">
-                <li><input type="checkbox" name="cb" id="cb1"><label for="cb1">Groente</label></li>
-                <li><input type="checkbox" name="cb" id="cb2"><label for="cb2">Fruit</label></li>
-                <li> <input type="checkbox" name="cb" id="cb3"><label for="cb3">Aardappel</label></li>
-                <li><input type="checkbox" name="cb" id="cb4"><label for="cb4">Knoflook, Pepers</label></li>
-                <li><input type="checkbox" name="cb" id="cb5"><label for="cb5">Fruitsalades</label></li>
-                <li><input type="checkbox" name="cb" id="cb6"><label for="cb6">Sappen, Smoothies</label></li>
-                <li><a class="product-filter-more-text" href="#"><img class="add" src="~/images/icons/add.svg"> Show all types</a></li>
+                @{ int i = 1;}
+                @foreach (string type in ViewBag.Types)
+                {
+                    string s = "cb" + i;
+                    <li><input type="checkbox" name="cb" id="@s"><label for="@s">@type</label></li>
+                    i++;
+                }
+                <li><a class="product-filter-more-text" href="#"><img class="add" src="~/images/icons/add.svg"> Show all categories</a></li>
             </ul>
 
             <h5>Product categories</h5>
@@ -107,122 +110,27 @@
         </div>
 
         <div class="col-md-8 product-rows">
+
+
             <div class="row">
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
+                @foreach (Product p in ViewBag.Products)
+                {
+                    <div class="col-md-3 products ml-5 mb-md-5">
+                        <div class="card">
+                        <a href="@Url.Action("Product", "Products", new { id = p.ProductId })">
+                            <img class="img-fluid" src="@p.ImgUrl" alt="@p.AltString">
+                            <div class="card-body">
+                                <h5 class="card-title">@p.Title</h5>
+                                <p class="card-text">@p.Type</p>
+                            </div>
+                        </a>
+                            </div>
+                    </div>
+                }
             </div>
-            <div class="row">
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card col-md-3 products offset-1">
-                    <a href="#">
-                        <img class="card-img-top" src="~/images/home/herbs.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Allspice ground</h5>
-                            <p class="card-text">Spices & Herbs</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+
+
+
             <div class="row pagination">
                 <div class="col-md-3 offset-1 p-0">
                     <div class="page-item disabled">
@@ -245,6 +153,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>

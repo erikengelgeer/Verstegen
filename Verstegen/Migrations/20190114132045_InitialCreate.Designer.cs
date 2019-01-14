@@ -10,7 +10,7 @@ using Verstegen.Models;
 namespace Verstegen.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190114113630_InitialCreate")]
+    [Migration("20190114132045_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -190,12 +190,18 @@ namespace Verstegen.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AltString")
+                        .IsRequired();
+
                     b.Property<int>("CategoryId");
 
                     b.Property<string>("Contents")
                         .IsRequired();
 
                     b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<string>("ImgUrl")
                         .IsRequired();
 
                     b.Property<string>("ProductDetails")
@@ -235,7 +241,7 @@ namespace Verstegen.Migrations
                     b.Property<string>("SubTitle")
                         .IsRequired();
 
-                    b.Property<int?>("ThemeId");
+                    b.Property<int>("ThemeId");
 
                     b.Property<string>("Title")
                         .IsRequired();
@@ -304,7 +310,8 @@ namespace Verstegen.Migrations
                 {
                     b.HasOne("Verstegen.Models.Theme", "Theme")
                         .WithMany()
-                        .HasForeignKey("ThemeId");
+                        .HasForeignKey("ThemeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
