@@ -1178,6 +1178,16 @@ a.carousel-control-next {
         }
 
 /***************
+  Recipes
+***************/
+
+.img-small{
+    object-fit:cover;
+    max-height:154px;
+    min-width:231px;
+}
+
+/***************
   Contact Page
 ***************/
 .contacts-body {
