@@ -20,13 +20,8 @@ namespace Verstegen.Controllers
 
         public IActionResult Index()
         {
-            /*
-            ViewBag.Blogs = db.Categories
-             .Where(m => m.CategoryValue == "hww")
-             .SelectMany(m => m.BlogsInProject.Select(mc => mc.Blog))
-             .ToList();
+            ViewBag.Blogs = db.Blogs.Where(b=> b.Type == "hww").ToList();
             ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();   
-            */
             return View();
         }
     }
