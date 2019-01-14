@@ -106,27 +106,29 @@
                 }
             </div>
 
-
-
             <div class="row pagination">
                 <div class="col-md-3 offset-1 p-0">
-                    <div class="page-item disabled">
-                        <button type="button" class="btn btn-red btn-lg red-color" disabled>
-                            Previous <img src="~/images/icons/left-arrow.svg" class="icon-arrow-left-white">
-                        </button>
+                    <div class="page-item">
+                        <a href="@Url.Action("Index", "Recipes", new { page = ViewBag.Page-1 })">
+                            <div class="btn btn-red btn-lg @Html.Raw(ViewBag.Page < 2 ? "btn-warning" : "red-color")">
+                                <img src="~/images/icons/left-arrow.svg" class="icon-arrow-left-white"> Back
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-3 offset-1 d-flex justify-content-center">
-                    <div class="page-item active"><a class="page-link" href="#">1</a></div>
-                    <div class="page-item"><a class="page-link" href="#">2</a></div>
-                    <div class="page-item"><a class="page-link" href="#">3</a></div>
-                    <div class="page-item"><a class="page-link" href="#">4</a></div>
+                    @for (var j = 1; j < ViewBag.AmountPages + 1; j++)
+                    {
+                        <div class="page-item @Html.Raw(ViewBag.Page == j ? "active" : "")"><a class="page-link" href="@Url.Action("Index", "Recipes", new { page = j })">@j</a></div>
+                    }
                 </div>
                 <div class="col-md-3 offset-1 d-flex justify-content-end p-0">
                     <div class="page-item">
-                        <button type="button" class="btn btn-red btn-lg red-color">
-                            Next <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                        </button>
+                        <a href="@Url.Action("Index", "Recipes", new { page = ViewBag.Page+1 })">
+                            <div class="btn btn-red btn-lg red-color">
+                                Next <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
