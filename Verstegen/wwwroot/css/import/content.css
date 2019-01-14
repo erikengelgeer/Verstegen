@@ -42,6 +42,10 @@ a{
         text-align: center;
     }
 
+.button-text-white {
+    color: white;
+}
+
 .h1 {
     font-size: 7.5rem;
     color: #FFFFFF;

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,21 @@ namespace Verstegen.Controllers
     public class ProductsController : Controller
     {
         readonly MyContext db;
+        private int Amount;
 
         public ProductsController()
         {
             db = new MyContext();
+            Amount = 6;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page)
         {
+            if (page < 1)
+            {
+                page = 1;
+            }
+
             List<string> TempTypeList = db.Products.Select(p => p.Type).Distinct().ToList();
             List<string> TypesWithCount = new List<string>();
             foreach (string s in TempTypeList)
@@ -27,8 +35,10 @@ namespace Verstegen.Controllers
 
             ViewBag.Types = TypesWithCount;
             ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
-            ViewBag.Products = db.Products.ToList();
+            ViewBag.Products = db.Products.ToList().ToPagedList(page, Amount);
+            ViewBag.AmountPages = (int)Math.Ceiling((Double)db.Recipes.ToList().Count() / Amount);
             ViewBag.Categories = db.Categories.ToList();
+            ViewBag.Page = page;
             return View();
         }
 
