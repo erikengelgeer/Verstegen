@@ -28,6 +28,7 @@ namespace Verstegen.Controllers
             ViewBag.Types = TypesWithCount;
             ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
             ViewBag.Recipes = db.Recipes.ToList();
+            ViewBag.Categories = db.Categories.ToList();
             return View();
         }
 

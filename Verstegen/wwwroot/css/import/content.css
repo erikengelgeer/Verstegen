@@ -1181,10 +1181,11 @@ a.carousel-control-next {
   Recipes
 ***************/
 
-.img-small{
-    object-fit:cover;
-    max-height:154px;
-    min-width:231px;
+.img-small {
+    object-fit: cover;
+    object-position: center;
+    max-height: 154px;
+    min-width: 231px;
 }
 
 /***************

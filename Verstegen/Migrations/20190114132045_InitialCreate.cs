@@ -89,7 +89,9 @@ namespace Verstegen.Migrations
                     CategoryId = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: false),
                     Contents = table.Column<string>(nullable: false),
-                    ProductDetails = table.Column<string>(nullable: false)
+                    ProductDetails = table.Column<string>(nullable: false),
+                    ImgUrl = table.Column<string>(nullable: false),
+                    AltString = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -145,7 +147,7 @@ namespace Verstegen.Migrations
                     ImgUrl = table.Column<string>(nullable: false),
                     Procedure = table.Column<string>(nullable: false),
                     Decoration = table.Column<string>(nullable: false),
-                    ThemeId = table.Column<int>(nullable: true)
+                    ThemeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -155,7 +157,7 @@ namespace Verstegen.Migrations
                         column: x => x.ThemeId,
                         principalTable: "Themes",
                         principalColumn: "ThemeId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

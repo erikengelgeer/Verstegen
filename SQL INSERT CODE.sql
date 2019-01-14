@@ -34,20 +34,23 @@ INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Provi
 INSERT INTO [dbo].[Contacts] ([ContactId], [Name], [Function], [Country], [Province], [Tel], [Email], [ImgUrl]) VALUES (8, N'Adeel Shani', N'Director of Sales & Marketing Food Industry', N'The Netherland', N'Zuid-Holland', N'+31(0)532534344', N'gdjong@verstegen.nl', N'/images/icons/persoon_img.svg')
 SET IDENTITY_INSERT [dbo].[Contacts] OFF
 
-SET IDENTITY_INSERT [dbo].[Ingredients] ON
-INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (0, N'Rundersnippers 85/15', NULL, 860, 68.8, 1)
-INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (1, N'Water', NULL, 60, 20, 1)
-INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (2, N'Snijbare Champignonsaus', NULL, 250, 20, 1)
-INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (3, N'World Spice Blend Mediterranean', NULL, 40, 3.2, 1)
-INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (4, N'Binding Vero Pure', NULL, 40, 3.2, 1)
-SET IDENTITY_INSERT [dbo].[Ingredients] OFF
-
 SET IDENTITY_INSERT [dbo].[Products] ON
-INSERT INTO [dbo].[Products] ([ProductId], [Title], [Type], [CategoryId], [Description], [Contents], [ProductDetails]) VALUES (0, N'Kruidenmix', N'Vlees', 2, N'Kruidenmix oor gehakt (natrium)', N'40g', N'Koop
-Zonder zout eten hoeft helemaal niet smaakloos te zijn. Als je maar de juiste ingrediënten gebruikt. En dat is precies wat wij hebben gedaan: door de juiste smaakvolle kruiden en specerijen te gebruiken breng je ook zonder zout je gerecht heerlijk op smaak.')
-INSERT INTO [dbo].[Products] ([ProductId], [Title], [Type], [CategoryId], [Description], [Contents], [ProductDetails]) VALUES (1, N'Mix voor aardappel', N'Aardappel', 0, N'Mix voor aardappel', N'80g', N'Koop
-Wat velen niet weten is dat wij naast de bekende mixen voor gehakt en kip ook verschillende mixen hebben voor je maaltijd. Met deze mixen kun je met één zakje je gehele maaltijd op smaak brengen. Heerlijke winterse Hachee, Goulash of Chili con Carne of verschillende stamppotten, met Verstegen chef je het allemaal zelf.')
+INSERT INTO [dbo].[Products] ([ProductId], [Title], [Type], [CategoryId], [Description], [Contents], [ProductDetails], [ImgUrl], [AltString]) VALUES (0, N'Kruidenmix', N'Meat', 2, N'Kruidenmix oor gehakt (natrium)', N'40g', N'Koop
+Zonder zout eten hoeft helemaal niet smaakloos te zijn. Als je maar de juiste ingrediënten gebruikt. En dat is precies wat wij hebben gedaan: door de juiste smaakvolle kruiden en specerijen te gebruiken breng je ook zonder zout je gerecht heerlijk op smaak.', N'https://store.verstegen.eu/media/catalog/product/cache/1/thumbnail/218x163/9df78eab33525d08d6e5fb8d27136e95/3/9/3990_3.jpg', N'Kruidenmix voor gehakt')
+INSERT INTO [dbo].[Products] ([ProductId], [Title], [Type], [CategoryId], [Description], [Contents], [ProductDetails], [ImgUrl], [AltString]) VALUES (1, N'Mix voor aardappel', N'Potato', 0, N'Mix voor aardappel', N'80g', N'Koop
+Wat velen niet weten is dat wij naast de bekende mixen voor gehakt en kip ook verschillende mixen hebben voor je maaltijd. Met deze mixen kun je met één zakje je gehele maaltijd op smaak brengen. Heerlijke winterse Hachee, Goulash of Chili con Carne of verschillende stamppotten, met Verstegen chef je het allemaal zelf.', N'https://store.verstegen.eu/media/catalog/product/cache/1/thumbnail/218x163/9df78eab33525d08d6e5fb8d27136e95/4/0/4002_4.jpg', N'Mix voor aardappellen')
+INSERT INTO [dbo].[Products] ([ProductId], [Title], [Type], [CategoryId], [Description], [Contents], [ProductDetails], [ImgUrl], [AltString]) VALUES (2, N'Krispi citroen en dille', N'Fish', 2, N'Krispi citroen en dille', N'50g', N'Met onze Krispi kruidenmmixen zorg je op een eenvoudige manier voor een heerlijk krokant laagje op je gerecht. De speciale combinatie van het krokante van cornflakes met de beste kruiden en specerijen geeft je vis, vlees of kip een zeer smaakvolle en krokante smaak.', N'https://store.verstegen.eu/media/catalog/product/cache/1/thumbnail/218x163/9df78eab33525d08d6e5fb8d27136e95/3/6/3639_2.jpg', N'Krispi citroen en dille')
+INSERT INTO [dbo].[Products] ([ProductId], [Title], [Type], [CategoryId], [Description], [Contents], [ProductDetails], [ImgUrl], [AltString]) VALUES (3, N'Prei groentenfinish', N'Vegetables', 0, N'Groentenfinish voor prei', N'15g', N'Door deze mix toe te voegen aan uw groente, maakt u van uw vertrouwde groente weer een bijzonder gerecht. Bovendien zijn alle Verstegen groentenmixen vrij van kunstmatige geur-, kleur- en smaakstoffen.', N'https://store.verstegen.eu/media/catalog/product/cache/1/thumbnail/218x163/9df78eab33525d08d6e5fb8d27136e95/4/0/4098_3.jpg', N'Groentenfinish voor prei')
+INSERT INTO [dbo].[Products] ([ProductId], [Title], [Type], [CategoryId], [Description], [Contents], [ProductDetails], [ImgUrl], [AltString]) VALUES (4, N'Honingmoster saus', N'Sauces', 10, N'Honingmosterd saus', N'80ml', N'Smaak: Honing / Mosterd', N'https://store.verstegen.eu/media/catalog/product/cache/1/thumbnail/218x163/9df78eab33525d08d6e5fb8d27136e95/6/4/6460_12.jpg', N'Honingmosterd saus')
+INSERT INTO [dbo].[Products] ([ProductId], [Title], [Type], [CategoryId], [Description], [Contents], [ProductDetails], [ImgUrl], [AltString]) VALUES (5, N'Mix voor sate', N'Meat', 2, N'Mix voor sate 100% natuurlijk', N'25g', N'Smaak: specifiek', N'https://store.verstegen.eu/media/catalog/product/cache/1/thumbnail/218x163/9df78eab33525d08d6e5fb8d27136e95/8/2/8234_1.jpg', N'Mix voor sate')
+INSERT INTO [dbo].[Products] ([ProductId], [Title], [Type], [CategoryId], [Description], [Contents], [ProductDetails], [ImgUrl], [AltString]) VALUES (6, N'Hollandaise saus', N'Sauces', 10, N'Hollandaise saus', N'80ml', N'Koop
+In handige 80 ml cups. Deze saus is heerlijk bij vis, kip en varkensvlees, maar uiteraard ook bij groenten, zoals asperges. De cupjes zijn ideaal voor eenmalig gebruik. De saus kan in de magnetron opgewarmd worden, doordat de verpakking magnetronbestendig is. Let op: prik we gaatjes in de folie. Afhankelijk van type en vermogen van je magnetron adviseren wij 30 seconden op 600 W. Of je warmt het even op in een pan. Dat kan natuurlijk ook.', N'https://store.verstegen.eu/media/catalog/product/cache/1/thumbnail/218x163/9df78eab33525d08d6e5fb8d27136e95/5/3/5394_21.jpg', N'Hollandaise saus')
 SET IDENTITY_INSERT [dbo].[Products] OFF
+
+SET IDENTITY_INSERT [dbo].[Themes] ON
+INSERT INTO [dbo].[Themes] ([ThemeId], [Name], [ImgUrl], [IconUrl]) VALUES (0, N'Easter', N'https://images2.alphacoders.com/661/661074.jpg', N'easter-egg-icon.svg')
+INSERT INTO [dbo].[Themes] ([ThemeId], [Name], [ImgUrl], [IconUrl]) VALUES (1, N'Thanksgiving', N'https://www.kiss1023.ca/wp-content/blogs.dir/10/files/Holiday_Thanksgiving_Turkey-Dinner-Picture-2012-HD-Wallpaper-1.jpg', N'chicken-icon.svg')
+SET IDENTITY_INSERT [dbo].[Themes] OFF
 
 SET IDENTITY_INSERT [dbo].[Recipes] ON
 INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration], [ThemeId]) VALUES (0, N'Sausage', N'Grilled pork sausages', N'Meat', N'For 5 sausages', N'images/recipes/preview/sausages.jpg', N'Grind the meat_make sausage_grill the sausage and you''re done', N'BBQ Sauce_Garlic Sauce', 0)
@@ -55,10 +58,45 @@ INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfP
 INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration], [ThemeId]) VALUES (2, N'Salmon', N'Salmon with fresh vegetables', N'Fish', N'For 5 plates', N'images/recipes/preview/salmon.jpg', N'Slice the salmon_Bake the vegetables with some oil_grill the salmon_serve together in a bowl', N'Dill_Rucola', 0)
 INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration], [ThemeId]) VALUES (3, N'Oatmeal', N'Oatmeal with fresh fruits', N'Breakfast', N'For 2 bowls', N'images/recipes/preview/oatmeal-fruits.jpg', N'Warm up some milk and put it in a bowl_Add the oatmeal_Add any fruits you fancy_enjoy your meal!', N'Fresh mint_Extra fruits', 0)
 INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration], [ThemeId]) VALUES (4, N'Pancakes', N'Pancakes with fruits', N'Breakfast', N'For 10 pancakes', N'images/recipes/preview/pancakes.jpg', N'Add the flower, milk and eggs in a bowl_Mix the contents for 2 minutes_Warm up a pan and make some pancakes', N'Sugar_Bacon', 0)
-INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration], [ThemeId]) VALUES (6, N'Pasta Pesto', N'Pasta with fresh pesto and spinach', N'Pasta', N'For 3 bowls', N'images/recipes/preview/sausages.jpg', N'Boil the pasta for 10 minutes_Cook the chicken in the meantime_When the pasta is done, combine with the chicken_Final touch, add the pesto ', N'Pine nuts_Rucola', 0)
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration], [ThemeId]) VALUES (6, N'Pasta Pesto', N'Pasta with fresh pesto and spinach', N'Pasta', N'For 3 bowls', N'images/recipes/preview/pasta-pesto.jpg', N'Boil the pasta for 10 minutes_Cook the chicken in the meantime_When the pasta is done, combine with the chicken_Final touch, add the pesto ', N'Pine nuts_Rucola', 0)
+INSERT INTO [dbo].[Recipes] ([RecipeId], [Title], [SubTitle], [Type], [AmountOfPeople], [ImgUrl], [Procedure], [Decoration], [ThemeId]) VALUES (7, N'Nasi', N'Nasi with chicken', N'Rice', N'For 4 bowls', N'images/recipes/preview/nasi.jpg', N'Cook the rice_Bake the vegetables_serve together', N'Saté_Crispy onions', 0)
 SET IDENTITY_INSERT [dbo].[Recipes] OFF
 
-SET IDENTITY_INSERT [dbo].[Themes] ON
-INSERT INTO [dbo].[Themes] ([ThemeId], [Name], [ImgUrl], [IconUrl]) VALUES (0, N'Easter', N'https://images2.alphacoders.com/661/661074.jpg', N'easter-egg-icon.svg')
-INSERT INTO [dbo].[Themes] ([ThemeId], [Name], [ImgUrl], [IconUrl]) VALUES (1, N'Thanksgiving', N'https://www.kiss1023.ca/wp-content/blogs.dir/10/files/Holiday_Thanksgiving_Turkey-Dinner-Picture-2012-HD-Wallpaper-1.jpg', N'chicken-icon.svg')
-SET IDENTITY_INSERT [dbo].[Themes] OFF
+
+SET IDENTITY_INSERT [dbo].[Ingredients] ON
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (0, N'Rundersnippers 85/15', NULL, 860, 68.8, 0)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (1, N'Water', NULL, 60, 20, 0)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (2, N'Snijbare Champignonsaus', NULL, 250, 20, 0)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (3, N'World Spice Blend Mediterranean', NULL, 40, 3.2, 0)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (4, N'Binding Vero Pure', NULL, 40, 3.2, 0)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (5, N'Gehakt', NULL, 860, 68.8, 1)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (6, N'IJsbergsla', NULL, 60, 20, 1)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (7, N'Bacon', NULL, 250, 20, 1)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (8, N'World Spice Blend Mediterranean', NULL, 40, 3.2, 1)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (9, N'Binding Vero Pure', NULL, 40, 3.2, 1)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (10, N'Zalmfilet', NULL, 860, 68.8, 2)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (11, N'Peper', NULL, 2, 3, 2)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (12, N'Wokgroenten', NULL, 250, 20, 2)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (13, N'World Spice Blend Mediterranean', NULL, 40, 3.2, 2)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (14, N'Binding Vero Pure', NULL, 40, 3.2, 2)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (15, N'Oatmeal', NULL, 860, 68.8, 3)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (16, N'Melk', NULL, 60, 20, 3)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (17, N'Bosvruchten', NULL, 250, 20, 3)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (18, N'Suiker', NULL, 10, 3.2, 3)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (19, N'Binding Vero Pure', NULL, 40, 3.2, 3)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (20, N'Bloem', NULL, 860, 68.8, 4)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (21, N'Melk', NULL, 60, 20, 4)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (22, N'Eieren', NULL, 250, 20, 4)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (23, N'World Spice Blend Mediterranean', NULL, 40, 3.2, 4)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (24, N'Binding Vero Pure', NULL, 40, 3.2, 4)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (25, N'Pasta', NULL, 860, 68.8, 6)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (26, N'Verse Pesto', NULL, 60, 20, 6)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (27, N'Cherry tomaten', NULL, 250, 20, 6)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (28, N'World Spice Blend Mediterranean', NULL, 40, 3.2, 6)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (29, N'Binding Vero Pure', NULL, 40, 3.2, 6)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (30, N'Rijst', NULL, 860, 68.8, 7)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (31, N'Kip', NULL, 60, 20, 7)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (32, N'Wokgroenten', NULL, 250, 20, 7)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (33, N'World Spice Blend Mediterranean', NULL, 40, 3.2, 7)
+INSERT INTO [dbo].[Ingredients] ([IngredientId], [Name], [ArticleNumber], [Gram], [Percentage], [RecipeId]) VALUES (34, N'Binding Vero Pure', NULL, 40, 3.2, 7)
+SET IDENTITY_INSERT [dbo].[Ingredients] OFF

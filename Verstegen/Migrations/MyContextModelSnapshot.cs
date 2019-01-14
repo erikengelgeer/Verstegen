@@ -188,12 +188,18 @@ namespace Verstegen.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AltString")
+                        .IsRequired();
+
                     b.Property<int>("CategoryId");
 
                     b.Property<string>("Contents")
                         .IsRequired();
 
                     b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<string>("ImgUrl")
                         .IsRequired();
 
                     b.Property<string>("ProductDetails")
@@ -233,7 +239,7 @@ namespace Verstegen.Migrations
                     b.Property<string>("SubTitle")
                         .IsRequired();
 
-                    b.Property<int?>("ThemeId");
+                    b.Property<int>("ThemeId");
 
                     b.Property<string>("Title")
                         .IsRequired();
@@ -302,7 +308,8 @@ namespace Verstegen.Migrations
                 {
                     b.HasOne("Verstegen.Models.Theme", "Theme")
                         .WithMany()
-                        .HasForeignKey("ThemeId");
+                        .HasForeignKey("ThemeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

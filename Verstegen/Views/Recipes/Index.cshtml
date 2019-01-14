@@ -1,5 +1,4 @@
 ﻿@model List<Recipe>
-
 <!-- Header -->
 <header class="masthead recipes-masthead d-flex justify-content-end">
     <div class="container text-center my-auto">
@@ -35,11 +34,13 @@
     <div class="products-content row">
         <div class="col-md-3 products-sidebar">
             <select class="form-control">
-                <option disabled selected value=""> -- Filter --</option>
-                <option value="">Geen</option>
-                <option value="agf">Aardappel, Groente, Fruit</option>
-                <option value="k&ks">Kant-en-klaar, Salades</option>
-                <option value="vkvv">Vlees, Kip, Vis, Vega</option>
+                <option value="geen">Filter</option>
+                @foreach (Category cat in ViewBag.Categories)
+                {
+                    string val = cat.CategoryValue;
+                    string name = cat.CategoryName;
+                    <option value="@val">@name</option>
+                }
             </select>
 
             <h5>Type</h5>
@@ -94,14 +95,16 @@
             <div class="row">
                 @foreach (Recipe r in ViewBag.Recipes)
                 {
-                    <div class="card col-md-3 products offset-1 mb-md-5">
-                        <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">
-                            <img class="card-img-top img-small" src="@r.ImgUrl" alt="@r.ImgUrl">
-                            <div class="card-body">
-                                <h5 class="card-title">@r.Title</h5>
-                                <p class="card-text">@r.Type</p>
-                            </div>
-                        </a>
+                    <div class="col-md-3 products ml-5 mb-md-5">
+                        <div class="card">
+                            <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">
+                                <img class="img-fluid img-small" src="@r.ImgUrl" alt="@r.ImgUrl">
+                                <div class="card-body">
+                                    <h5 class="card-title">@r.Title</h5>
+                                    <p class="card-text">@r.Type</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 }
             </div>

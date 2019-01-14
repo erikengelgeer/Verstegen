@@ -29,6 +29,12 @@ namespace Verstegen.Models
         [Required]
         public string ProductDetails { get; set; }
 
+        [Required]
+        public string ImgUrl { get; set; }
+
+        [Required]
+        public string AltString { get; set; }
+
 
     }
 }
