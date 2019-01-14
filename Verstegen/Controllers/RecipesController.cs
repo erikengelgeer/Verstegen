@@ -33,7 +33,7 @@ namespace Verstegen.Controllers
 
         public IActionResult Recipe(int id)
         {
-            if (id <= 0)
+            if (id < 0)
             {
                 return RedirectToAction("/Recipes");
             }
