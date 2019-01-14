@@ -32,6 +32,9 @@ namespace Verstegen.Models
         [Required]
         public string Decoration { get; set; }
 
+        public int ThemeId { get; set; }
+        public Theme Theme { get; set; }
+
         public ICollection<Ingredient> Ingredients { get; set; }
     }
 

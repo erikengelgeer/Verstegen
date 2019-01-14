@@ -45,31 +45,18 @@ namespace Verstegen.Migrations
                     b.Property<string>("Text")
                         .IsRequired();
 
+                    b.Property<int>("ThemeId");
+
                     b.Property<string>("Title")
                         .IsRequired();
 
+                    b.Property<string>("Type");
+
                     b.HasKey("BlogId");
 
+                    b.HasIndex("ThemeId");
+
                     b.ToTable("Blogs");
-                });
-
-            modelBuilder.Entity("Verstegen.Models.BlogCategory", b =>
-                {
-                    b.Property<int>("BlogCategoryId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("BlogID");
-
-                    b.Property<int?>("CategoryID");
-
-                    b.HasKey("BlogCategoryId");
-
-                    b.HasIndex("BlogID");
-
-                    b.HasIndex("CategoryID");
-
-                    b.ToTable("BlogCategorys");
                 });
 
             modelBuilder.Entity("Verstegen.Models.Category", b =>
@@ -86,7 +73,7 @@ namespace Verstegen.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categorys");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Verstegen.Models.Contact", b =>
@@ -246,6 +233,8 @@ namespace Verstegen.Migrations
                     b.Property<string>("SubTitle")
                         .IsRequired();
 
+                    b.Property<int>("ThemeId");
+
                     b.Property<string>("Title")
                         .IsRequired();
 
@@ -254,18 +243,36 @@ namespace Verstegen.Migrations
 
                     b.HasKey("RecipeId");
 
+                    b.HasIndex("ThemeId");
+
                     b.ToTable("Recipes");
                 });
 
-            modelBuilder.Entity("Verstegen.Models.BlogCategory", b =>
+            modelBuilder.Entity("Verstegen.Models.Theme", b =>
                 {
-                    b.HasOne("Verstegen.Models.Blog", "Blog")
-                        .WithMany()
-                        .HasForeignKey("BlogID");
+                    b.Property<int>("ThemeId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasOne("Verstegen.Models.Category", "Category")
-                        .WithMany("BlogsInProject")
-                        .HasForeignKey("CategoryID");
+                    b.Property<string>("IconUrl");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("ThemeId");
+
+                    b.ToTable("Themes");
+                });
+
+            modelBuilder.Entity("Verstegen.Models.Blog", b =>
+                {
+                    b.HasOne("Verstegen.Models.Theme", "Theme")
+                        .WithMany()
+                        .HasForeignKey("ThemeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Verstegen.Models.Image", b =>
@@ -289,6 +296,14 @@ namespace Verstegen.Migrations
                     b.HasOne("Verstegen.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Verstegen.Models.Recipe", b =>
+                {
+                    b.HasOne("Verstegen.Models.Theme", "Theme")
+                        .WithMany()
+                        .HasForeignKey("ThemeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

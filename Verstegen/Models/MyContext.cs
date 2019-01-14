@@ -14,12 +14,13 @@ namespace Verstegen.Models
         public DbSet<Ingredient> Ingredients { get; set; }
 
         public DbSet<Blog> Blogs { get; set; }
-        public DbSet<BlogCategory> BlogCategorys { get; set; }
-        public DbSet<Category> Categorys { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         public DbSet<Establishment> Establishments { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<Theme> Themes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Verstegen.Models
 {
-    public class Category
+    public class Theme
     {
-        public int CategoryId { get; set; }
+        public int ThemeId { get; set; }
 
         [Required]
-        public string CategoryName { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public string CategoryValue { get; set; }
+        public string ImgUrl { get; set; }
+
+        public string IconUrl { get; set; }
     }
 }
-
