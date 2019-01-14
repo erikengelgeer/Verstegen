@@ -35,16 +35,11 @@ namespace Verstegen.Models
 
         [Required]
         public DateTime Date { get; set; }
+
+        public int ThemeId { get; set; }
+        public Theme Theme { get; set; }
+
+        public string Type { get; set; }
     }
-
-    public class BlogCategory
-    {
-        public int BlogCategoryId { get; set;}
-
-        [ForeignKey("BlogID")]
-        public Blog Blog { get; set; }
-
-        [ForeignKey("CategoryID")]
-        public Category Category { get; set; }
-    }
+    
 }
