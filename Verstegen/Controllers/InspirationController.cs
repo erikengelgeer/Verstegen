@@ -21,9 +21,10 @@ namespace Verstegen.Controllers
             return View();
         }
 
-        public IActionResult Theme()
+        public IActionResult Theme(int id)
         {
-            ViewBag.Recipes = db.Recipes.ToList();
+            ViewBag.Recipes = db.Recipes.Where(r=> r.ThemeId == id).ToList();
+            ViewBag.Theme = db.Themes.Where(r => r.ThemeId == id).SingleOrDefault();
             ViewBag.Blogs = db.Blogs.ToList();
 
             return View();
