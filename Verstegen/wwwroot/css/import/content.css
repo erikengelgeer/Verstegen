@@ -1,11 +1,12 @@
 ﻿/* Content.css */
-*{
-    border: 1px solid red;
-}
 
 /***********************
   Global css
 ************************/
+
+a{
+    color: inherit;
+}
 
 .pt-6,
 .py-6 {
@@ -246,7 +247,7 @@ p.body-text {
     background-color: #e4e4e4;
 }
 
-.inspiration-card-2 .inspiration {
+.inspiration{
     border-radius: 50%;
     position: absolute;
     top: -42px;
@@ -810,6 +811,17 @@ a.carousel-control-next {
 
 .inspirationCardBody{
     background-color: #fff;
+}
+
+.morethemesIcons{
+    top: auto !important;
+    right: auto !important;
+    max-width: 50px !important;
+}
+
+.inspirationCarouselImg{
+    width: 943.5px !important;
+    height: 500px !important;
 }
 
 /***************
