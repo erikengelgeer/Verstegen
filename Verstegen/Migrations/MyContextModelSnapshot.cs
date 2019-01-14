@@ -45,7 +45,7 @@ namespace Verstegen.Migrations
                     b.Property<string>("Text")
                         .IsRequired();
 
-                    b.Property<int>("ThemeId");
+                    b.Property<int?>("ThemeId");
 
                     b.Property<string>("Title")
                         .IsRequired();
@@ -233,7 +233,7 @@ namespace Verstegen.Migrations
                     b.Property<string>("SubTitle")
                         .IsRequired();
 
-                    b.Property<int>("ThemeId");
+                    b.Property<int?>("ThemeId");
 
                     b.Property<string>("Title")
                         .IsRequired();
@@ -271,8 +271,7 @@ namespace Verstegen.Migrations
                 {
                     b.HasOne("Verstegen.Models.Theme", "Theme")
                         .WithMany()
-                        .HasForeignKey("ThemeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ThemeId");
                 });
 
             modelBuilder.Entity("Verstegen.Models.Image", b =>
@@ -303,8 +302,7 @@ namespace Verstegen.Migrations
                 {
                     b.HasOne("Verstegen.Models.Theme", "Theme")
                         .WithMany()
-                        .HasForeignKey("ThemeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ThemeId");
                 });
 #pragma warning restore 612, 618
         }

@@ -36,7 +36,7 @@ namespace Verstegen.Models
         [Required]
         public DateTime Date { get; set; }
 
-        public int ThemeId { get; set; }
+        public int? ThemeId { get; set; }
         public Theme Theme { get; set; }
 
         public string Type { get; set; }
