@@ -55,3 +55,10 @@ for (i = 0; i < locations.length; i++) {
         })(marker, i)
     );
 }
+
+$(function () {
+    $('#cat-filter').change(function () {
+        $('.products').hide();
+        $('#' + $(this).val()).show();
+    });
+});

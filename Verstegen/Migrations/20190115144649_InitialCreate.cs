@@ -147,11 +147,18 @@ namespace Verstegen.Migrations
                     ImgUrl = table.Column<string>(nullable: false),
                     Procedure = table.Column<string>(nullable: false),
                     Decoration = table.Column<string>(nullable: false),
-                    ThemeId = table.Column<int>(nullable: false)
+                    ThemeId = table.Column<int>(nullable: false),
+                    CategoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Recipes", x => x.RecipeId);
+                    table.ForeignKey(
+                        name: "FK_Recipes_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Recipes_Themes_ThemeId",
                         column: x => x.ThemeId,
@@ -222,6 +229,11 @@ namespace Verstegen.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
                 table: "Products",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Recipes_CategoryId",
+                table: "Recipes",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(

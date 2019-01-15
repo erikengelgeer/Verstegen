@@ -58,52 +58,29 @@
     <div class="row">
         <div class="col-sm-6 col-md-6 categories">
             <ul class="category-list">
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Aardappel, Groente, Fruit <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#p">Kant-en-klaar, Salades <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Vlees, Kip, Vis, Vega <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Kaas, Vleeswwaren, Delicatessen <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Zuivel, Eieren <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Bakkerij <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Ontbijtgranen, Broodbeleg, Tussendoor <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
+                @foreach (Category cat in ViewBag.First)
+                {
+                    string val = cat.CategoryValue;
+                    string name = cat.CategoryName;
+
+                    <li class="category-item">
+                        <a class="categories-list-text" href="@Url.Action("Index", "Inspiration", new { page = 1, id = cat.CategoryId })">@name <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
+                    </li>
+                }
             </ul>
         </div>
+
         <div class="col-sm-6 col-md-6 categories">
             <ul class="category-list">
-                <li class="category-item">
-                    <a class="categories-list-text" href="#p">Frisdrank, Sappen, Koffie, Thee <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#p">Bier, Sterke drank, Apperatieven <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Pasta, Rijst, Internationale keuken <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Soepen, Conserven, Sauzen, Smaakmakers <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Snoep, Koek, Chips <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Diepvries <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
-                <li class="category-item">
-                    <a class="categories-list-text" href="#">Bewuste voeding <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
-                </li>
+                @foreach (Category cat in ViewBag.Second)
+                {
+                    string val = cat.CategoryValue;
+                    string name = cat.CategoryName;
+
+                    <li class="category-item">
+                        <a class="categories-list-text" href="@Url.Action("Index", "Inspiration", new { page = 1, id = cat.CategoryId })">@name <img src="~/images/icons/right-arrow.svg" class="icon-arrow-right"></a>
+                    </li>
+                }
             </ul>
         </div>
     </div>

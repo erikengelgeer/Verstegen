@@ -19,7 +19,9 @@ namespace Verstegen.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Themes = db.Themes.ToList();         
+            ViewBag.First = db.Categories.ToList().Take(7);
+            ViewBag.Second = db.Categories.ToList().Skip(7).Take(7);
+            ViewBag.Themes = db.Themes.ToList();
             return View();
         }
         
