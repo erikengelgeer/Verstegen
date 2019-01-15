@@ -1189,7 +1189,7 @@ header.inspirationDetailImg {
         }
 
 /***************
-  Recipes
+  Card Images
 ***************/
 
 .img-small {
@@ -1197,6 +1197,13 @@ header.inspirationDetailImg {
     object-position: center;
     max-height: 154px;
     min-width: 231px;
+}
+
+.img-big {
+    object-fit: cover;
+    object-position: center;
+    max-height: 400px;
+    min-width: 600px;
 }
 
 /***************
