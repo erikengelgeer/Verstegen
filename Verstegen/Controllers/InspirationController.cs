@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PagedList;
 using Verstegen.Models;
+using X.PagedList;
 
 namespace Verstegen.Controllers
 {
