@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Verstegen.Models;
-using PagedList;
+using X.PagedList;
 
 namespace Verstegen.Controllers
 {
