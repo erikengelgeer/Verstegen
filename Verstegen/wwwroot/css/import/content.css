@@ -951,8 +951,13 @@ header.inspirationDetailImg {
         border-radius: 5px;
     }
 
+.img-slider-center {
+    align-items: center;
+    text-align: center;
+    height: 600px;
+    display: flex;
+}
 /* Checkbox stuling from https://codepen.io/raubaca/pen/PZzWRN */
-
 /* Basic styles */
 .products-sidebar input[type="checkbox"] {
     position: absolute;

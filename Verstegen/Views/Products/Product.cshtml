@@ -2,4 +2,279 @@
     ViewData["Title"] = "Products";
 }
 
-<h1>This is the home of product: @ViewData["productname"]</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6" id="slider">
+            <div id="myCarousel" class="carousel slide">
+                <!-- main slider carousel items -->
+                <div class="carousel-inner img-slider-center">
+                    <div class="active item carousel-item" data-slide-number="0">
+                        <img src="@ViewBag.Product.ImgUrl" class="img-fluid" />
+                    </div>
+                    <div class="item carousel-item" data-slide-number="1">
+                        <img src="@ViewBag.Product.ImgUrl" class="img-fluid" />
+                    </div>
+                </div>
+
+                <ul class="carousel-indicators list-inline">
+                    <li class="list-inline-item active">
+                        <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
+                            <img src="@ViewBag.Product.ImgUrl" class="img-fluid" />
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel">
+                            <img src="@ViewBag.Product.ImgUrl" class="img-fluid" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 green-background">
+            <div class="product-details-container">
+                <div class="row">
+                    <ol class="breadcrumb breadcrumb-green-bg">
+                        <li class="breadcrumb-item"><a href="/Home">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/Products">Products</a></li>
+                        <li class="breadcrumb-item">@ViewBag.Product.Type</li>
+                        <li class="breadcrumb-item active" aria-current="page">@ViewBag.Product.Title</li>
+                    </ol>
+                </div>
+                <div class="row">
+                    <h1 class="h2 mt-2">@ViewBag.Product.Title</h1>
+                    <p class="body-text">
+                        @ViewBag.Product.Description
+                    </p>
+                    <div class="product-info-container">
+                        <span class="product-category-label">Category</span><span class="product-category ml-2">@ViewBag.Product.Type</span>
+                        <span class="product-category-label ml-4">Contents</span><span class="product-category ml-2">@ViewBag.Product.Contents</span>
+                        <div class="product-details mt-2">
+                            <h4 class="h4">Product details</h4>
+                            <ul class="product-list">
+                                @{ string[] ProductDetails = ViewBag.Product.ProductDetails.Split('_'); }
+                                @foreach (string d in ProductDetails)
+                                {
+                                    <li class="product-item">
+                                        <p class="categories-list-text">@d</p>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="product-more-info">
+                            <span class="more-info-text">Looking for more specifications?</span>
+                            <button type="button" class="btn btn-lg btn-red float-right">
+                                <span class="fas fa-download"></span> Download specsheet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center mt-5 pt-5">
+        <div class="col-md-5 categories">
+            <h3 class="hww-h4">Contact us</h3>
+            <div class="contact-bubble card contact-card">
+                <div class="contact-us">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="persoon-img" src="@ViewBag.Contact.ImgUrl">
+                        </div>
+                        <div class="col-md-6">
+                            <span class="persoon-naam">@ViewBag.Contact.Name</span>
+                            <span class="persoon-functie">@ViewBag.Contact.Function</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card col-md-5 offset-1 phone-card">
+                            <img src="~/images/icons/smartphone-call .svg" class="phone-icon" />
+                            <span class="phone-number">@ViewBag.Contact.Tel</span>
+                        </div>
+                        <div class="card col-md-5 offset-1 email-card">
+                            <img src="~/images/icons/close-envelope.svg" class="phone-icon" />
+                            <span class="phone-number">@ViewBag.Contact.Email</span>
+                        </div>
+                        <div class="card col-md-5 offset-1 phone-card">
+                            <img src="~/images/icons/chat.svg" class="phone-icon" />
+                            <span class="phone-number">Send a message</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-red btn-lg red-color all-contacts">
+                All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+            </button>
+        </div>
+        <div class="col-md-5 categories">
+            <h3 class="hww-h4">Learn more</h3>
+            <ul id="accordion" class="accordion-list">
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">What sources are used?</strong> <img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseOne" class="collapse accordion-item-body" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"><strong class="accordion-item">How we ensure fair trade </strong> <img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseTwo" class="collapse accordion-item-body" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">How we produce organic </strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseThree" class="collapse accordion-item-body" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">What is custom made </strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseFour" class="collapse accordion-item-body" aria-labelledby="headingFour" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"><strong class="accordion-item">What sources are used? </strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseFive" class="collapse accordion-item-body" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+                <li class="card accordion-card">
+                    <div class="card-header collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
+                        <a href="#"> <strong class="accordion-item">How we ensure fair trade </strong><img src="" class="card-header-img"></a>
+                    </div>
+                    <div id="collapseSix" class="collapse accordion-item-body" aria-labelledby="headingSix" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                            Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                            Sed vel porttitor dolor. Aenean tempus eros.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid green-background py-5 mt-5">
+    <div class="container product-inspiration">
+        <div class="element-title mt-5">
+            <h6 class="h6"> C a t e g o r i e s</h6>
+            <h2 class="h2"> Find the best ideas in your branch </h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 mt-4">
+                <div class="card inspiration-card-3">
+                    <div class="card-img-block">
+                        <img class="img-fluid" src="https://spicysouthernkitchen.com/wp-content/uploads/mongolian-beef.jpg" alt="Card image cap" />
+                    </div>
+                    <div class="card-body">
+                        <h6 class="h6">Meat</h6>
+                        <a href="#" class="card-title">Coq au vin<span class="fas fa-arrow-right"></span></a>
+                        <p class="card-text mt-1">With chicken and Grand-Venerusauce</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 mt-4">
+                <div class="card inspiration-card-3">
+                    <div class="card-img-block">
+                        <img class="img-fluid" src="https://cafedelites.com/wp-content/uploads/2016/06/Crispy-Garlic-Wedges-4.jpg" alt="Card image cap" />
+                    </div>
+                    <div class="card-body">
+                        <h6 class="h6">Potato</h6>
+                        <a href="#" class="card-title">Potatoe dish<span class="fas fa-arrow-right"></span></a>
+                        <p class="card-text mt-1">Potato, cheese, mushroom sauce and gratin sauce</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <button type="button" class="btn btn-white btn-lg mt-4 mb-5">
+                All recipes <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="element-title mt-5 mb-4">
+        <h6 class="h6">P r o d u c t s</h6>
+        <h2 class="h2">Related products</h2>
+    </div>
+    <div class="row text-center">
+        <div class="col-12 col-sm-3">
+            <img class="spotlightImg img-fluid" src="~/images/home/herbs.jpg" alt="Spices & Herbs" />
+            <span class="spotlightTitle">Product</span>
+            <a href="#">
+                <p class="spotlightP text-left">
+                    <strong>Allspice ground</strong><br />
+                    Spices & Herbs
+                </p>
+            </a>
+        </div>
+        <div class="col-12 col-sm-3">
+            <img class="spotlightImg img-fluid" src="~/images/home/ribs.jpg" alt="Ribs" />
+            <span class="spotlightTitle">Product</span>
+            <a href="#">
+                <p class="spotlightP text-left">
+                    <strong>"Bio marinades: honest & sustainable"</strong><br />
+                    Trend
+                </p>
+            </a>
+        </div>
+        <div class="col-12 col-sm-3">
+            <img class="spotlightImg img-fluid" src="~/images/home/sausages.jpg" alt="African Farmer Sausages" />
+            <span class="spotlightTitle">Product</span>
+            <a href="#">
+                <p class="spotlightP text-left">
+                    <strong>African Farmer Sausages</strong><br />
+                    Meat
+                </p>
+            </a>
+        </div>
+        <div class="col-12 col-sm-3">
+            <img class="spotlightImg img-fluid" src="~/images/home/sausages.jpg" alt="African Farmer Sausages" />
+            <span class="spotlightTitle">Product</span>
+            <a href="#">
+                <p class="spotlightP text-left">
+                    <strong>African Farmer Sausages</strong><br />
+                    Meat
+                </p>
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <button type="button" class="btn btn-red btn-lg">
+            Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+        </button>
+    </div>
+</div>

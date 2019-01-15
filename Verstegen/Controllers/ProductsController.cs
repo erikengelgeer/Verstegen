@@ -42,9 +42,10 @@ namespace Verstegen.Controllers
             return View();
         }
 
-        public IActionResult Product(string product)
+        public IActionResult Product(int id)
         {
-            ViewData["productname"] = product;
+            ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
+            ViewBag.Product = db.Products.SingleOrDefault(p => p.ProductId == id);
             return View();
         }
 
