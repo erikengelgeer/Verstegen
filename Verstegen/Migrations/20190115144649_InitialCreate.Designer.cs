@@ -10,7 +10,7 @@ using Verstegen.Models;
 namespace Verstegen.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190114132045_InitialCreate")]
+    [Migration("20190115144649_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -229,6 +229,8 @@ namespace Verstegen.Migrations
                     b.Property<string>("AmountOfPeople")
                         .IsRequired();
 
+                    b.Property<int>("CategoryId");
+
                     b.Property<string>("Decoration")
                         .IsRequired();
 
@@ -250,6 +252,8 @@ namespace Verstegen.Migrations
                         .IsRequired();
 
                     b.HasKey("RecipeId");
+
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("ThemeId");
 
@@ -308,6 +312,11 @@ namespace Verstegen.Migrations
 
             modelBuilder.Entity("Verstegen.Models.Recipe", b =>
                 {
+                    b.HasOne("Verstegen.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("Verstegen.Models.Theme", "Theme")
                         .WithMany()
                         .HasForeignKey("ThemeId")
