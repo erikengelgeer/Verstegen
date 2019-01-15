@@ -88,14 +88,16 @@
         <div class="carousel-inner">
             @foreach (Recipe r in ViewBag.Recipes)
             {
-                <div class="carousel-item @Html.Raw(r.RecipeId == ViewBag.Recipes[0].RecipeId ? "active" : "")">
-                    <img class="spotlightImg inspirationCarouselImg img-fluid" src="~/@r.ImgUrl" alt="Meal image" />
+            <div class="carousel-item @Html.Raw(r.RecipeId == ViewBag.Recipes[0].RecipeId ? "active" : "")">
+                <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">
+                    <img class="spotlightImg inspirationCarouselImg img-fluid img-big" src="~/@r.ImgUrl" alt="Meal image" />
                     <div class="spotlightTitle">Recipe</div>
                     <p class="spotlightP text-left">
                         <strong>@r.Title</strong><br />
                         @r.SubTitle
                     </p>
-                </div>
+                </a>
+            </div>
             }
         </div>
         <a class="carousel-control-prev" data-target="#carousel" role="button" data-slide="prev">
@@ -151,36 +153,29 @@
             <h6 class="h6"> C a t e g o r i e s</h6>
             <h2 class="h2"> Find the best ideas in your branch </h2>
         </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-6 mt-4">
-                <div class="card inspiration-card-3">
-                    <div class="card-img-block">
-                        <img class="img-fluid" src="https://spicysouthernkitchen.com/wp-content/uploads/mongolian-beef.jpg" alt="Card image cap" />
-                    </div>
-                    <div class="card-body">
-                        <h6 class="h6">Meat</h6>
-                        <a href="#" class="card-title">Coq au vin<span class="fas fa-arrow-right"></span></a>
-                        <p class="card-text mt-1">With chicken and Grand-Venerusauce</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 mt-4">
-                <div class="card inspiration-card-3">
-                    <div class="card-img-block">
-                        <img class="img-fluid" src="https://cafedelites.com/wp-content/uploads/2016/06/Crispy-Garlic-Wedges-4.jpg" alt="Card image cap" />
-                    </div>
-                    <div class="card-body">
-                        <h6 class="h6">Potato</h6>
-                        <a href="#" class="card-title">Potatoe dish<span class="fas fa-arrow-right"></span></a>
-                        <p class="card-text mt-1">Potato, cheese, mushroom sauce and gratin sauce</p>
+        <div class="row justify-content-center">
+            @foreach (Recipe r in ViewBag.Recipes)
+            {
+                <div class="col-sm-6 col-md-6 mt-4">
+                    <div class="card inspiration-card-3">
+                        <div class="card-img-block">
+                            <img class="" src="~/@r.ImgUrl" alt="Card image cap" />
+                        </div>
+                        <div class="card-body">
+                            <h6 class="h6">@r.Type</h6>
+                            <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })" class="card-title">@r.Title<span class="fas fa-arrow-right"></span></a>
+                            <p class="card-text mt-1">@r.SubTitle</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
         <div class="row d-flex justify-content-center">
-            <button type="button" class="btn btn-white btn-lg mt-4 mb-5">
-                All recipes <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
-            </button>
+            <a href="/Recipes">
+                <div type="button" class="btn btn-white btn-lg mt-4 mb-5">
+                    All recipes <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
+                </div>
+            </a>
         </div>
     </div>
 </div>
