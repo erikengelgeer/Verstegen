@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+<!-- Header -->
+<header class="masthead how-we-work-masthead d-flex justify-content-end">
+    <div class="container text-center my-auto">
+        <h1 class="mb-1 h1">About</h1>
+        <h2 class="mb-1 h2">Profile & brandvalues</h2>
+    </div>
+</header>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a class="active" href="/about">About</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="row margin-bottom">
+        <div class="col-md-6 mr-5">
+            <img class="img-fluid aboutProfileImg" src="~/images/Stories/hand-seasoning.jpg" alt="Field Worker" />
+        </div>
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="usp-block">
+                <h6 class="h6">Company profile</h6>
+                <h2 class="h2">Creative and surprising innovations</h2>
+                <p class="body-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non dignissim neque.
+                    Praesent tincidunt ullamcorper ultrices. Aenean sagittis mi ut tortor sollicitudin scelerisque.
+                    Sed vel porttitor dolor. Aenean tempus eros.
+                </p>
+                <br />
+                <p class="body-text"><strong>Facts</strong><br /><br />
+                    <span class="fas fa-arrow-right" style="color: #d00935;"></span> Family-owned business since 1886<br /><br />
+                    <span class="fas fa-arrow-right" style="color: #d00935;"></span> We work with local farmers to produce the purest herbs and spices<br /><br />
+                    <span class="fas fa-arrow-right" style="color: #d00935;"></span> We manage every step of the way ourselves, from transport to our in-house grinding and safe food processing
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid green-background">
+    <div class="container">
+        <div class="row margin-bottom py-6">
+            <div class="col-md-6 mr-5">
+                <img class="img-fluid background-image" src="@ViewBag.Blogs[2].ImgUrl" alt="Field Worker" />
+            </div>
+            <div class="col-md-5 d-flex align-items-center">
+                <div class="green-usp-block">
+                    <h6 class="h6">@ViewBag.Blogs[2].Subject</h6>
+                    <h2 class="h2">@ViewBag.Blogs[2].Title</h2>
+                    <p class="body-text">
+                        @ViewBag.Blogs[2].Text
+                    </p>
+                    <button type="button" class="btn btn-white btn-lg">
+                        Read more <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pb-5">
+    <h2 class="h2 my-5 text-center">Brand values</h2>
+    <div id="carousel" class="inspiration-carousel carousel slide carousel-fade" data-ride="#carousel">
+        <div class="carousel-inner">
+            @foreach (Recipe r in ViewBag.Recipes)
+            {
+                <div class="carousel-item @Html.Raw(r.RecipeId == ViewBag.Recipes[0].RecipeId ? "active" : "")">
+                    <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">
+                        <img class="spotlightImg inspirationCarouselImg img-fluid img-big" src="~/@r.ImgUrl" alt="Meal image" />
+                        <div class="spotlightTitle">Recipe</div>
+                        <p class="spotlightP text-left">
+                            <strong>@r.Title</strong><br />
+                            @r.SubTitle
+                        </p>
+                    </a>
+                </div>
+            }
+        </div>
+        <a class="carousel-control-prev" data-target="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" data-target="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<div class="container">
+    <div class="row margin-bottom">
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="usp-block">
+                <h2 class="h2">@ViewBag.Blogs[0].Title</h2>
+                <p class="body-text">
+                    @ViewBag.Blogs[0].Text
+                </p>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <img class="img-fluid background-image" src="@ViewBag.Blogs[0].ImgUrl" alt="Field Worker" />
+        </div>
+    </div>
+</div>

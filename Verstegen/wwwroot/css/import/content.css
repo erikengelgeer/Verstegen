@@ -207,21 +207,20 @@ p.body-text {
     border-color: #ffffff !important;
 }
 
+.btn-white:hover,
+.btn-white:focus,
+.btn-white:active,
+.btn-white.active,
+.open .dropdown-toggle.btn-white {
+    color: #848484;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    background-image: url(../../images/icons/right-arrow-green.svg) !important;
+}
 
-    .btn-white:hover,
-    .btn-white:focus,
-    .btn-white:active,
-    .btn-white.active,
-    .open .dropdown-toggle.btn-white {
-        color: #848484;
-        background-color: #ffffff !important;
-        border-color: #ffffff !important;
-        background-image: url(../../images/icons/right-arrow-green.svg) !important;
-    }
-
-        .btn-white:hover .icon-arrow-right-green {
-            background: url(../../images/icons/right-arrow-green.svg) !important;
-        }
+.btn-white:hover .icon-arrow-right-green {
+    background: url(../../images/icons/right-arrow-green.svg) !important;
+}
 
 /***********************
   Home intro section
@@ -729,9 +728,9 @@ header.inspirationDetailImg {
     transition: background-color 0.25s ease-in-out;
 }
 
-    .ct-btn-scroll:hover {
-        background-color: #CE0B35;
-    }
+.ct-btn-scroll:hover {
+    background-color: #CE0B35;
+}
 
 .inspirationP {
     font-size: 1rem !important;
@@ -1237,8 +1236,13 @@ header.inspirationDetailImg {
   Search Page
 ***************/
 
-
-
+/***************
+  ABOUT PAGE
+***************/
+.aboutProfileImg{
+    width: 670px !important;
+    height: 670px !important;
+}
 
 /***************
   MEDIA QUERIES
