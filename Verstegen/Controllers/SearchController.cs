@@ -32,9 +32,9 @@ namespace Verstegen.Controllers
 
             ViewBag.Search = result;
 
-            var local1 = db.Blogs.Where(b => b.Title.Contains(result) || b.SubTitle.Contains(result) || b.Text.Contains(result) || b.SubTitle.Contains(result)).ToList();
-            var local2 = db.Recipes.Where(r => r.Title.Contains(result) || r.Type.Contains(result)).ToList();
-            var local3 = db.Products.Where(p => p.Title.Contains(result)).ToList();
+            var local1 = db.Blogs.Where(b => b.Title.Contains(result) || b.Subject.Contains(result) || b.SubTitle.Contains(result) || b.Text.Contains(result) || b.Quote.Contains(result) || b.QuoteFrom.Contains(result) || b.SubText.Contains(result) || b.Date.ToString().Contains(result) || b.Type.Contains(result)).ToList();
+            var local2 = db.Recipes.Where(r => r.Title.Contains(result) || r.SubTitle.Contains(result) || r.Type.Contains(result) || r.Type.Contains(result) || r.AmountOfPeople.Contains(result) || r.Procedure.Contains(result) || r.Decoration.Contains(result)).ToList();
+            var local3 = db.Products.Where(p => p.Title.Contains(result) || p.Type.Contains(result) || p.Description.Contains(result) || p.Contents.Contains(result) || p.AltString.Contains(result) || p.ProductDetails.Contains(result)).ToList();
 
             resultList = (from x in local1 select (Object)x).ToList();
             resultList.AddRange((from x in local2 select (Object)x).ToList());
