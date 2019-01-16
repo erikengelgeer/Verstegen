@@ -1243,7 +1243,58 @@ header.inspirationDetailImg {
   Search Page
 ***************/
 
+.search-ig {
+    border-right: 0px;
+    background-color: white;
+}
 
+.search-fc {
+    border-left: 0px;
+}
+
+.search-ic:before {
+    color: #cd0b35;
+}
+
+.search-btn-mg {
+    margin-top: 2.5px;
+}
+
+.search li {
+    height: 120px;
+    margin-bottom: 25px;
+    list-style-type: none;
+    background-color: #ececec;
+}
+
+.search img {
+    height: 120px;
+    width: 160px;
+    float: left;
+    object-fit: cover;
+}
+
+.search div {
+    position: absolute;
+    background: rgba(0,0,0,.5);
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.search h5 {
+    font-size: 1.2rem;
+    padding-top: 25px;
+    margin-left: 200px;
+}
+
+.search P {
+    margin-top: 10px;
+    margin-left: 200px;
+    font-size: 0.7rem;
+    color: #9f9f9f;
+}
 
 
 /***************
