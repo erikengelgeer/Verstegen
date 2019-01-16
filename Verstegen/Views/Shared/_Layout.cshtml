@@ -12,147 +12,152 @@
     <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
 <body>
-<div class="header-position-style">
-    <div class="logo-container">
-        <a href="/Home"><img class="logo-img" src="~/images/footer/logo-verstegen.svg" alt="Verstegen Logo" /></a>
-    </div>
+    <div class="header-position-style">
+        <div class="logo-container">
+            <a href="/Home"><img class="logo-img" src="~/images/footer/logo-verstegen.svg" alt="Verstegen Logo" /></a>
+        </div>
 
-    <!-- Navigation -->
-    <div class="menu-toggle-wrapper rounded">
-        <div class="row">
-            <span class="food-industry">Food industry</span>
-            <a class="menu-toggle rounded" href="#">
-                <span class="fa fa-bars"></span>
-            </a>
-            <div class="changeLang ">
-                <input type="radio" name="l" id="toNl" checked />
-                <label for="toNl"></label>
-                <input type="radio" name="l" id="toEn" />
-                <label for="toEn"></label>
-                <a href="#">
-                    <span class="fas fa-search"></span>
+        <!-- Navigation -->
+        <div class="menu-toggle-wrapper rounded">
+            <div class="row">
+                <span class="food-industry">Food industry</span>
+                <a class="menu-toggle rounded" href="#">
+                    <span class="fa fa-bars"></span>
                 </a>
-            </div>
-        </div>
-    </div>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav mt-5">
-            <li class="sidebar-nav-item mt-5">
-                <a class="js-scroll-trigger" href="/home">Home</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="/howwework">How we work</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="/inspiration">Inspiration</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="/newsandevents">News & events</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="/products">Products</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="/recipes">Recipes</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="/contact">Contact</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="/about">About Verstegen</a>
-            </li>
-        </ul>
-    </nav>
-</div>
-<div class="body-content">
-    @RenderBody()
-</div>
-
-<footer class="footer">
-    <div class="container-fluid main-color">
-        <div class="container">
-            <div class="row pt-5 justify-content-center">
-                <h3>Our certificates</h3>
-            </div>
-            <div class="row py-2 justify-content-center">
-                <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
-                <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
-                <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
-                <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
-                <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
-                <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
-                <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
-                <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
-                <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
-            </div>
-            <div class="row pb-5 justify-content-center">
-                <h5>Click on a certificate to download</h5>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row py-5 px-5 secondary-color">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3">
-                <div>
-                    <h4 class="footer-sub-title">Verstegen Spices & Sauces</h4>
-                    <h5>t.a.v. Business Unit Food Industry</h5>
-                    <h5>Industrieweg 161</h5>
-                    <h5>3044 AS Rotterdam</h5>
-                    <h5>The Netherlands</h5>
+                <div class="changeLang ">
+                    <input type="radio" name="l" id="toNl" checked />
+                    <label for="toNl"></label>
+                    <input type="radio" name="l" id="toEn" />
+                    <label for="toEn"></label>
+                    <a href="#" id="search-icon" onclick="displaySearch()">
+                        <span class="fas fa-search"></span>
+                    </a>
+                    <div style="display: none;" class="mb-3 mr-5" id="search-input">
+                        <form action="@Url.Action("Index", "Search")" method="GET">
+                            <input id="result" name="result" type="text" class="form-control w-100 search-input" placeholder="Search ..." autocomplete="off">
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <h4 class="footer-sub-title">Contact details</h4>
-                <h5>+31 (0)10-2455160</h5>
-                <a href="mailto:foodindustry@verstegen.eu?"><h5>foodindustry@verstegen.eu</h5></a>
-                <h5>Send us a message</h5>
-            </div>
-            <div class="col-sm-3">
-                <h4 class="footer-sub-title">Newsletter</h4>
-                <h5 id="newsletter-text">Stay up to date about Verstegen</h5>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="E-mail address" aria-label="Search">
-                    <button class="btn red-color my-2 my-sm-0" type="submit">Subscribe</button>
-                </form>
+        </div>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav mt-5">
+                <li class="sidebar-nav-item mt-5">
+                    <a class="js-scroll-trigger" href="/home">Home</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="/howwework">How we work</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="/inspiration">Inspiration</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="/newsandevents">News & events</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="/products">Products</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="/recipes">Recipes</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="/contact">Contact</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="/about">About Verstegen</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="body-content">
+        @RenderBody()
+    </div>
+
+    <footer class="footer">
+        <div class="container-fluid main-color">
+            <div class="container">
+                <div class="row pt-5 justify-content-center">
+                    <h3>Our certificates</h3>
+                </div>
+                <div class="row py-2 justify-content-center">
+                    <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
+                    <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
+                    <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
+                    <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
+                    <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
+                    <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
+                    <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
+                    <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
+                    <div class="category"><a href="~/files/Certificate.pdf" download><img src="~/images/footer/icon.png" /></a></div>
+                </div>
+                <div class="row pb-5 justify-content-center">
+                    <h5>Click on a certificate to download</h5>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row py-4 px-4">
-            <div class="col-sm-1">
-                <a href="/Home"><img src="~/images/footer/logo-verstegen.svg" /></a>
-            </div>
-            <div class="col-sm-3 footer-copyright">
-                <p>&#9400;2017 Verstegen Sauces & Spices</p>
-            </div>
-            <div class="col-sm-4">
-                <img src="~/images/footer/enjoygreattaste.png" />
-            </div>
-            <div class="col-sm-4 d-flex justify-content-center">
-                <a href="https://www.youtube.com/channel/UCm3nQjm1SwJ2S_HsCs3E_8w">
-                    <div class="square">
-                        <img src="~/images/footer/youtube-logo.svg" alt="YouTube" />
+        <div class="container-fluid">
+            <div class="row py-5 px-5 secondary-color">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-3">
+                    <div>
+                        <h4 class="footer-sub-title">Verstegen Spices & Sauces</h4>
+                        <h5>t.a.v. Business Unit Food Industry</h5>
+                        <h5>Industrieweg 161</h5>
+                        <h5>3044 AS Rotterdam</h5>
+                        <h5>The Netherlands</h5>
                     </div>
-                </a>
-                <a href="https://www.facebook.com/VerstegenNL">
-                    <div class="square">
-                        <img src="~/images/footer/facebook-logo.svg" alt="Facebook" />
-                    </div>
-                </a>
-                <a href="https://twitter.com/verstegen_nl">
-                    <div class="square">
-                        <img src="~/images/footer/twitter-logo.svg" alt="Twitter" />
-                    </div>
-                </a>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="footer-sub-title">Contact details</h4>
+                    <h5>+31 (0)10-2455160</h5>
+                    <a href="mailto:foodindustry@verstegen.eu?"><h5>foodindustry@verstegen.eu</h5></a>
+                    <h5>Send us a message</h5>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="footer-sub-title">Newsletter</h4>
+                    <h5 id="newsletter-text">Stay up to date about Verstegen</h5>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="E-mail address" aria-label="Search">
+                        <button class="btn red-color my-2 my-sm-0" type="submit">Subscribe</button>
+                    </form>
+                </div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row py-4 px-4">
+                <div class="col-sm-1">
+                    <a href="/Home"><img src="~/images/footer/logo-verstegen.svg" /></a>
+                </div>
+                <div class="col-sm-3 footer-copyright">
+                    <p>&#9400;2017 Verstegen Sauces & Spices</p>
+                </div>
+                <div class="col-sm-4">
+                    <img src="~/images/footer/enjoygreattaste.png" />
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center">
+                    <a href="https://www.youtube.com/channel/UCm3nQjm1SwJ2S_HsCs3E_8w">
+                        <div class="square">
+                            <img src="~/images/footer/youtube-logo.svg" alt="YouTube" />
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/VerstegenNL">
+                        <div class="square">
+                            <img src="~/images/footer/facebook-logo.svg" alt="Facebook" />
+                        </div>
+                    </a>
+                    <a href="https://twitter.com/verstegen_nl">
+                        <div class="square">
+                            <img src="~/images/footer/twitter-logo.svg" alt="Twitter" />
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-    </div>
-</footer>
+        </div>
+    </footer>
 
-<script src="/lib/jquery/dist/jquery.js"></script>
-<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/js/anchor.js"></script>
     <script src="/js/site.js?v=6YWg9zDRz2a6ix9LIONgRvXZXbOGqA9NaplyUOKTg5M"></script>
     <script src="~/js/carousel.js"></script>

@@ -17,9 +17,8 @@
         a("#sidebar-wrapper").removeClass("active"), a(".menu-toggle").removeClass("active"), a(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
     }), a(document).scroll(function () {
         100 < a(this).scrollTop() ? a(".scroll-to-top").fadeIn() : a(".scroll-to-top").fadeOut();
-    })
+        })
 }(jQuery);
-
 
 var locations = [
     ["Den Haag", 52.0704978, 4.3006999, 2],
@@ -56,9 +55,11 @@ for (i = 0; i < locations.length; i++) {
     );
 }
 
-$(function () {
-    $('#cat-filter').change(function () {
-        $('.products').hide();
-        $('#' + $(this).val()).show();
-    });
-});
+function displaySearch() {
+    var x = document.getElementById("search-input");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

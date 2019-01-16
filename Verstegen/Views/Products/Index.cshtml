@@ -144,7 +144,7 @@
                 <div class="col-md-3 offset-1 d-flex justify-content-center">
                     @for (var j = 1; j < ViewBag.AmountPages + 1; j++)
                     {
-                        <div class="page-item @Html.Raw(ViewBag.Page == j ? "active" : "")"><a class="page-link" href="@Url.Action("Index", "Products", new { page = j })">@j</a></div>
+                        <div class="page-item @Html.Raw(ViewBag.Page == j ? "active disabled" : "")"><a class="page-link" href="@Url.Action("Index", "Products", new { page = j })">@j</a></div>
                     }
                 </div>
                 <div class="col-md-3 offset-1 d-flex justify-content-end p-0">

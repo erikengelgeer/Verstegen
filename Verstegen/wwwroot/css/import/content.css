@@ -106,6 +106,17 @@ a{
     background-size: cover;
 }
 
+.down-arrow {
+    width: 75px;
+}
+
+.search-input {
+    right: 100px;
+}
+
+.search-button {
+    width: 38px;
+}
 
 .masthead .container .h2 {
     color: #FFFFFF;
@@ -719,19 +730,14 @@ header.inspirationDetailImg {
 }
 
 .ct-btn-scroll {
-    position: absolute;
+    float: right;
     bottom: 50px;
-    right: 50px;
-    margin: auto;
+    margin-bottom: -50px;
     z-index: 9;
     border-radius: 50%;
     -webkit-transition: background-color 0.25s ease-in-out;
     transition: background-color 0.25s ease-in-out;
 }
-
-    .ct-btn-scroll:hover {
-        background-color: #CE0B35;
-    }
 
 .inspirationP {
     font-size: 1rem !important;

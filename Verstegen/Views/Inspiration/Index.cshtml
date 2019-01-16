@@ -5,7 +5,9 @@
 <!-- Header -->
 <header class="masthead recipes-masthead d-flex justify-content-end">
     <div class="container text-center my-auto">
-        <h1 class="mb-1 h1">@ViewBag.Category.CategoryName</h1>
+        <h1 class="mb-1 h1">
+            @ViewBag.Category.CategoryName
+            </h1>
     </div>
 </header>
 
@@ -50,20 +52,6 @@
                     }
                 }
             </select>
-
-            @*<ul>
-                <li> @ViewBag.Category.CategoryName </li>
-                @foreach (Category c in ViewBag.Categories)
-                {
-                    string val = c.CategoryValue;
-                    string name = c.CategoryName;
-
-                    if (!name.Equals(ViewBag.Category.CategoryName))
-                    {
-                        <li class=""><a href="@Url.Action("Index", "Inspiration", new { page = 1, id = c.CategoryId })"> @name </a></li>
-                    }
-                }
-            </ul>*@
 
             <h5>Type</h5>
             <ul class="product-type-filter">
@@ -172,8 +160,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
