@@ -70,6 +70,7 @@ namespace Verstegen.Controllers
 
         public IActionResult Details()
         {
+            ViewData["Details"] = "Inspiration Details page";
             return View();
         }
     }
