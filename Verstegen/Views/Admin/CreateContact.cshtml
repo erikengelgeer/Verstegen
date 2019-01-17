@@ -1,18 +1,22 @@
 ﻿@model Verstegen.Models.Contact
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create contact";
 }
-<div class="container pt-6">
-    <h2>Edit</h2>
 
+<header class="masthead masthead-admin d-flex justify-content-end">
+    <div class="container text-center my-auto">
+        <h2 class="mb-1 h2">Create Contact</h2>
+    </div>
+</header>
+
+<div class="container mt-md-5">
     <h4>Contact</h4>
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form method="post" enctype="multipart/form-data" asp-controller="Contact" asp-action="Edit">
+            <form method="post" enctype="multipart/form-data" asp-action="CreateContact">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="ContactId" />
                 <div class="form-group">
                     <label asp-for="Name" class="control-label"></label>
                     <input asp-for="Name" class="form-control" />
@@ -50,18 +54,16 @@
                 </div>
                 @*<div class="form-group">
                     <input type="file" name="photo" class="form-control" />
-                    <img src="~/images/contacts/@Model.ImgUrl" alt="Alternate Text" />
                 </div>*@
                 <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                    <input type="hidden" asp-for="ContactId" />
+                    <input type="submit" value="Opslaan" class="btn btn-default" />
                 </div>
             </form>
         </div>
     </div>
 
     <div>
-        <a asp-controller="Contact" asp-action="AllContacts">Back to List</a>
+        <a asp-action="AllContacts">Back to List</a>
     </div>
 
 </div>
