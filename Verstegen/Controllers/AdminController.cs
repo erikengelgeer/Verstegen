@@ -150,13 +150,15 @@ namespace Verstegen.Controllers
         {
             ViewBag.recipes = db.Recipes.ToList();
             ViewBag.Categories = db.Categories.ToList();
-            ViewBag.Themes = db.Categories.ToList();
+            ViewBag.Themes = db.Themes.ToList();
             return View();
         }
 
         [HttpGet]
         public IActionResult CreateRecipe()
         {
+            ViewBag.Themes = db.Themes.ToList();
+            ViewBag.Categories = db.Categories.ToList();
             return View("CreateRecipe", new Recipe());
         }
 
@@ -180,6 +182,11 @@ namespace Verstegen.Controllers
         [HttpGet]
         public IActionResult EditRecipe(int id)
         {
+            Recipe Recipe = db.Recipes.Where(r => r.RecipeId == id).SingleOrDefault();
+            ViewBag.Themes = db.Themes.ToList();
+            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.ActiveCategory = db.Categories.Where(t => t.CategoryId == Recipe.CategoryId).SingleOrDefault();
+            ViewBag.ActiveTheme = db.Themes.Where(t => t.ThemeId == Recipe.ThemeId).SingleOrDefault();
             return View("EditRecipe", db.Recipes.Find(id));
         }
 
