@@ -57,6 +57,11 @@ a{
     color: #4E4E4E;
 }
 
+.masthead-admin {
+    height: 15em;
+    background-color: #536B63;
+}
+
 .masthead-home {
     height: 100vh;
     min-height: 500px;
