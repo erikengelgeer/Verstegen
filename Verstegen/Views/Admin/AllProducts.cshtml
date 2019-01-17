@@ -66,7 +66,7 @@
                         @products.ProductDetails
                     </td>
                     <td>
-                        <img src="@products.ImgUrl" alt="@products.AltString" />
+                        <img class="img-fluid" style="max-width: 220px" src="@products.ImgUrl" alt="@products.AltString" />
                     </td>
                     <td>
                         @products.AltString"
@@ -74,7 +74,7 @@
                     <td>
                         <a class="btn btn-primary btn-block" asp-action="EditProduct" asp-route-id="@products.ProductId"> <i class="far fa-edit"></i> </a>
                         <a class="btn btn-danger btn-block" asp-action="DeleteProduct" asp-route-id="@products.ProductId"
-                           onclick=" return confirm('Item verwijderen?') "><i class="far fa-trash-alt"></i></a>
+                           onclick=" return confirm('Item verwijderen?') " ><i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>
             }

@@ -27,9 +27,15 @@
                     <span asp-validation-for="Type" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="CategoryId" class="control-label"></label>
-                    <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Category.CategoryName"></select>
-                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    <label asp-for="CategoryId" class="control-label">Category</label>
+                    <select class="form-control" name="CategoryId">
+                        @foreach (Category c in ViewBag.Categories)
+                        {
+                            int id = c.CategoryId;
+                            string name = c.CategoryName;
+                            <option value="@id" class="form-control">@name</option>
+                        }
+                    </select>
                 </div>
                 <div class="form-group">
                     <label asp-for="Description" class="control-label"></label>
@@ -47,7 +53,9 @@
                     <span asp-validation-for="ProductDetails" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="file" name="photo" class="form-control" />
+                    <label asp-for="ImgUrl" class="control-label"></label>
+                    <input asp-for="ImgUrl" class="form-control" />
+                    <span asp-validation-for="ImgUrl" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="AltString" class="control-label"></label>

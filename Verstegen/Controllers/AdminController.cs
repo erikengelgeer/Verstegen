@@ -35,6 +35,7 @@ namespace Verstegen.Controllers
         [HttpGet]
         public IActionResult CreateProduct()
         {
+            ViewBag.Categories = db.Categories.ToList();
             return View("CreateProduct", new Product());
         }
 
@@ -46,7 +47,7 @@ namespace Verstegen.Controllers
             db.Products.Add(product);
             db.SaveChanges();
 
-            return RedirectToAction($"AllContacts");
+            return RedirectToAction($"AllProducts");
         }
 
         [HttpGet]
@@ -54,12 +55,15 @@ namespace Verstegen.Controllers
         {
             db.Remove(db.Products.Find(id));
             db.SaveChanges();
-            return RedirectToAction($"AllContacts");
+            return RedirectToAction($"AllProducts");
         }
 
         [HttpGet]
         public IActionResult EditProduct(int id)
         {
+            Product Product = db.Products.Where(r => r.ProductId == id).SingleOrDefault();
+            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.ActiveCategory = db.Categories.Where(t => t.CategoryId == Product.CategoryId).SingleOrDefault();
             return View("EditProduct", db.Products.Find(id));
         }
 
