@@ -10,12 +10,12 @@ namespace Verstegen.Controllers
 {
     public class InspirationController : Controller
     {
-        readonly MyContext db;
+        private readonly MyContext db;
         private int Amount;
 
-        public InspirationController()
+        public InspirationController(MyContext myContext)
         {
-            db = new MyContext();
+            db = myContext;
             Amount = 6;
         }
 

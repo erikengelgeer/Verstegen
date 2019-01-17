@@ -11,11 +11,11 @@ namespace Verstegen.Controllers
 {
     public class AboutController : Controller
     {
-        readonly MyContext db;
+        private readonly MyContext db;
 
-        public AboutController()
+        public AboutController(MyContext myContext)
         {
-            db = new MyContext();
+            db = myContext;
         }
 
         // GET: /<controller>/

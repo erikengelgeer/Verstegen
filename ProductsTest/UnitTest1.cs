@@ -6,7 +6,6 @@ using Verstegen;
 using Verstegen.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Verstegen.Models;
-using Verstegen.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace ProductsTest

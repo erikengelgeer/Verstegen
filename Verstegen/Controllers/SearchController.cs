@@ -10,15 +10,15 @@ namespace Verstegen.Controllers
 {
     public class SearchController : Controller
     {
-        readonly MyContext db;
+        private readonly MyContext db;
 
         List<Object> resultList;
 
         int Amount;
 
-        public SearchController()
+        public SearchController(MyContext myContext)
         {
-            db = new MyContext();
+            db = myContext;
             resultList = new List<object>();
             Amount = 2;
         }
