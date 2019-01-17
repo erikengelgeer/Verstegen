@@ -76,6 +76,7 @@ namespace Verstegen.Controllers
         [HttpPost]
         public IActionResult Create(Product product, IFormFile photo)
         {
+            ViewBag.Catergory = db.Products.ToList();
             //Upload image
             if (photo == null || photo.Length == 0)
             {

@@ -4,15 +4,18 @@
     ViewData["Title"] = "Create";
 }
 
+<header class="masthead masthead-admin d-flex justify-content-end">
+    <div class="container text-center my-auto">
+        <h2 class="mb-1 h2">Create Recipe</h2>
+    </div>
+</header>
 
-<div class="container pt-6">
-    <h2>Create</h2>
-
+<div class="container mt-md-5">
     <h4>Recipe</h4>
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="Create">
+            <form asp-action="CreateRecipe">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Title" class="control-label"></label>
@@ -65,7 +68,7 @@
     </div>
 
     <div>
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="AllRecipes">Back to List</a>
     </div>
 
 </div>

@@ -1,15 +1,85 @@
-﻿
+﻿@model IEnumerable<Verstegen.Models.Product>
+
 @{
     ViewData["Title"] = "AllProducts";
 }
 <header class="masthead masthead-admin d-flex justify-content-end">
     <div class="container text-center my-auto">
-        <h2 class="mb-1 h2">Admin Panel</h2>
+        <h2 class="mb-1 h2">Products</h2>
     </div>
 </header>
 
 <div class="container mt-md-5">
-    <h2>List of all products</h2>
+    <p>
+        <a class="btn btn-success mb-4 float-left" asp-action="Index">Back to Admin</a>
+        <a class="btn btn-success mb-4 float-right" asp-action="CreateProduct">Add new product</a>
+    </p>
+    <table class="table table-light table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contents)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductDetails)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImgUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AltString)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var products in ViewBag.products)
+            {
+                <tr>
+                    <td>
+                        @products.Title
+                    </td>
+                    <td>
+                        @products.Type
+                    </td>
+                    <td>
+                        @products.Category.CategoryName
+                    </td>
+                    <td>
+                        @products.Description
+                    </td>
+                    <td>
+                        @products.Contents
+                    </td>
+                    <td>
+                        @products.ProductDetails
+                    </td>
+                    <td>
+                        <img src="@products.ImgUrl" alt="@products.AltString" />
+                    </td>
+                    <td>
+                        @products.AltString"
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-block" asp-action="EditProduct" asp-route-id="@products.ProductId"> <i class="far fa-edit"></i> </a>
+                        <a class="btn btn-danger btn-block" asp-action="DeleteProduct" asp-route-id="@products.ProductId"
+                           onclick=" return confirm('Item verwijderen?') "><i class="far fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
 
 

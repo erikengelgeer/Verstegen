@@ -1,18 +1,23 @@
 ﻿@model Verstegen.Models.Product
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
+<header class="masthead masthead-admin d-flex justify-content-end">
+    <div class="container text-center my-auto">
+        <h2 class="mb-1 h2">Edit Product</h2>
+        <h3 class="3">@Model.Title</h3>
+    </div>
+</header>
 
-<div class="container pt-6">
-    <h2>Create</h2>
-
+<div class="container mt-md-5">
     <h4>Product</h4>
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="Create">
+            <form asp-action="EditProduct">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ProductId" />
                 <div class="form-group">
                     <label asp-for="Title" class="control-label"></label>
                     <input asp-for="Title" class="form-control" />
@@ -44,7 +49,9 @@
                     <span asp-validation-for="ProductDetails" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="file" name="photo" class="form-control" />
+                    <label asp-for="ImgUrl" class="control-label"></label>
+                    <input asp-for="ImgUrl" class="form-control" />
+                    <span asp-validation-for="ImgUrl" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="AltString" class="control-label"></label>
@@ -52,7 +59,7 @@
                     <span asp-validation-for="AltString" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    <input type="submit" value="Save" class="btn btn-default" />
                 </div>
             </form>
         </div>
