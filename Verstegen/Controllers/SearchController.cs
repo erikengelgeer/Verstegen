@@ -20,7 +20,7 @@ namespace Verstegen.Controllers
         {
             db = myContext;
             resultList = new List<object>();
-            Amount = 2;
+            Amount = 6;
         }
 
         public IActionResult Index(string result, int page)
