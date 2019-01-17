@@ -153,8 +153,6 @@ namespace Verstegen.Controllers
             ViewBag.Themes = db.Categories.ToList();
             return View();
         }
-<<<<<<< HEAD
-=======
 
         [HttpGet]
         public IActionResult CreateRecipe()
@@ -193,6 +191,5 @@ namespace Verstegen.Controllers
 
             return RedirectToAction($"AllRecipes");
         }
->>>>>>> 80394ee2a7a25bd5a29292c786252aedc5cdfafb
     }
 }
