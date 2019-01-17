@@ -11,11 +11,11 @@ namespace Verstegen.Controllers
 {
     public class HowWeWorkController : Controller
     {
-        readonly MyContext db;
+        private readonly MyContext db;
 
-        public HowWeWorkController()
+        public HowWeWorkController(MyContext myContext)
         {
-            db = new MyContext();
+            db = myContext;
         }
 
         public IActionResult Index()

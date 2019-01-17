@@ -10,13 +10,13 @@ namespace Verstegen.Controllers
 {
     public class RecipesController : Controller
     {
-        readonly MyContext db;
+        private readonly MyContext db;
 
         private int Amount;
 
-        public RecipesController()
+        public RecipesController(MyContext myContext)
         {
-            db = new MyContext();
+            db = myContext;
             Amount = 6;
         }
 

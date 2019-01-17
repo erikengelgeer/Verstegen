@@ -36,6 +36,9 @@ namespace Verstegen
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddDbContext<MyContext>(options => options.UseSqlServer(@"Data Source=srv-h-se-wdpr-a.database.windows.net;Initial Catalog=grp2;User ID=grp2;Password=2osajposlwA;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

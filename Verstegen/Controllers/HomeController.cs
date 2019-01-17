@@ -10,11 +10,11 @@ namespace Verstegen.Controllers
 {
     public class HomeController : Controller
     {
-        readonly MyContext db;
+        private readonly MyContext db;
 
-        public HomeController()
+        public HomeController(MyContext myContext)
         {
-            db = new MyContext();
+            db = myContext;
         }
 
         public IActionResult Index()
