@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Verstegen.Models.Recipe>
+
+@{
+    ViewData["Title"] = "AllProducts";
+}
+
+<div class="container">
+    <p class="pt-6">
+        <a class="btn btn-success" asp-action="Create">Add new recipe</a>
+    </p>
+    <table class="table table-light table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AmountOfPeople)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImgUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Procedure)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Decoration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Theme)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recipe in ViewBag.recipes)
+            {
+            <tr>
+                <td>
+                    @recipe.Title
+                </td>
+                <td>
+                    @recipe.SubTitle
+                </td>
+                <td>
+                    @recipe.Type
+                </td>
+                <td>
+                    @recipe.AmountOfPeople
+                </td>
+                <td>
+                    <img src="@recipe.ImgUrl" alt="" />
+                </td>
+                <td>
+                    @recipe.Procedure
+                </td>
+                <td>
+                    @recipe.Decoration
+                </td>
+                <td>
+                    @recipe.Theme
+                </td>
+                <td>
+                    @recipe.Category.CategoryName
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-block" asp-action="Edit" asp-route-id="@recipe.RecipeId"> <i class="far fa-edit"></i> </a>
+                    <a class="btn btn-danger btn-block" asp-action="Delete" asp-route-id="@recipe.RecipeId"
+                       onclick=" return confirm('Item verwijderen?') "><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

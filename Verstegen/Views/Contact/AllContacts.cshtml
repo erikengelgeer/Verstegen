@@ -1,18 +1,12 @@
 ﻿@model IEnumerable<Verstegen.Models.Contact>
+
 @{
     ViewData["Title"] = "AllContacts";
 }
 
-<header class="masthead masthead-admin d-flex justify-content-end">
-    <div class="container text-center my-auto">
-        <h2 class="mb-1 h2">Contacts</h2>
-    </div>
-</header>
-
-<div class="container mt-md-5">
-    <p>
-        <a class="btn btn-success mb-4 float-left" asp-action="Index">Back to Admin</a>
-        <a class="btn btn-success mb-4 float-right" asp-action="CreateContact">Add new contact</a>
+<div class="container">
+    <p class="pt-6">
+        <a class="btn btn-success" asp-controller="Contact" asp-action="Create">Add Contact</a>
     </p>
     <table class="table table-light table-bordered table-striped">
         <thead>
@@ -67,8 +61,8 @@
                         <img class="img-thumbnail img-small" src="@contacts.ImgUrl" alt="Alternate Text" />
                     </td>
                     <td>
-                        <a class="btn btn-primary btn-block" asp-controller="Admin" asp-action="EditContact" asp-route-id="@contacts.ContactId"><i class="far fa-edit"></i></a>
-                        <a class="btn btn-danger btn-block" asp-controller="Admin" asp-action="DeleteContact" asp-route-id="@contacts.ContactId"
+                        <a class="btn btn-primary btn-block" asp-controller="Contact" asp-action="Edit" asp-route-id="@contacts.ContactId"><i class="far fa-edit"></i></a> 
+                        <a class="btn btn-danger btn-block" asp-controller="Contact" asp-action="Delete" asp-route-id="@contacts.ContactId" 
                            onclick=" return confirm('Item verwijderen?') "><i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>
@@ -76,4 +70,3 @@
         </tbody>
     </table>
 </div>
-
