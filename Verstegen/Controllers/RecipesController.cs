@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Verstegen.Models;
 using X.PagedList;
@@ -56,6 +58,82 @@ namespace Verstegen.Controllers
                 ViewBag.Recipe = db.Recipes.SingleOrDefault(r => r.RecipeId == id);
                 return View();
             }
+        }
+
+        //Crud
+
+        public IActionResult AllRecipes()
+        {
+            ViewBag.recipes = db.Recipes.ToList();
+            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.Themes = db.Categories.ToList();
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View("Create", new Recipe());
+        }
+
+        [HttpPost]
+        public IActionResult Create(Recipe recipe, IFormFile photo)
+        {
+            //Upload image
+            if (photo == null || photo.Length == 0)
+            {
+                recipe.ImgUrl = "default-avatar.png";
+            }
+            else
+            {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/recipes",
+                    photo.FileName);
+                var stream = new FileStream(path, FileMode.Create);
+
+                recipe.ImgUrl = photo.FileName;
+            }
+
+            db.Recipes.Add(recipe);
+            db.SaveChanges();
+
+            return RedirectToAction($"AllRecipes");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            db.Remove(db.Recipes.Find(id));
+            db.SaveChanges();
+            return RedirectToAction($"AllRecipes");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            return View("Edit", db.Recipes.Find(id));
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, Recipe recipe, IFormFile photo)
+        {
+            //Upload image
+            if (photo == null || photo.Length == 0)
+            {
+                recipe.ImgUrl = db.Recipes.Find(recipe.RecipeId).ImgUrl;
+            }
+            else
+            {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/recipes",
+                    photo.FileName);
+                var stream = new FileStream(path, FileMode.Create);
+
+                recipe.ImgUrl = photo.FileName;
+            }
+
+            db.Update(recipe);
+            db.SaveChanges();
+
+            return RedirectToAction($"AllRecipes");
         }
     }
 }
