@@ -82,18 +82,18 @@ namespace Verstegen.Controllers
         public IActionResult Edit(int id, Contact contact, IFormFile photo)
         {
             //Upload image
-            if (photo == null || photo.Length == 0)
-            {
-                contact.ImgUrl = db.Contacts.Find(contact.ContactId).ImgUrl;
-            }
-            else
-            {
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/contacts",
-                    photo.FileName);
-                var stream = new FileStream(path, FileMode.Create);
+            //if (photo == null || photo.Length == 0)
+            //{
+            //    contact.ImgUrl = db.Contacts.Find(contact.ContactId).ImgUrl;
+            //}
+            //else
+            //{
+            //    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/contacts",
+            //        photo.FileName);
+            //    var stream = new FileStream(path, FileMode.Create);
 
-                contact.ImgUrl = photo.FileName;
-            }
+            //    contact.ImgUrl = photo.FileName;
+            //}
 
             db.Update(contact);
             db.SaveChanges();
