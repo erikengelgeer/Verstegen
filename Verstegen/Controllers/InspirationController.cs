@@ -10,12 +10,12 @@ namespace Verstegen.Controllers
 {
     public class InspirationController : Controller
     {
-        readonly MyContext db;
+        private readonly MyContext db;
         private int Amount;
 
-        public InspirationController()
+        public InspirationController(MyContext myContext)
         {
-            db = new MyContext();
+            db = myContext;
             Amount = 6;
         }
 
@@ -37,7 +37,6 @@ namespace Verstegen.Controllers
             else
             {
                 ViewBag.Welcome = "Welcome bij inspiration";
-                ViewBag.Category = db.Categories.ToList();
                 ViewBag.Recipes = db.Recipes.ToList().ToPagedList(page, Amount);
                 ViewBag.Products = db.Products.ToList().ToPagedList(page, Amount);
                 ViewBag.AmountPages = (int)Math.Ceiling(((Double)db.Recipes.Distinct().ToList().Count() + db.Products.Distinct().ToList().Count()) / Amount);
@@ -50,10 +49,8 @@ namespace Verstegen.Controllers
                 TypesWithCount.Add(s + " (" + db.Recipes.Where(r => r.Type == s).Count() + ")");
             }
 
-
             List<Product> products = db.Products.Where(p => p.CategoryId == id).ToList();
-
-            
+                        
             ViewBag.Types = TypesWithCount;
             ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
             ViewBag.Categories = db.Categories.ToList();
@@ -73,6 +70,7 @@ namespace Verstegen.Controllers
 
         public IActionResult Details()
         {
+            ViewData["Details"] = "Inspiration Details page";
             return View();
         }
     }

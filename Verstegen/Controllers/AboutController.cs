@@ -1,27 +1,28 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Verstegen.Models;
 
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace Verstegen.Controllers
 {
-    public class HowWeWorkController : Controller
+    public class AboutController : Controller
     {
         private readonly MyContext db;
 
-        public HowWeWorkController(MyContext myContext)
+        public AboutController(MyContext myContext)
         {
             db = myContext;
         }
 
+        // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.Blogs = db.Blogs.Where(b=> b.Type == "hww").ToList();
-            ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();   
+            ViewBag.Blogs = db.Blogs.ToList();
+            ViewBag.Recipes = db.Recipes.ToList();
             return View();
         }
     }

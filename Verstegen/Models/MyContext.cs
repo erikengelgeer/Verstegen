@@ -8,6 +8,10 @@ namespace Verstegen.Models
 {
     public class MyContext : DbContext
     {
+        public MyContext(DbContextOptions<MyContext> options) : base(options)
+        {
+        }
+
         public DbSet<Contact> Contacts { get; set; }
 
         public DbSet<Recipe> Recipes { get; set; }
@@ -21,11 +25,5 @@ namespace Verstegen.Models
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Theme> Themes { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Data Source=srv-h-se-wdpr-a.database.windows.net;Initial Catalog=grp2;User ID=grp2;Password=2osajposlwA;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        }
-
     }
 }

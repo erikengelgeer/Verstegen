@@ -3,13 +3,16 @@
 }
 
 <!-- Header -->
-<header class="masthead d-flex justify-content-end">
-    <div class="container text-center my-auto">
-        <h1 class="mb-1 h1">Enjoy great taste!</h1>
-    </div>
-</header>
 
-<div class="container-fluid">
+<header class="masthead-home">
+    <div class="col-12 text-center my-auto">
+        <h1 class="h1 mb-5" id="detailH1">Enjoy great taste!</h1>
+    </div>
+    <a class="ct-btn-scroll ct-js-btn-scroll mr-5 mt-5" href="#content">
+        <img alt="Arrow Down" class="down-arrow" src="~/images/icons/down-arrow-white.svg">
+    </a>
+</header>
+<div class="container-fluid" id="content">
     <div class="row mt-5">
         <div class="col-sm-12 col-md-9 d-flex justify-content-end">
             <div class="home-inner-container d-flex align-items-center">
@@ -38,7 +41,7 @@
             <div class="col-6 col-sm-6 col-md-4 mt-4">
                 <div class="card inspiration-card-2">
                     <div class="card-img-block">
-                        <img class="img-fluid" src="@t.ImgUrl" alt="Card image cap" />
+                        <img class="img-fluid" src="~/images/home/@t.ImgUrl" alt="Card image cap" />
                     </div>
                     <div class="card-body">
                         <img src="@t.IconUrl" alt="inspiration-image" class="inspiration d-none d-md-block" />
