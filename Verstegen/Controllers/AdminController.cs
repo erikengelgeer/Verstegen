@@ -12,5 +12,20 @@ namespace Verstegen.Controllers
         {
             return View();
         }
+
+        public IActionResult AllProducts()
+        {
+            return View();
+        }
+
+        public IActionResult AllContacts()
+        {
+            return View();
+        }
+
+        public IActionResult AllRecipes()
+        {
+            return View();
+        }
     }
 }
