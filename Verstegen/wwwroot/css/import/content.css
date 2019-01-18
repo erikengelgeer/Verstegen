@@ -1305,9 +1305,17 @@ header.inspirationDetailImg {
 }
 
 /***************
+  NEWS & EVENTS
+***************/
+
+.news-p .news-h5 {
+    font-size: 1.2rem;
+    color: #9f9f9f;
+}
+/***************
   ABOUT PAGE
 ***************/
-.aboutProfileImg{
+.aboutProfileImg {
     width: 670px !important;
     height: 670px !important;
 }
