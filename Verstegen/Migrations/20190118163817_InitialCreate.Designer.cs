@@ -10,7 +10,7 @@ using Verstegen.Models;
 namespace Verstegen.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190115144649_InitialCreate")]
+    [Migration("20190118163817_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -151,11 +151,7 @@ namespace Verstegen.Migrations
 
                     b.Property<string>("ImgUrl");
 
-                    b.Property<int>("ProductId");
-
                     b.HasKey("ImageId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Images");
                 });
@@ -218,6 +214,19 @@ namespace Verstegen.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Verstegen.Models.ProductImage", b =>
+                {
+                    b.Property<int>("ProductId");
+
+                    b.Property<int>("ImageId");
+
+                    b.HasKey("ProductId", "ImageId");
+
+                    b.HasIndex("ImageId");
+
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("Verstegen.Models.Recipe", b =>
@@ -286,14 +295,6 @@ namespace Verstegen.Migrations
                         .HasForeignKey("ThemeId");
                 });
 
-            modelBuilder.Entity("Verstegen.Models.Image", b =>
-                {
-                    b.HasOne("Verstegen.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
             modelBuilder.Entity("Verstegen.Models.Ingredient", b =>
                 {
                     b.HasOne("Verstegen.Models.Recipe", "Recipe")
@@ -307,6 +308,19 @@ namespace Verstegen.Migrations
                     b.HasOne("Verstegen.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Verstegen.Models.ProductImage", b =>
+                {
+                    b.HasOne("Verstegen.Models.Image", "Image")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Verstegen.Models.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
