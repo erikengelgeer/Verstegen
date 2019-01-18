@@ -89,7 +89,8 @@ namespace ProductsTest
             Assert.Single(TestDb.Recipes.Where(r => r.Type == "Rice").ToList());
         }
 
-        //Deze test controlleert of de juiste ojbject worden opgehaald, of de juiste page wordt opgehaald,  en juiste view
+        //Deze test controlleert of de juiste page wordt opgehaald, of de totaal juiste object wordt,
+        //of de juiste ojbject worden opgehaald, opgehaalden juiste view
         [Fact]
         public void TestSearch1()
         {
