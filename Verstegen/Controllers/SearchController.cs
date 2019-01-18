@@ -40,10 +40,13 @@ namespace Verstegen.Controllers
             resultList.AddRange((from x in local2 select (Object)x).ToList());
             resultList.AddRange((from x in local3 select (Object)x).ToList());
 
+            ViewBag.TestList = resultList;
+
             ViewBag.resultList = resultList.ToPagedList(page, Amount);
             ViewBag.AmountPages = (int)Math.Ceiling((Double)resultList.Count() / Amount);
             ViewBag.Page = page;
             ViewBag.Result = result;
+
             return View();
         }
     }
