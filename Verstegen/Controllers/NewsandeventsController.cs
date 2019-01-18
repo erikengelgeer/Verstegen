@@ -22,5 +22,10 @@ namespace Verstegen.Controllers
             //ViewBag.News = db.Blogs.Where(b => b.Type == "news" || b.Type == "story").ToList();
             return View();
         }
+
+        public IActionResult Details()
+        {
+            return View();
+        }
     }
 }
