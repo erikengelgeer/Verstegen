@@ -51,16 +51,18 @@
             <div class="row text-center">
                 @foreach (Blog p in ViewBag.News)
                 {
-                    <div class="col-12 col-sm-3">
-                        <img class="spotlightImg img-fluid" src="@p.ImgUrl" alt="@p.Type" />
-                        <div class="spotlightTitle">@p.Type</div>
-                        <a href="#">
-                            <p class="spotlightP text-left">
-                                <strong>@p.Title</strong><br />
-                                @p.Date.ToShortDateString()
-                            </p>
-                        </a>
-                    </div>
+                    <a href="@Url.Action("details", "newsandevents", new { id = p.BlogId })">
+                        <div class="col-12 col-sm-3">
+                            <img class="spotlightImg img-fluid" src="@p.ImgUrl" alt="@p.Type" />
+                            <div class="spotlightTitle">@p.Type</div>
+                            <a href="#">
+                                <p class="spotlightP text-left">
+                                    <strong>@p.Title</strong><br />
+                                    @p.Date.ToShortDateString()
+                                </p>
+                            </a>
+                        </div>
+                    </a>
                 }
             </div>
             <div class="row pagination">
