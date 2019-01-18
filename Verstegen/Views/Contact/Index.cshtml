@@ -5,7 +5,7 @@
 }
 
 <!-- Header -->
-<header class="masthead how-we-work-masthead d-flex justify-content-end">
+<header class="masthead contact-masthead d-flex justify-content-end">
     <div class="container text-center my-auto">
         <h1 class="mb-1 h1">Contact</h1>
         <h2 class="mb-1 h2">We staan voor u klaar!</h2>
@@ -143,7 +143,8 @@
                             </div>
                             <div class="col-12 contacts-body_ca">
                                 <img class="contacts-body_icon" src="~/images/icons/close-envelope.svg" />
-                                <span>@Html.DisplayFor(modelItem => contacts.Email)</span>
+                                @{string mailto = "mailto:" + contacts.Email;}
+                                <a href="@mailto"><span>@Html.DisplayFor(modelItem => contacts.Email)</span></a>
                             </div>
                             <div class="col-12 contacts-body_ca">
                                 <img class="contacts-body_icon" src="~/images/icons/chat.svg" />
