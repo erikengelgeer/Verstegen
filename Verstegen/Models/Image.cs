@@ -14,7 +14,6 @@ namespace Verstegen.Models
 
         public string AltString { get; set; }
 
-        public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public IList<ProductImage> ProductImages { get; set; }
     }
 }

@@ -22,6 +22,8 @@
         </div>
     </div>
 
+    
+
     <div class="row margin-bottom">
         <div class="col-md-6 mr-5">
             <img class="img-fluid background-image" src="@ViewBag.Blogs[0].ImgUrl" alt="Field Worker" />
@@ -31,11 +33,14 @@
                 <h6 class="h6">@ViewBag.Blogs[0].Subject</h6>
                 <h2 class="h2">@ViewBag.Blogs[0].Title</h2>
                 <p class="body-text">
-                    @ViewBag.Blogs[0].Text
+                    @ViewBag.Blogs[0].Text.Substring(0, 180)
+                    ...
                 </p>
-                <button type="button" class="btn btn-red btn-lg">
-                    Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                </button>
+                <a href="@Url.Action("Details", "Inspiration", new { id = ViewBag.Blogs[0].BlogId })" class="btn btn-red btn-lg">
+                    <div class="button-text-white">
+                        Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -44,11 +49,14 @@
             <div class="usp-block">
                 <h2 class="h2">@ViewBag.Blogs[1].Title</h2>
                 <p class="body-text">
-                    @ViewBag.Blogs[1].Text
+                    @ViewBag.Blogs[1].Text.Substring(0, 180)
+                    ...
                 </p>
-                <button type="button" class="btn btn-red btn-lg">
-                    Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                </button>
+                <a href="@Url.Action("Details", "Inspiration", new { id = ViewBag.Blogs[1].BlogId })" class="btn btn-red btn-lg">
+                    <div class="button-text-white">
+                        Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                    </div>
+                </a>
             </div>
         </div>
         <div class="col-md-1"></div>
@@ -68,11 +76,14 @@
                     <h6 class="h6">@ViewBag.Blogs[2].Subject</h6>
                     <h2 class="h2">@ViewBag.Blogs[2].Title</h2>
                     <p class="body-text">
-                        @ViewBag.Blogs[2].Text
+                        @ViewBag.Blogs[2].Text.Substring(0, 180)
+                        ...
                     </p>
-                    <button type="button" class="btn btn-white btn-lg">
-                        Read more <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
-                    </button>
+                    <a href="@Url.Action("Details", "Inspiration", new { id = ViewBag.Blogs[2].BlogId })" class="btn btn-white btn-lg">
+                        <div class="">
+                            Read more <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -84,11 +95,14 @@
             <div class="usp-block">
                 <h2 class="h2">@ViewBag.Blogs[3].Title</h2>
                 <p class="body-text">
-                    @ViewBag.Blogs[3].Text
+                    @ViewBag.Blogs[3].Text.Substring(0, 180)
+                    ...
                 </p>
-                <button type="button" class="btn btn-red btn-lg">
-                    Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                </button>
+                <a href="@Url.Action("Details", "Inspiration", new { id = ViewBag.Blogs[3].BlogId })" class="btn btn-red btn-lg">
+                    <div class="button-text-white">
+                        Read more <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                    </div>
+                </a>
             </div>
         </div>
         <div class="col-md-1"></div>
@@ -133,9 +147,11 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-red btn-lg red-color all-contacts">
-                    All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                </button>
+                <a href="/Contact" class="btn btn-red btn-lg ml-md-5">
+                    <div class="button-text-white">
+                        All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                    </div>
+                </a>
             </div>
             <div class="col-md-5 categories">
                 <h3 class="hww-h4">More about how we work</h3>

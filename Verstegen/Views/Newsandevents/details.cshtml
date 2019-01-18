@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "News & Events Detail";
+}
+
+<header class="masthead NewsDetailImg">
+    <div class="col-12 text-left">
+        <h1 class="h1" id="detailH1">@ViewBag.N.Title</h1>
+    </div>
+    <a class="ct-btn-scroll ct-js-btn-scroll mr-5 mt-5" href="#content">
+        <img alt="Arrow Down" class="down-arrow" src="~/images/icons/down-arrow-white.svg">
+    </a>
+</header>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Newsandevents">Inspiration</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewBag.N.Title</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="content">
+    <div class="row mt-5">
+        <div class="col-sm-12 col-md-9 d-flex justify-content-end">
+            <div class="home-inner-container d-flex align-items-center">
+                <p class="body-text">
+                    @ViewBag.N.Quote
+               </p>
+            </div>
+        </div>
+        <div class="col-md-3 d-none d-md-block">
+            <img class="float-right img-fluid" src="~/images/home/rozemarijn.jpg" alt="rozemarijn" />
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col-8 offset-2">
+        <div class="row">
+            <p class="body-text inspirationP">
+                <span style="color: #CD0B35";><strong>@ViewBag.N.Date.ToShortDateString()</strong></span>
+                @ViewBag.N.Text
+            </p>
+        </div>
+        <div class="row my-5">
+            <div class="card w-100">
+                <img class="card-img-top" src="~/@ViewBag.N.ImgUrl" alt="Plant image">
+                <div class="card-body">
+                    <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p class="h5"><strong>@ViewBag.N.SubTitle</strong></p>
+            <p class="body-text inspirationP">
+               @ViewBag.N.SubText
+            </p>
+            <br />
+            <p class="body-text">
+                <span class="fas fa-arrow-right" style="color: #d00935;"></span> Family-owned business since 1886<br /><br />
+                <span class="fas fa-arrow-right" style="color: #d00935;"></span> We work with local farmers to produce the purest herbs and spices<br /><br />
+                <span class="fas fa-arrow-right" style="color: #d00935;"></span> We manage every step of the way ourselves, from transport to our in-house grinding and safe food processing
+            </p>
+        </div>
+
+        <div class="row d-flex align-items-center">
+            <div class="body-text m-3">Share this</div>
+            <a href="https://www.youtube.com/channel/UCm3nQjm1SwJ2S_HsCs3E_8w">
+                <div class="square">
+                    <img src="~/images/footer/youtube-logo.svg" alt="YouTube" />
+                </div>
+            </a>
+            <a href="https://www.facebook.com/VerstegenNL">
+                <div class="square">
+                    <img src="~/images/footer/facebook-logo.svg" alt="Facebook" />
+                </div>
+            </a>
+            <a href="https://twitter.com/verstegen_nl">
+                <div class="square">
+                    <img src="~/images/footer/twitter-logo.svg" alt="Twitter" />
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="element-title mt-5">
+        <h6 class="h6">R e l a t e d n e w s </h6>
+        <h2 class="h2">We have more!</h2>
+    </div>
+    <div class="row text-center">
+        <div class="col-12 col-sm-3">
+            <img class="spotlightImg img-fluid" src="~/images/Stories/classic-car.jpg" alt="Spices & Herbs" />
+            <div class="spotlightTitle">News</div>
+            <a href="#">
+                <p class="spotlightP text-left">
+                    <strong>Verstegen throwbacks: our old cars</strong><br />
+                    19/01/2019
+                </p>
+            </a>
+        </div>
+        <div class="col-12 col-sm-3">
+            <img class="spotlightImg img-fluid" src="~/images/Stories/classic-car.jpg" alt="Ribs" />
+            <div class="spotlightTitle">News</div>
+            <a href="#">
+                <p class="spotlightP text-left">
+                    <strong>Verstegen throwbacks: our old cars</strong><br />
+                    19/01/2019
+                </p>
+            </a>
+        </div>
+        <div class="col-12 col-sm-3">
+            <img class="spotlightImg img-fluid" src="~/images/Stories/classic-car.jpg" alt="African Farmer Sausages" />
+            <div class="spotlightTitle">News</div>
+            <a href="#">
+                <p class="spotlightP text-left">
+                    <strong>Verstegen throwbacks: our old cars</strong><br />
+                    19/01/2019
+                </p>
+            </a>
+        </div>
+        <div class="col-12 col-sm-3">
+            <img class="spotlightImg img-fluid" src="~/images/Stories/classic-car.jpg" alt="African Farmer Sausages" />
+            <div class="spotlightTitle">News</div>
+            <a href="#">
+                <p class="spotlightP text-left">
+                    <strong>Verstegen throwbacks: our old cars</strong><br />
+                    19/01/2019
+                </p>
+            </a>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center mt-md-4">
+        <a href="/Newsandevents" class="btn btn-red btn-lg">
+            <div class="button-text-white">
+                All news <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+            </div>
+        </a>
+    </div>
+</div>

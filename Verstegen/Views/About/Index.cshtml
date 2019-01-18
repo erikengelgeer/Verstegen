@@ -3,7 +3,7 @@
 }
 
 <!-- Header -->
-<header class="masthead how-we-work-masthead d-flex justify-content-end">
+<header class="masthead about-masthead d-flex justify-content-end">
     <div class="container text-center my-auto">
         <h1 class="mb-1 h1">About</h1>
         <h2 class="mb-1 h2">Profile & brandvalues</h2>
@@ -52,11 +52,14 @@
                     <h6 class="h6">@ViewBag.Blogs[2].Subject</h6>
                     <h2 class="h2">@ViewBag.Blogs[2].Title</h2>
                     <p class="body-text">
-                        @ViewBag.Blogs[2].Text
+                        @ViewBag.Blogs[2].Text.Substring(0, 180)
+                        ...
                     </p>
-                    <button type="button" class="btn btn-white btn-lg">
-                        Read more <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
-                    </button>
+                    <a href="@Url.Action("Details", "Inspiration", new { id = ViewBag.Blogs[2].BlogId })" class="btn btn-white btn-lg">
+                        <div class="">
+                            Read more <img src="~/images/icons/right-arrow-red.svg" class="icon-arrow-right-green">
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

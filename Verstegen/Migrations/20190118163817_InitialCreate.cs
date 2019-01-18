@@ -64,6 +64,20 @@ namespace Verstegen.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    ImageId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ImgUrl = table.Column<string>(nullable: true),
+                    AltString = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.ImageId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Themes",
                 columns: table => new
                 {
@@ -168,20 +182,23 @@ namespace Verstegen.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Images",
+                name: "ProductImages",
                 columns: table => new
                 {
+                    ProductId = table.Column<int>(nullable: false),
                     ImageId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ImgUrl = table.Column<string>(nullable: true),
-                    AltString = table.Column<string>(nullable: true),
-                    ProductId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Images", x => x.ImageId);
+                    table.PrimaryKey("PK_ProductImages", x => new { x.ProductId, x.ImageId });
                     table.ForeignKey(
-                        name: "FK_Images_Products_ProductId",
+                        name: "FK_ProductImages_Images_ImageId",
+                        column: x => x.ImageId,
+                        principalTable: "Images",
+                        principalColumn: "ImageId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProductImages_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "ProductId",
@@ -217,14 +234,14 @@ namespace Verstegen.Migrations
                 column: "ThemeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Images_ProductId",
-                table: "Images",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Ingredients_RecipeId",
                 table: "Ingredients",
                 column: "RecipeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductImages_ImageId",
+                table: "ProductImages",
+                column: "ImageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
@@ -254,22 +271,25 @@ namespace Verstegen.Migrations
                 name: "Establishments");
 
             migrationBuilder.DropTable(
-                name: "Images");
-
-            migrationBuilder.DropTable(
                 name: "Ingredients");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "ProductImages");
 
             migrationBuilder.DropTable(
                 name: "Recipes");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Images");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Themes");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
         }
     }
 }

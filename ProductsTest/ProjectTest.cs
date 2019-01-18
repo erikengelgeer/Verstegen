@@ -7,6 +7,7 @@ using Verstegen.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Verstegen.Models;
 using Microsoft.EntityFrameworkCore;
+using Verstegen.Models;
 
 namespace ProductsTest
 {
@@ -147,6 +148,32 @@ namespace ProductsTest
 
         // Deze test controlleert of de juiste page wordt opgehaald, of de totaal juiste object wordt,
         //of de juiste ojbject worden opgehaald, opgehaalden juiste view
+        [Fact]
+        public void Test_IndexViewType()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var controller = new ContactController(TestDb);
+            
+            var result = controller.Index();
+            Assert.IsType<ViewResult>(result);
+        }
+        
+        [Fact]
+        public void TestContacts_Index_ReturnsAViewResult()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var controller = new ContactController(TestDb);
+            
+            var result = controller.Index();
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var model = Assert.IsAssignableFrom<IEnumerable<Contact>>(
+                viewResult.ViewData.Model);
+            Assert.Equal(2, model.Count());
+        }
+        
+
         [Fact]
         public void TestSearch1()
         {

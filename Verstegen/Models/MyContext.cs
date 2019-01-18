@@ -12,6 +12,22 @@ namespace Verstegen.Models
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductImage>().HasKey(sc => new { sc.ProductId, sc.ImageId });
+
+            modelBuilder.Entity<ProductImage>()
+                .HasOne<Product>(sc => sc.Product)
+                .WithMany(s => s.ProductImages)
+                .HasForeignKey(sc => sc.ProductId);
+
+
+            modelBuilder.Entity<ProductImage>()
+                .HasOne<Image>(sc => sc.Image)
+                .WithMany(s => s.ProductImages)
+                .HasForeignKey(sc => sc.ImageId);
+        }
+
         public DbSet<Contact> Contacts { get; set; }
 
         public DbSet<Recipe> Recipes { get; set; }
@@ -25,5 +41,9 @@ namespace Verstegen.Models
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Theme> Themes { get; set; }
+
+        public DbSet<ProductImage> ProductImages { get; set; }
+
+        
     }
 }

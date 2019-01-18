@@ -81,6 +81,26 @@ a{
     background-size: cover;
 }
 
+.about-masthead {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url(/images/header/about-header.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contact-masthead {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url(/images/header/contact-header.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .recipes-masthead {
     position: relative;
     width: 100%;
@@ -106,6 +126,16 @@ a{
     width: 100%;
     height: 500px;
     background: url(/images/header/search.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.news-masthead {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url(/images/header/news-header.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -721,7 +751,7 @@ span {
 header.inspirationDetailImg {
     height: 100vh;
     min-height: 500px;
-    background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/lnpNnwy/videoblocks-agricultural-soybean-seeds_swlprdurl_thumbnail-full01.png) !important;
+    background: url(/images/header/farm.jpg) !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -818,6 +848,7 @@ header.inspirationDetailImg {
     box-shadow: 0px 0px 10px 2px rgba(173,173,173,0.73);
     background-color: #ffffff;
     opacity: 1;
+    z-index: 999;
 }
 
 .inspiration-carousel a.carousel-control-prev {
@@ -1305,11 +1336,32 @@ header.inspirationDetailImg {
 }
 
 /***************
+  NEWS & EVENTS
+***************/
+.news-p .news-h5 {
+    font-size: 1.2rem;
+    color: #9f9f9f;
+}
+
+/***************
   ABOUT PAGE
 ***************/
-.aboutProfileImg{
+.aboutProfileImg {
     width: 670px !important;
     height: 670px !important;
+    object-fit: cover;
+}
+
+/***************
+  NEWS & EVENTS PAGE
+***************/
+.NewsDetailImg {
+    height: 100vh;
+    min-height: 500px;
+    background: url(https://wallpapercave.com/wp/yCtABom.jpg) !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /***************
