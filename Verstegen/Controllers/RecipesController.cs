@@ -50,7 +50,7 @@ namespace Verstegen.Controllers
         {
             if (id < 0)
             {
-                return RedirectToAction("/Recipes");
+                return RedirectToAction("Index", "Recipes");
             }
             else
             {
