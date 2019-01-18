@@ -3,7 +3,7 @@
 }
 
 <!-- Header -->
-<header class="masthead products-masthead d-flex justify-content-end">
+<header class="masthead news-masthead d-flex justify-content-end">
     <div class="container text-center my-auto">
         <h1 class="mb-1 h1">News & Events</h1>
         <h2 class="mb-1 h2">Stay up to date</h2>
@@ -42,55 +42,53 @@
                 <li><input type="checkbox" name="innovations" id="innovations" value="innovations"><label for="innovations">Innovations</label></li>
                 <li><input type="checkbox" name="stories" id="stories" value="stories"><label for="news">Stories</label></li>
             </ul>
+
+            <h5 class="mt-5">Upcoming events</h5>
+
         </div>
 
         <div class="col-md-8 product-rows">
-            <div class="row">
+            <div class="row text-center">
                 @foreach (Blog p in ViewBag.News)
                 {
-                    <div class="col-md-3 products ml-5 mb-md-5">
-                        <div class="card">
-                            <a href="">
-                                <img class="img-fluid" src="@p.ImgUrl" alt="">
-                                <div class="spotText mt-2 ml-2">News</div>
-                                <div class="card-body">
-                                    <h5 class="news-h5">@p.Title</h5>
-                                    <p class="news-p">@p.Type</p>
-                                </div>
-                            </a>
-                        </div>
+                    <div class="col-12 col-sm-3">
+                        <img class="spotlightImg img-fluid" src="@p.ImgUrl" alt="@p.Type" />
+                        <div class="spotlightTitle">@p.Type</div>
+                        <a href="#">
+                            <p class="spotlightP text-left">
+                                <strong>@p.Title</strong><br />
+                                @p.Date.ToShortDateString()
+                            </p>
+                        </a>
                     </div>
                 }
             </div>
-
-
-            @*
-        <div class="row pagination">
-            <div class="col-md-3 offset-1 p-0">
-                <div class="page-item">
-                    <a href="@Url.Action("Index", "Products", new { page = ViewBag.Page-1 })" class="btn btn-red btn-lg @Html.Raw(ViewBag.Page < 2 ? "disabled" : "red-color")">
-                        <div class="button-text-white">
-                            <img src="~/images/icons/left-arrow.svg" class="icon-arrow-left-white"> Back
-                        </div>
-                    </a>
+            <div class="row pagination">
+                <div class="col-md-3 p-0">
+                    <div class="page-item">
+                        <a href="@Url.Action("Index", "newsandevents", new { page = ViewBag.Page-1 })" class="btn btn-red btn-lg @Html.Raw(ViewBag.Page < 2 ? "disabled" : "red-color")">
+                            <div class="button-text-white">
+                                <img src="~/images/icons/left-arrow.svg" class="icon-arrow-left-white"> Back
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex justify-content-center">
+                    @for (var j = 1; j < ViewBag.AmountPages + 1; j++)
+                    {
+                        <div class="page-item @Html.Raw(ViewBag.Page == j ? "active disabled" : "")"><a class="page-link" href="@Url.Action("Index", "Products", new { page = j })">@j</a></div>
+                    }
+                </div>
+                <div class="col-md-3 d-flex justify-content-end p-0">
+                    <div class="page-item">
+                        <a href="@Url.Action("Index", "newsandevents", new { page = ViewBag.Page+1 })" class="btn btn-red btn-lg @Html.Raw(ViewBag.Page > ViewBag.AmountPages - 1 ? "disabled" : "red-color")">
+                            <div class="button-text-white">
+                                Next <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 offset-1 d-flex justify-content-center">
-                @for (var j = 1; j < ViewBag.AmountPages + 1; j++)
-                {
-                    <div class="page-item @Html.Raw(ViewBag.Page == j ? "active disabled" : "")"><a class="page-link" href="@Url.Action("Index", "Products", new { page = j })">@j</a></div>
-                }
-            </div>
-            <div class="col-md-3 offset-1 d-flex justify-content-end p-0">
-                <div class="page-item">
-                    <a href="@Url.Action("Index", "Products", new { page = ViewBag.Page+1 })" class="btn btn-red btn-lg @Html.Raw(ViewBag.Page > ViewBag.AmountPages - 1 ? "disabled" : "red-color")">
-                        <div class="button-text-white">
-                            Next <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>*@
         </div>
     </div>
 </div>
