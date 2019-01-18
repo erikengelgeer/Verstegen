@@ -58,12 +58,12 @@ namespace ProductsTest
         {
             MyContext TestDb = GetInMemoryDatabase();
             var control = new ProductsController(TestDb);
-
             var result = control.Index(1);
 
-            Assert.Equal(3, TestDb.Categories.Count());
+            var Categories = control.ViewBag.Categories.Count;
+            var Products = control.ViewBag.Products.Count;
 
-            Assert.Equal("test", "test");
+            Assert.Equal(3, Categories);
         }
 
         [Fact]
@@ -87,6 +87,27 @@ namespace ProductsTest
             Assert.Equal(2, TestDb.Recipes.ToList().Count);
             Assert.Single(TestDb.Recipes.Where(r => r.Type == "Meat").ToList());
             Assert.Single(TestDb.Recipes.Where(r => r.Type == "Rice").ToList());
+        }
+
+        [Fact]
+        public void TestSearch1()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var controller = new SearchController(TestDb);
+
+            //Test1
+            var result1 = controller.Index("Rice", -2);
+            int page = controller.ViewBag.Page;
+            Assert.Equal(1, page);
+
+            //Test2
+            var result2 = controller.Index("Meat", 1);
+            int bag = controller.ViewBag.TestList.Count;
+            Assert.Equal(2, bag);
+
+            //Test3
+            //var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result2);
+            //Assert.Equal("Index", redirectToActionResult.ControllerName);
         }
 
 
