@@ -68,10 +68,10 @@ namespace Verstegen.Controllers
             return View();
         }
 
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
-            ViewData["Details"] = "Inspiration Details page";
-            return View();
+            Blog blog = db.Blogs.Where(b => b.BlogId == id).SingleOrDefault();
+            return View(blog);
         }
     }
 }

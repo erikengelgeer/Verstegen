@@ -1,10 +1,12 @@
-﻿@{
+﻿@model Blog
+
+@{
     ViewData["Title"] = "Inspiration Detail";
 }
 
 <header class="masthead inspirationDetailImg">
     <div class="col-12 text-left">
-        <h1 class="h1" id="detailH1">Products are sourced from where they grow</h1>
+        <h1 class="h1" id="detailH1">@Model.Title</h1>
     </div>
     <a class="ct-btn-scroll ct-js-btn-scroll mr-5 mt-5" href="#content">
         <img alt="Arrow Down" class="down-arrow" src="~/images/icons/down-arrow-white.svg">
@@ -15,8 +17,8 @@
         <div class="col-md-12">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/Home">Home</a></li>
-                <li class="breadcrumb-item"><a href="/Inspiration">Inspiration</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Products are sourced from where they grow</li>
+                <li class="breadcrumb-item"><a href="/HowWeWork">How we work</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
             </ol>
         </div>
     </div>
@@ -42,17 +44,7 @@
     <div class="col-8 offset-2">
         <div class="row">
             <p class="body-text inspirationP">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Aenean ultricies enim ac risus placerat, sed pretium justo dictum. Sed sed erat efficitur, efficitur quam eu, aliquet velit.
-                Sed in erat id nisl tincidunt placerat quis in urna. Nam venenatis suscipit enim, id ultrices tellus egestas et.
-                Fusce aliquet laoreet dui, vitae eleifend nisi vehicula non. Suspendisse nec facilisis risus, in feugiat ex.
-                Donec a dignissim diam. Nullam vulputate tortor eu sem molestie venenatis. Morbi et ligula libero.
-            </p>
-            <p class="body-text inspirationP">
-                Vivamus magna metus, aliquet ac vulputate eget, maximus eu ex.
-                Nullam consectetur lorem at sem tristique, nec facilisis magna hendrerit.
-                Nunc venenatis, est et convallis viverra, risus lorem maximus ligula, eu finibus nisl felis non est. 
-                Donec facilisis, eros et lacinia fringilla, velit justo tempor nunc, nec varius magna felis in tellus.
+                @Model.Text
             </p>
         </div>
         <div class="row d-flex align-items-center my-5">
@@ -61,25 +53,21 @@
                 <img class="img-fluid rounded position-absolute" id="inspirationQuoteIcon" alt="Quote icon" src="~/images/inspiration/two-quotes.svg" />
             </div>
             <div class="col-8 offset-1">
-                <p class="body-text inspirationQuote"><em>We  travel around the world to find inspiration for our products</em></p>
-                <p class="body-text inspirationP">J. ter Heijde (Innovation team Verstegen)</p>
+                <p class="body-text inspirationQuote"><em>@Model.Quote</em></p>
+                <p class="body-text inspirationP">@Model.QuoteFrom</p>
             </div>
         </div>
         <div class="row">
-            <p class="h5"><strong>Integer posuere erat a ante venenatis dapibus</strong></p>
+            <p class="h5"><strong>@Model.SubTitle</strong></p>
             <p class="body-text inspirationP">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Aenean ultricies enim ac risus placerat, sed pretium justo dictum. Sed sed erat efficitur, efficitur quam eu, aliquet velit.
-                Sed in erat id nisl tincidunt placerat quis in urna. Nam venenatis suscipit enim, id ultrices tellus egestas et.
-                Fusce aliquet laoreet dui, vitae eleifend nisi vehicula non. Suspendisse nec facilisis risus, in feugiat ex.
-                Donec a dignissim diam. Nullam vulputate tortor eu sem molestie venenatis. Morbi et ligula libero.
+                @Model.SubText
             </p>
         </div>
         <div class="row my-5">
             <div class="card" style="width: 100%;">
-                <img class="card-img-top" src="https://ak2.picdn.net/shutterstock/videos/10055102/thumb/11.jpg" alt="Plant image">
+                <img class="card-img-top" src="~/@Model.ImgUrl" alt="@Model.ImgUrl">
                 <div class="card-body">
-                    <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text text-center">@Model.Title</p>
                 </div>
             </div>
         </div>
@@ -149,8 +137,14 @@
                 </p>
             </a>
         </div>
+        <div class="col-md-12">
+            <a href="@Url.Action("Index", "Inspiration", new { page = 1, id = 0 })" class="btn btn-red btn-lg">
+                <div class="button-text-white">
+                    All Inspirations <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
+                </div>
+            </a>
+        </div>
     </div>
-    <div class="row justify-content-center">
-        <a class="btn btn-lg btn-red" href="/inspiration" role="button">All inspiration<span class="fas fa-arrow-right"></span></a>
-    </div>
+    
+    
 </div>
