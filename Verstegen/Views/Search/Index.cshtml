@@ -62,6 +62,12 @@
                 {
                     UrlImg = "/Blogs/Blog?id=" + p.BlogId;
                     TypeString = "Blog";
+
+                    if(p.Type == "Story" || p.Type == "News")
+                    {
+                        UrlImg = "/Newsandevents/details?id=" + p.BlogId;
+                        TypeString = p.Type;
+                    }
                 }
 
                 <a href="@UrlImg">

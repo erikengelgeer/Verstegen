@@ -39,8 +39,13 @@ namespace Verstegen.Controllers
             return View();
         }
 
-        public IActionResult Details()
-        {
+        public IActionResult Details(int id)
+        { 
+            if(!db.Blogs.Where(b => b.Type == "News" || b.Type == "Story").Any(b => b.BlogId == id))
+            {             
+                return RedirectToAction("Index");
+            }
+            ViewBag.N = db.Blogs.Where(b => b.BlogId == id).First();
             return View();
         }
     }
