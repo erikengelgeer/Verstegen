@@ -89,28 +89,29 @@ namespace ProductsTest
             Assert.Single(TestDb.Recipes.Where(r => r.Type == "Rice").ToList());
         }
 
+        //Deze test controlleert of de juiste page wordt opgehaald, of de totaal juiste object wordt,
+        //of de juiste ojbject worden opgehaald, opgehaalden juiste view
         [Fact]
         public void TestSearch1()
         {
             MyContext TestDb = GetInMemoryDatabase();
             var controller = new SearchController(TestDb);
 
-            //Test1
+            //Test1 - Juiste pagina index
             var result1 = controller.Index("Rice", -2);
             int page = controller.ViewBag.Page;
             Assert.Equal(1, page);
 
-            //Test2
+            //Test2 - Totaal objecten
             var result2 = controller.Index("Meat", 1);
             int bag = controller.ViewBag.TestList.Count;
             Assert.Equal(2, bag);
 
-            //Test3
-            //var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result2);
-            //Assert.Equal("Index", redirectToActionResult.ControllerName);
+            //Test3 - Testen of juiste Object wordt opgehaald
+            Assert.True(TestDb.Recipes.Where(r => r.Type == "Meat").First().Equals(controller.ViewBag.TestList[0]));
+
+            //Test4 - Juiste view
+            Assert.IsType<ViewResult>(result2);
         }
-
-
-
     }
 }
