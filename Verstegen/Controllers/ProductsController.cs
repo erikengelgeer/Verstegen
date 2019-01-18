@@ -21,7 +21,7 @@ namespace Verstegen.Controllers
             Amount = 6;
         }
 
-        public IActionResult Index(int page)
+        public async Task<IActionResult> Index(int page)
         {
             if (page < 1)
             {
