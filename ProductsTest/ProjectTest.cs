@@ -78,8 +78,11 @@ namespace ProductsTest
             Assert.Equal("Recipes", redirectToActionResult.ControllerName);
             Assert.Equal("Index", redirectToActionResult.ActionName);
 
-            var result2 = controller.Recipe(1);
+            var result2 = controller.Recipe(10);
             var viewResult = Assert.IsType<ViewResult>(result2);
+
+            Recipe Recipe = controller.ViewBag.Recipe;
+            Assert.Equal("For 4 people", Recipe.AmountOfPeople);
 
             Assert.Equal(2, TestDb.Recipes.ToList().Count);
             Assert.Single(TestDb.Recipes.Where(r => r.Type == "Meat").ToList());
