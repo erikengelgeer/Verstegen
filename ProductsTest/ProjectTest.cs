@@ -17,7 +17,8 @@ namespace ProductsTest
         private MyContext GetInMemoryDatabase()
         {
             MyContext db = getContext(true);
-            if (db.Recipes.Count() == 0) {
+            if (db.Recipes.Count() == 0)
+            {
                 db.Add(new Category { CategoryId = 10, CategoryName = "Potato, Vegetable, Fruit", CategoryValue = "pvf" });
                 db.Add(new Category { CategoryId = 11, CategoryName = "Ready-made, Salads", CategoryValue = "rms" });
                 db.Add(new Category { CategoryId = 12, CategoryName = "Meat, Fish, Vegetarian, Chicken", CategoryValue = "mfvc" });
@@ -99,7 +100,7 @@ namespace ProductsTest
 
         // Deze test controlleert of de juiste types wordt meegegeven met het juiste aantal.
         [Fact]
-        public void TestCorrectTypes()
+        public void TestCorrectProductTypes()
         {
             MyContext TestDb = GetInMemoryDatabase();
             var control = new ProductsController(TestDb);
@@ -115,7 +116,7 @@ namespace ProductsTest
 
             List<string> types = control.ViewBag.Types;
 
-            for(int i= 0; i < types.Count(); i++)
+            for (int i = 0; i < types.Count(); i++)
             {
                 Assert.Equal(Expected[i], types[i]);
             }
@@ -144,7 +145,7 @@ namespace ProductsTest
             Assert.Single(TestDb.Recipes.Where(r => r.Type == "Rice").ToList());
         }
 
-        //Deze test controlleert of de juiste page wordt opgehaald, of de totaal juiste object wordt,
+        // Deze test controlleert of de juiste page wordt opgehaald, of de totaal juiste object wordt,
         //of de juiste ojbject worden opgehaald, opgehaalden juiste view
         [Fact]
         public void TestSearch1()
@@ -167,6 +168,137 @@ namespace ProductsTest
 
             //Test4 - Juiste view
             Assert.IsType<ViewResult>(result2);
+        }
+
+        // Deze test controlleert of het crud systeem van Contactpersoon alle entries naar de tabel stuurt.
+        [Fact]
+        public void TestContactTabel()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new AdminController(TestDb);
+            var result = control.AllContacts();
+
+            List<Contact> ExpectedContacts = TestDb.Contacts.ToList();
+            List<Contact> contacts = control.ViewBag.contacts;
+            int ContactsCount = contacts.Count();
+
+            Assert.Equal(2, ContactsCount);
+
+            for (int i = 0; i < ContactsCount; i++)
+            {
+                Assert.Equal(ExpectedContacts[i].ContactId, contacts[i].ContactId);
+            }
+        }
+
+        // Deze test controlleert van CRUD: Create functie voor contactpersoon. 
+        // Een met geldige data en een met ongeldige data.
+        [Fact]
+        public void TestCreateContact()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new AdminController(TestDb);
+            Contact TestContact1 = new Contact { ContactId = 12, Name = "Test contactname", Function = "Test Function", Country = "The Netherlands", Province = "Zuid-Holland", Tel = "+31(0)532534344", Email = "test@test.nl", ImgUrl = "/images/icons/persoon_img.svg" };
+            var result1 = control.CreateContact(TestContact1);
+
+            var ContactResult1 = false;
+            List<Contact> AllContacts = TestDb.Contacts.ToList();
+
+            for (int i = 0; i < AllContacts.Count(); i++)
+            {
+                if (TestContact1.ContactId == AllContacts[i].ContactId)
+                {
+                    ContactResult1 = true;
+                }
+                else
+                {
+                    ContactResult1 = false;
+                }
+            }
+
+            Assert.True(ContactResult1);
+        }
+
+        // Deze test controlleert van CRUD: Edit van een contactpersoon. 
+        // Checkt of de juiste gegevens worden meegegeven aan de view.
+        [Fact]
+        public void TestGetEditContact()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new AdminController(TestDb);
+            Contact TestContact = new Contact { ContactId = 12, Name = "Test", Function = "Test", Country = "The Netherlands", Province = "Zuid-Holland", Tel = "+31(0)532534344", Email = "contact1@contact.nl", ImgUrl = "/images/icons/persoon_img.svg" };
+            TestDb.Add(TestContact);
+            var result1 = control.EditContact(TestContact.ContactId);
+
+            Contact ViewContact = control.ViewBag.Contact;
+
+            Assert.Equal(TestContact.ContactId, ViewContact.ContactId);
+        }
+
+        // Deze test controlleer van CRUD: Edit van een contactpersoon.
+        // Checkt of de juiste entry wordt aangepast.
+        [Fact]
+        public void TestEditContact()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new AdminController(TestDb);
+            Contact TestContact = new Contact { ContactId = 12, Name = "Test", Function = "Test", Country = "The Netherlands", Province = "Zuid-Holland", Tel = "+31(0)532534344", Email = "contact1@contact.nl", ImgUrl = "/images/icons/persoon_img.svg" };
+
+            Assert.Equal("Test", TestContact.Name);
+
+            TestDb.Add(TestContact);
+            TestContact.Name = "ChangedName";
+            var result = control.EditContact(TestContact.ContactId, TestContact);
+            var name = "";
+            List<Contact> AllContacts = TestDb.Contacts.ToList();
+
+            for (int i = 0; i < AllContacts.Count(); i++)
+            {
+                if (AllContacts[i].ContactId == 12)
+                {
+                    name = AllContacts[i].Name;
+                }
+            }
+
+            Assert.Equal("ChangedName", name);
+        }
+
+        // Deze test controlleer van CRUD: Delete van een contactpersoon.
+        // Checkt of de juiste entry wordt verwijderd.
+        [Fact]
+        public void TestDeleteContact()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new AdminController(TestDb);
+            Contact TestContact = new Contact { ContactId = 13, Name = "Test", Function = "Test", Country = "The Netherlands", Province = "Zuid-Holland", Tel = "+31(0)532534344", Email = "contact1@contact.nl", ImgUrl = "/images/icons/persoon_img.svg" };
+            TestDb.Add(TestContact);
+
+            List<Contact> AllContacts = TestDb.Contacts.ToList();
+
+            for (int i = 0; i < AllContacts.Count(); i++)
+            {
+                if(AllContacts[i].ContactId == TestContact.ContactId)
+                {
+                    Assert.True(true);
+                }
+            }
+
+            control.DeleteContact(TestContact.ContactId);
+            var DeleteResult = false;
+            List<Contact> AllContacts2 = TestDb.Contacts.ToList();
+
+            for (int i = 0; i < AllContacts2.Count(); i++)
+            {
+                if (AllContacts[i].ContactId != TestContact.ContactId)
+                {
+                    DeleteResult = true;
+                }
+                else
+                {
+                    DeleteResult = false;
+                }
+            }
+
+            Assert.True(DeleteResult);
         }
     }
 }

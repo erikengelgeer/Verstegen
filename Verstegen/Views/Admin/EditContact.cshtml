@@ -6,7 +6,7 @@
 <header class="masthead masthead-admin d-flex justify-content-end">
     <div class="container text-center my-auto">
         <h2 class="mb-1 h2">Edit Contact</h2>
-        <h3 class="3">@Model.Name</h3>
+        <h3 class="3">@ViewBag.Contact.Name</h3>
     </div>
 </header>
 
@@ -20,37 +20,37 @@
                 <input type="hidden" asp-for="ContactId" />
                 <div class="form-group">
                     <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
+                    <input required autocomplete="off" asp-for="Name" type="text"  value="@ViewBag.Contact.Name" class="form-control" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Function" class="control-label"></label>
-                    <input asp-for="Function" class="form-control" />
+                    <input required autocomplete="off" asp-for="Function" type="text"  value="@ViewBag.Contact.Function" class="form-control" />
                     <span asp-validation-for="Function" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Country" class="control-label"></label>
-                    <input asp-for="Country" class="form-control" />
+                    <input required autocomplete="off" asp-for="Country" type="text"  value="@ViewBag.Contact.Country" class="form-control" />
                     <span asp-validation-for="Country" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Province" class="control-label"></label>
-                    <input asp-for="Province" class="form-control" />
+                    <input required autocomplete="off" asp-for="Province" type="text"  value="@ViewBag.Contact.Country" class="form-control" />
                     <span asp-validation-for="Province" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Tel" class="control-label"></label>
-                    <input asp-for="Tel" class="form-control" />
+                    <input required autocomplete="off" asp-for="Tel" type="text"  value="@ViewBag.Contact.Tel" class="form-control" />
                     <span asp-validation-for="Tel" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" class="form-control" />
+                    <input required autocomplete="off" asp-for="Email" type="text"  value="@ViewBag.Contact.Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="ImgUrl" class="control-label"></label>
-                    <input asp-for="ImgUrl" class="form-control" />
+                    <input required autocomplete="off" asp-for="ImgUrl" type="text"  value="@ViewBag.Contact.ImgUrl" class="form-control" />
                     <span asp-validation-for="ImgUrl" class="text-danger"></span>
                 </div>
                 @*<div class="form-group">

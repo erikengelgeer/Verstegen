@@ -123,6 +123,7 @@ namespace Verstegen.Controllers
         [HttpGet]
         public IActionResult EditContact(int id)
         {
+            ViewBag.Contact = db.Contacts.Find(id);
             return View("EditContact", db.Contacts.Find(id));
         }
 
