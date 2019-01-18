@@ -54,7 +54,7 @@ namespace ProductsTest
         }
 
         [Fact]
-        public void Test1()
+        public void TestProducts1()
         {
             MyContext TestDb = GetInMemoryDatabase();
             var control = new ProductsController(TestDb);
@@ -84,8 +84,6 @@ namespace ProductsTest
             Assert.Equal(2, TestDb.Recipes.ToList().Count);
             Assert.Single(TestDb.Recipes.Where(r => r.Type == "Meat").ToList());
             Assert.Single(TestDb.Recipes.Where(r => r.Type == "Rice").ToList());
-
-            
         }
 
 
