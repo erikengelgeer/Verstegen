@@ -46,9 +46,14 @@ namespace Verstegen.Controllers
 
         public IActionResult Product(int id)
         {
-            ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
-            ViewBag.Product = db.Products.SingleOrDefault(p => p.ProductId == id);
-            return View();
+            if (id < 0)
+            {
+                return RedirectToAction("Index", "Products");
+            } else {
+                ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
+                ViewBag.Product = db.Products.SingleOrDefault(p => p.ProductId == id);
+                return View();
+            }
         }
 
     }

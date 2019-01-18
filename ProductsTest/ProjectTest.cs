@@ -53,17 +53,72 @@ namespace ProductsTest
             return new MyContext(options);
         }
 
+        // Deze test controlleert of de juiste view wordt gereturned als er een ongeldig id mee wordt gegeven.
         [Fact]
-        public void TestProducts1()
+        public void TestCorrectProductViews()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new ProductsController(TestDb);
+
+            var UnvalidResult = control.Product(-1);
+
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(UnvalidResult);
+            Assert.Equal("Products", redirectToActionResult.ControllerName);
+            Assert.Equal("Index", redirectToActionResult.ActionName);
+        }
+
+        // Deze test controlleert of het juiste aantal categoriën en producten wordt meegegeven aan de view.
+        [Fact]
+        public void TestAmountOfProducts()
         {
             MyContext TestDb = GetInMemoryDatabase();
             var control = new ProductsController(TestDb);
             var result = control.Index(1);
+            var view = Assert.IsType<ViewResult>(result);
 
             var Categories = control.ViewBag.Categories.Count;
             var Products = control.ViewBag.Products.Count;
 
             Assert.Equal(3, Categories);
+            Assert.Equal(2, Products);
+        }
+
+        // Deze test controlleert of het juiste product wordt meegegeven aan de view.
+        [Fact]
+        public void TestSingleProduct()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new ProductsController(TestDb);
+            var result = control.Product(11);
+            var view = Assert.IsType<ViewResult>(result);
+
+            Product ViewProduct = control.ViewBag.Product;
+
+            Assert.Equal(11, ViewProduct.ProductId);
+        }
+
+        // Deze test controlleert of de juiste types wordt meegegeven met het juiste aantal.
+        [Fact]
+        public void TestCorrectTypes()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new ProductsController(TestDb);
+            var result = control.Index(1);
+
+            string FirstExpected = "Meat (1)";
+            string SecondExpected = "Potato (1)";
+
+            List<string> Expected = new List<string>();
+
+            Expected.Add(FirstExpected);
+            Expected.Add(SecondExpected);
+
+            List<string> types = control.ViewBag.Types;
+
+            for(int i= 0; i < types.Count(); i++)
+            {
+                Assert.Equal(Expected[i], types[i]);
+            }
         }
 
         [Fact]
