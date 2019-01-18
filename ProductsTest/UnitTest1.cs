@@ -52,12 +52,12 @@ namespace ProductsTest
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task Test1Async()
+        public void Test1()
         {
             MyContext TestDb = GetInMemoryDatabase();
             var control = new ProductsController(TestDb);
 
-            var result = await control.Index(1);
+            var result = control.Index(1);
 
             Assert.Equal(3, TestDb.Categories.Count());
 
