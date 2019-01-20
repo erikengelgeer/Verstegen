@@ -153,17 +153,17 @@ namespace ProductsTest
         {
             MyContext TestDb = GetInMemoryDatabase();
             var controller = new ContactController(TestDb);
-            
+
             var result = controller.Index();
             Assert.IsType<ViewResult>(result);
         }
-        
+
         [Fact]
         public void TestContacts_Index_ReturnsAViewResult()
         {
             MyContext TestDb = GetInMemoryDatabase();
             var controller = new ContactController(TestDb);
-            
+
             var result = controller.Index();
 
             // Assert
@@ -172,7 +172,7 @@ namespace ProductsTest
                 viewResult.ViewData.Model);
             Assert.Equal(2, model.Count());
         }
-        
+
 
         [Fact]
         public void TestSearch1()
@@ -303,7 +303,7 @@ namespace ProductsTest
 
             for (int i = 0; i < AllContacts.Count(); i++)
             {
-                if(AllContacts[i].ContactId == TestContact.ContactId)
+                if (AllContacts[i].ContactId == TestContact.ContactId)
                 {
                     Assert.True(true);
                 }
@@ -326,6 +326,54 @@ namespace ProductsTest
             }
 
             Assert.True(DeleteResult);
+        }
+
+        //Inspiration correct value Test
+        [Fact]
+        public void TestInspirationProduct()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var controller = new InspirationController(TestDb);
+
+            var result = controller.Index(1, 12);
+
+            var Products = controller.ViewBag.Products.Count;
+
+            Assert.Equal(1, Products);
+        }
+
+        //Inspiration correct views test
+        [Fact]
+        public void TestCorrectInspirationView()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new InspirationController(TestDb);
+
+            var result1 = control.Theme(-1);
+            var result2 = control.Details(-1);
+
+            var redirectToIndex1 = Assert.IsType<RedirectToActionResult>(result1);
+            var redirectToIndex2 = Assert.IsType<RedirectToActionResult>(result2);
+
+            Assert.Equal("Index", redirectToIndex1.ActionName);
+            Assert.Equal("Index", redirectToIndex2.ActionName);
+        }
+
+        //Inspiration correct views test
+        [Fact]
+        public void TestInspiration2()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var control = new InspirationController(TestDb);
+
+            var result1 = control.Theme(-1);
+            var result2 = control.Details(-1);
+
+            var redirectToIndex1 = Assert.IsType<RedirectToActionResult>(result1);
+            var redirectToIndex2 = Assert.IsType<RedirectToActionResult>(result2);
+
+            Assert.Equal("Index", redirectToIndex1.ActionName);
+            Assert.Equal("Index", redirectToIndex2.ActionName);
         }
     }
 }

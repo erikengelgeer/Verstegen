@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Verstegen.Models;
 using X.PagedList;
 
@@ -61,17 +62,33 @@ namespace Verstegen.Controllers
 
         public IActionResult Theme(int id)
         {
-            ViewBag.Recipes = db.Recipes.Where(r => r.ThemeId == id).ToList();
-            ViewBag.Theme = db.Themes.Where(r => r.ThemeId == id).SingleOrDefault();
-            ViewBag.Blogs = db.Blogs.ToList();
+            if (id < 0)
+            {
+                return RedirectToAction("Index", new RouteValueDictionary(
+                                    new { controller = "Inspiration", action = "Index", Id = 0, Page = 1 }));
+            }
+            else
+            {
+                ViewBag.Recipes = db.Recipes.Where(r => r.ThemeId == id).ToList();
+                ViewBag.Theme = db.Themes.Where(r => r.ThemeId == id).SingleOrDefault();
+                ViewBag.Blogs = db.Blogs.ToList();
 
-            return View();
+                return View();
+            }
         }
 
         public IActionResult Details(int id)
         {
-            Blog blog = db.Blogs.Where(b => b.BlogId == id).SingleOrDefault();
-            return View(blog);
+            if (id < 0)
+            {
+                return RedirectToAction("Index", new RouteValueDictionary(
+                                    new { controller = "Inspiration", action = "Index", Id = 0, Page = 1 }));
+            }
+            else
+            {
+                Blog blog = db.Blogs.Where(b => b.BlogId == id).SingleOrDefault();
+                return View(blog);
+            }
         }
     }
 }
