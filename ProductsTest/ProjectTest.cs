@@ -366,22 +366,5 @@ namespace ProductsTest
             Assert.Equal("Index", redirectToIndex1.ActionName);
             Assert.Equal("Index", redirectToIndex2.ActionName);
         }
-
-        //Inspiration correct views test
-        [Fact]
-        public void TestInspiration2()
-        {
-            MyContext TestDb = GetInMemoryDatabase();
-            var control = new InspirationController(TestDb);
-
-            var result1 = control.Theme(-1);
-            var result2 = control.Details(-1);
-
-            var redirectToIndex1 = Assert.IsType<RedirectToActionResult>(result1);
-            var redirectToIndex2 = Assert.IsType<RedirectToActionResult>(result2);
-
-            Assert.Equal("Index", redirectToIndex1.ActionName);
-            Assert.Equal("Index", redirectToIndex2.ActionName);
-        }
     }
 }
