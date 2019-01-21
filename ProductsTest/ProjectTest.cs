@@ -31,8 +31,8 @@ namespace ProductsTest
                 db.Add(new Contact { ContactId = 11, Name = "Conact name 2", Function = "Function 2", Country = "The Netherlands", Province = "Zuid-Holland", Tel = "+31(0)532534344", Email = "contact2@contact.nl", ImgUrl = "/images/icons/persoon_img.svg" });
                 db.Add(new Ingredient { IngredientId = 10, Name = "Ingredient 1", Gram = 80, Percentage = 30.5, RecipeId = 0 });
                 db.Add(new Ingredient { IngredientId = 11, Name = "Ingredient 2", Gram = 40, Percentage = 20, RecipeId = 1 });
-                db.Add(new Recipe { RecipeId = 10, Title = "Recepi title 1", SubTitle = "Sub title 1", Type = "Meat", AmountOfPeople = "For 4 people", ImgUrl = "images/recipes/preview/sausages.jpg", Procedure = "Recept procedure 1", Decoration = "Recept 1 decoration", ThemeId = 0, CategoryId = 0 });
-                db.Add(new Recipe { RecipeId = 11, Title = "Recepi title 2", SubTitle = "Sub title 2", Type = "Rice", AmountOfPeople = "For 5 people", ImgUrl = "images/recipes/preview/nasi.jpg", Procedure = "Recept procedure 2", Decoration = "Recept 2 decoration", ThemeId = 1, CategoryId = 1 });
+                db.Add(new Recipe { RecipeId = 10, Title = "Burger", SubTitle = "Sub title 1", Type = "Meat", AmountOfPeople = "For 4 people", ImgUrl = "images/recipes/preview/sausages.jpg", Procedure = "Recept procedure 1", Decoration = "Recept 1 decoration", ThemeId = 0, CategoryId = 0 });
+                db.Add(new Recipe { RecipeId = 11, Title = "Nasi", SubTitle = "Sub title 2", Type = "Rice", AmountOfPeople = "For 5 people", ImgUrl = "images/recipes/preview/nasi.jpg", Procedure = "Recept procedure 2", Decoration = "Recept 2 decoration", ThemeId = 1, CategoryId = 1 });
                 db.Add(new Theme { ThemeId = 10, Name = "Theme 1 name", ImgUrl = "bbq.jpg", IconUrl = "images/icons/bbq-icon.svg" });
                 db.Add(new Theme { ThemeId = 11, Name = "Theme 2 name", ImgUrl = "cocktails.jpg", IconUrl = "images/icons/cocktail-glass-icon.svg" });
 
@@ -123,27 +123,35 @@ namespace ProductsTest
             }
         }
 
+        // Test of de redirect to action in /Recipes/Recipe goed wordt uitgevoerd bij een foute parameter
         [Fact]
-        public void TestRecipes1()
+        public void TestRedirectToRecipeIndex()
         {
             MyContext TestDb = GetInMemoryDatabase();
             var controller = new RecipesController(TestDb);
 
-            var result1 = controller.Recipe(-1);
+            var result = controller.Recipe(-1);
 
-            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result1);
+            // Assert
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal("Recipes", redirectToActionResult.ControllerName);
             Assert.Equal("Index", redirectToActionResult.ActionName);
+        }
 
-            var result2 = controller.Recipe(10);
-            var viewResult = Assert.IsType<ViewResult>(result2);
+        // Test of het juiste recept wordt getoont bij een correcte parameter
+        [Fact]
+        public void TestSingleRecipe()
+        {
+            MyContext TestDb = GetInMemoryDatabase();
+            var controller = new RecipesController(TestDb);
 
+            var result = controller.Recipe(10);
+            var viewResult = Assert.IsType<ViewResult>(result);
+
+            // Assert
             Recipe Recipe = controller.ViewBag.Recipe;
-            Assert.Equal("For 4 people", Recipe.AmountOfPeople);
-
-            Assert.Equal(2, TestDb.Recipes.ToList().Count);
-            Assert.Single(TestDb.Recipes.Where(r => r.Type == "Meat").ToList());
-            Assert.Single(TestDb.Recipes.Where(r => r.Type == "Rice").ToList());
+            Assert.Equal("Burger", Recipe.Title);
+            Assert.Equal("Meat", Recipe.Type);
         }
 
         // Deze test controlleert of de juiste page wordt opgehaald, of de totaal juiste object wordt,
