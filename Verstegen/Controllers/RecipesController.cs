@@ -48,7 +48,7 @@ namespace Verstegen.Controllers
 
         public IActionResult Recipe(int id)
         {
-            if (id < 0)
+            if (!db.Recipes.Any(b => b.RecipeId == id))
             {
                 return RedirectToAction("Index", "Recipes");
             }

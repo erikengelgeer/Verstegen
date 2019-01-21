@@ -46,7 +46,7 @@ namespace Verstegen.Controllers
 
         public IActionResult Product(int id)
         {
-            if (id < 0)
+            if (!db.Products.Any(b => b.ProductId == id))
             {
                 return RedirectToAction("Index", "Products");
             } else {

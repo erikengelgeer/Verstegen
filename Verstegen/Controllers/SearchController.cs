@@ -33,7 +33,7 @@ namespace Verstegen.Controllers
             ViewBag.Search = result;
 
             var blogList = db.Blogs.Where(b => b.Title.Contains(result) || b.Subject.Contains(result) || b.SubTitle.Contains(result) || b.Text.Contains(result) || b.Quote.Contains(result) || b.QuoteFrom.Contains(result) || b.SubText.Contains(result) || b.Date.ToString().Contains(result) || b.Type.Contains(result)).ToList();
-            var recipeList = db.Recipes.Where(r => r.Title.Contains(result) || r.SubTitle.Contains(result) || r.Type.Contains(result) || r.Type.Contains(result) || r.AmountOfPeople.Contains(result) || r.Procedure.Contains(result) || r.Decoration.Contains(result)).ToList();
+            var recipeList = db.Recipes.Where(r => r.Title.Contains(result) || r.SubTitle.Contains(result) || r.Type.Contains(result) || r.AmountOfPeople.Contains(result) || r.Procedure.Contains(result) || r.Decoration.Contains(result) || r.Ingredients.Any(a => a.Name.Contains(result) || a.Gram.ToString().Contains(result) || a.ArticleNumber.ToString().Contains(result) || a.Percentage.ToString().Contains(result))).ToList();
             var productList = db.Products.Where(p => p.Title.Contains(result) || p.Type.Contains(result) || p.Description.Contains(result) || p.Contents.Contains(result) || p.AltString.Contains(result) || p.ProductDetails.Contains(result)).ToList();
 
             resultList = (from x in blogList select (Object)x).ToList();
