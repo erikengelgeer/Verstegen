@@ -46,7 +46,7 @@
                     int val = c.CategoryId;
                     string name = c.CategoryName;
 
-                    @if (!name.Equals(ViewBag.Category.CategoryName))
+                    if (!name.Equals(ViewBag.Category.CategoryName))
                     {
                         <option value="@val">@name</option>
                     }
@@ -93,7 +93,7 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn-red btn-lg red-color all-contacts">
+            <button type="button" class="btn btn-red btn-lg red-color all-contacts my-4">
                 All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
             </button>
 
@@ -105,7 +105,7 @@
             <div class="row">
                 @foreach (Recipe r in ViewBag.Recipes)
                 {
-                    <div id="@r.CategoryId" class="col-md-3 products ml-5 mb-md-5">
+                    <div id="@r.CategoryId" class="col-md-3 products ml-md-5 mb-md-5">
                         <div class="card">
                             <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">
                                 <img class="img-fluid img-small" src="@r.ImgUrl" alt="@r.ImgUrl">
@@ -120,7 +120,7 @@
 
                 @foreach (Product p in ViewBag.Products)
                 {
-                    <div id="@p.CategoryId" class="col-md-3 products ml-5 mb-md-5">
+                    <div id="@p.CategoryId" class="col-md-3 products ml-md-5 mb-md-5">
                         <div class="card">
                             <a href="@Url.Action("Product", "Products", new { id = p.ProductId })">
                                 <img class="img-fluid img-small" src="@p.ImgUrl" alt="@p.AltString">

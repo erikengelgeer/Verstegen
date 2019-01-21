@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <a href="/Contact" class="btn btn-red btn-lg">
+            <a href="/Contact" class="btn btn-red btn-lg my-4">
                 <div class="button-text-white">
                     All contacts <img src="~/images/icons/right-arrow-white.svg" class="icon-arrow-right-white">
                 </div>
@@ -101,7 +101,7 @@
             <div class="row">
                 @foreach (Recipe r in ViewBag.Recipes)
                 {
-                    <div class="col-md-3 products ml-5 mb-md-5">
+                    <div class="col-md-3 products ml-md-5 mb-5">
                         <div class="card">
                             <a href="@Url.Action("Recipe", "Recipes", new { id = r.RecipeId })">
                                 <img class="img-fluid img-small" src="@r.ImgUrl" alt="@r.ImgUrl">
