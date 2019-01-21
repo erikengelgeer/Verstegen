@@ -170,7 +170,7 @@ namespace ProductsTest
             var viewResult = Assert.IsType<ViewResult>(result);
             var model = Assert.IsAssignableFrom<IEnumerable<Contact>>(
                 viewResult.ViewData.Model);
-            Assert.Equal(2, model.Count());
+            Assert.Equal(3, model.Count());
         }
 
 
