@@ -35,6 +35,6 @@ namespace Verstegen.Models
         [Required]
         public string AltString { get; set; }
 
-        public IList<ProductImage> ProductImages { get; set; }
+        public virtual IList<ProductImage> ProductImages { get; set; }
     }
 }

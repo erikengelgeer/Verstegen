@@ -49,9 +49,13 @@ namespace Verstegen.Controllers
             if (!db.Products.Any(b => b.ProductId == id))
             {
                 return RedirectToAction("Index", "Products");
-            } else {
+            }
+            else
+            {
                 ViewBag.Contact = db.Contacts.OrderBy(c => Guid.NewGuid()).Skip(0).Take(1).First();
                 ViewBag.Product = db.Products.SingleOrDefault(p => p.ProductId == id);
+                ViewBag.Images = db.ProductImages.Where(pi => pi.ProductId == id).Select(c => c.Image).ToList();
+                
                 return View();
             }
         }
