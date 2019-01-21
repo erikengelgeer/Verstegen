@@ -79,7 +79,7 @@ namespace Verstegen.Controllers
 
         public IActionResult Details(int id)
         {
-            if (id < 0)
+            if(!db.Blogs.Any(b => b.BlogId == id))
             {
                 return RedirectToAction("Index", new RouteValueDictionary(
                                     new { controller = "Inspiration", action = "Index", Id = 0, Page = 1 }));
